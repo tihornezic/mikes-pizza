@@ -1,0 +1,45 @@
+footer {
+    .darkBackground {
+        background-color: #1d1d1d;
+        width: 100% !important;
+        height: 400px;
+        position: relative;
+        z-index: 1;
+        margin-top: -160px;
+
+        .infoRow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 5;
+            padding-top: 200px;
+
+            .infoItem {
+                ul {
+                    display: flex;
+
+                    a {
+                        text-decoration: none;
+                        color: $creamWhite;
+
+                        li {
+                            list-style: none;
+                            padding-left: 75px;
+                            font-size: 1.3rem;
+                            font-weight: 600;
+                        }
+
+                        &.logo {
+                            padding-left: 25px;
+                        }
+                    }
+                }
+
+                img {
+                    width: 33px;
+                }
+            }
+        }
+    }
+}

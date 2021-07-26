@@ -16,8 +16,13 @@ body {
 }
 
 .container {
-  max-width: 1380px;
+  max-width: 1300px;
   margin: 0 auto;
+}
+@media (max-width: 1790px) {
+  .container {
+    max-width: 1125px;
+  }
 }
 
 .button {
@@ -53,6 +58,12 @@ body {
   color: #1E2D2F;
   padding-left: 65px;
 }
+@media (max-width: 1790px) {
+  .header {
+    right: 50px;
+    top: 35px;
+  }
+}
 
 .hero {
   height: 100vh;
@@ -66,7 +77,7 @@ body {
 }
 .hero .content {
   position: absolute;
-  top: 270px;
+  top: 28%;
 }
 .hero .content h1 {
   color: #DFDFDF;
@@ -87,9 +98,16 @@ body {
   margin-top: 70px;
 }
 .hero .image {
-  position: absolute;
-  top: 200px;
-  right: 240px;
+  width: 42%;
+  float: right;
+  margin-top: 17%;
+  margin-right: -47px;
+}
+@media (max-width: 1790px) {
+  .hero .image {
+    width: 40%;
+    margin-right: -80px;
+  }
 }
 
 .menu h2 {
@@ -149,6 +167,85 @@ body {
   font-size: 1.3rem;
   width: 310px;
   text-align: center;
+}
+
+.quote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 150px;
+}
+.quote p {
+  font-size: 1.5rem;
+  margin-top: -25px;
+  font-weight: 600;
+  color: #1E2D2F;
+}
+
+.badges {
+  position: relative;
+  height: 800px;
+  background: url("../img/gradientBackground.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 2;
+  margin-top: 150px;
+}
+.badges .badgesRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12%;
+}
+.badges .badgesRow .badgesItem {
+  text-align: center;
+}
+.badges .badgesRow .badgesItem img {
+  width: 200px;
+}
+.badges .badgesRow .badgesItem p {
+  color: #1E2D2F;
+  margin-top: 15px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  max-width: 300px;
+}
+
+footer .darkBackground {
+  background-color: #1d1d1d;
+  width: 100% !important;
+  height: 400px;
+  position: relative;
+  z-index: 1;
+  margin-top: -160px;
+}
+footer .darkBackground .infoRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 5;
+  padding-top: 200px;
+}
+footer .darkBackground .infoRow .infoItem ul {
+  display: flex;
+}
+footer .darkBackground .infoRow .infoItem ul a {
+  text-decoration: none;
+  color: #DFDFDF;
+}
+footer .darkBackground .infoRow .infoItem ul a li {
+  list-style: none;
+  padding-left: 75px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+footer .darkBackground .infoRow .infoItem ul a.logo {
+  padding-left: 25px;
+}
+footer .darkBackground .infoRow .infoItem img {
+  width: 33px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,7 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="757.358" height="327.779" viewBox="0 0 757.358 327.779">
-  <g id="pizzaLogoDark" transform="translate(0 3.616)">
-    <path id="Path_120" data-name="Path 120" d="M0,0H302.765V302.765H0Z" transform="translate(0 7.678)" fill="none"/>
-    <path id="Path_121" data-name="Path 121" d="M113.411,0A152.167,152.167,0,0,0,0,50.461L113.411,252.3,226.821,50.461A152.414,152.414,0,0,0,113.411,0ZM50.335,63.076a25.23,25.23,0,1,1,25.23,25.23A25.3,25.3,0,0,1,50.335,63.076ZM113.411,164a25.23,25.23,0,1,1,25.23-25.23A25.3,25.3,0,0,1,113.411,164Z" transform="matrix(0.891, -0.454, 0.454, 0.891, 24.296, 99.359)" fill="#c57b57"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="733.063" height="327.779" viewBox="0 0 733.063 327.779">
+  <g id="pizzaLogoDark" transform="translate(-24.296 3.616)">
+    <path id="Path_121" data-name="Path 121" d="M113.411,0A152.167,152.167,0,0,0,0,50.461L113.411,252.3,226.821,50.461A152.414,152.414,0,0,0,113.411,0ZM50.335,63.076a25.23,25.23,0,1,1,25.23,25.23A25.3,25.3,0,0,1,50.335,63.076ZM113.411,164a25.23,25.23,0,1,1,25.23-25.23A25.3,25.3,0,0,1,113.411,164Z" transform="matrix(0.891, -0.454, 0.454, 0.891, 24.296, 99.359)" fill="#f1ab86"/>
     <text id="Mike_s_Pizza" data-name="Mike&apos;s Pizza" transform="translate(287.358 195.714)" fill="#1d1d1d" font-size="93" font-family="Neuton-ExtraBold, Neuton" font-weight="800"><tspan x="0" y="0">Mike&apos;s Pizza</tspan></text>
   </g>
 </svg>

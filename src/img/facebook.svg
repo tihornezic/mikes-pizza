@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="44" height="44" viewBox="0 0 44 44">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f1ab86"/>
+      <stop offset="0.125" stop-color="#db9a79"/>
+      <stop offset="0.481" stop-color="#da9a79"/>
+      <stop offset="1" stop-color="#795643"/>
+    </linearGradient>
+  </defs>
+  <g id="facebook" transform="translate(0.434 0.435)">
+    <rect id="Rectangle_23" data-name="Rectangle 23" width="44" height="44" transform="translate(-0.434 -0.434)" fill="none"/>
+    <path id="Path_147" data-name="Path 147" d="M38.272,20.136A18.136,18.136,0,1,0,16.509,37.91V25.577H12.882V20.136h3.627V15.6a6.355,6.355,0,0,1,6.348-6.348h4.534V14.7H23.763a1.819,1.819,0,0,0-1.814,1.814v3.627h5.441v5.441H21.95v12.6A18.134,18.134,0,0,0,38.272,20.136Z" transform="translate(1.43 1.43)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

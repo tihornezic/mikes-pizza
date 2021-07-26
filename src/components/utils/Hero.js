@@ -21,7 +21,7 @@ const Hero = () => {
                 </div>
 
                 <div className='image'>
-                    <img src={pizzaMaker} alt='Pizza maker' width={'600px'} />
+                    <img src={pizzaMaker} alt='Pizza maker' />
                 </div>
 
             </div>
