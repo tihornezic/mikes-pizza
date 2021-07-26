@@ -1,0 +1,14 @@
+.menu {
+    h2 {
+        margin-top: 100px;
+        margin-bottom: 55px;
+        color: $darkGreen;
+        font-size: 1.85rem;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 60px;
+    }
+}

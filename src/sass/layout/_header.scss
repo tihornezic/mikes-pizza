@@ -1,0 +1,21 @@
+.header {
+    position: absolute;
+    right: 100px;
+    top: 57px;
+
+    ul {
+        display: flex;
+
+        li {
+            list-style: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+
+            a {
+                text-decoration: none;
+                color: $darkGreen;
+                padding-left: 65px;
+            }
+        }
+    }
+}

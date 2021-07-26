@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Neuton:ital,wght@0,300;0,400;0,700;0,800;1,400&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Neuton", serif;
+  background-color: #F2F2F2;
+}
+
+.container {
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+.button {
+  background-color: #C57B57;
+  border-radius: 20px;
+  padding: 10px 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #DFDFDF;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.button:hover {
+  background-color: #da9774;
+}
+
+.header {
+  position: absolute;
+  right: 100px;
+  top: 57px;
+}
+.header ul {
+  display: flex;
+}
+.header ul li {
+  list-style: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.header ul li a {
+  text-decoration: none;
+  color: #1E2D2F;
+  padding-left: 65px;
+}
+
+.hero {
+  height: 100vh;
+  background: url("../img/background4.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+}
+.hero .logo {
+  margin-top: 15px;
+}
+.hero .content {
+  position: absolute;
+  top: 270px;
+}
+.hero .content h1 {
+  color: #DFDFDF;
+  font-weight: 700;
+  font-size: 8rem;
+  letter-spacing: 3px;
+}
+.hero .content .description {
+  color: #DFDFDF;
+}
+.hero .content .description p {
+  font-weight: 700;
+  font-size: 1.45rem;
+  max-width: 620px;
+}
+.hero .content .heroButton {
+  display: inline-block;
+  margin-top: 70px;
+}
+.hero .image {
+  position: absolute;
+  top: 200px;
+  right: 240px;
+}
+
+.menu h2 {
+  margin-top: 100px;
+  margin-bottom: 55px;
+  color: #1E2D2F;
+  font-size: 1.85rem;
+}
+.menu .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 60px;
+}
+
+.pizzaCard .card {
+  position: relative;
+  background-color: transparent;
+  min-height: 620px;
+  border-radius: 20px;
+  background: #f1ab86;
+  background: linear-gradient(180deg, #f1ab86 0%, #db9a79 14%, #da9a79 50%, #795643 100%);
+}
+.pizzaCard .card .darkGreen {
+  position: absolute;
+  background-color: #1E2D2F;
+  width: 100%;
+  height: 290px;
+  border-radius: 20px;
+  z-index: 2;
+}
+.pizzaCard .card img {
+  position: absolute;
+  border-radius: 20px;
+  top: 0;
+  right: 0;
+  z-index: 3;
+}
+.pizzaCard .card h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #1E2D2F;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  width: 310px;
+  text-align: center;
+}
+.pizzaCard .card p {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #DFDFDF;
+  font-weight: 600;
+  font-size: 1.3rem;
+  width: 310px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */

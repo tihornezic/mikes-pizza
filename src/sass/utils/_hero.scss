@@ -1,0 +1,44 @@
+.hero {
+    height: 100vh;
+    background: url("../img/background4.svg");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+
+    .logo {
+        margin-top: 15px;
+    }
+
+    .content {
+        position: absolute;
+        top: 270px;
+
+        h1 {
+            color: $creamWhite;
+            font-weight: 700;
+            font-size: 8rem;
+            letter-spacing: 3px;
+        }
+
+        .description {
+            color: $creamWhite;
+
+            p {
+                font-weight: 700;
+                font-size: 1.45rem;
+                max-width: 620px;
+            }
+        }
+
+        .heroButton {
+            display: inline-block;
+            margin-top: 70px;
+        }
+    }
+
+    .image {
+        position: absolute;
+        top: 200px;
+        right: 240px;
+    }
+}

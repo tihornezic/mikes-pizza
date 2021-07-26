@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    font-family: $neuton;
+    background-color: $backgroundWhite;
+}
+
+.container {
+    max-width: 1380px;
+    margin: 0 auto;
+}
+
+.button {
+    background-color: $copperCrayola;
+    border-radius: 20px;
+    padding: 10px 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: $creamWhite;
+    text-align: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: #da9774;
+    }
+}
+
+
