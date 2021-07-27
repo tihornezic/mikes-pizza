@@ -5,18 +5,19 @@
         min-height: 620px;
         border-radius: 20px;
         // background: linear-gradient(#f1ab86, #db9a79, #da9a79, #795643);
-        background: rgb(241, 171, 134);
-        background: linear-gradient(
-            180deg,
-            rgba(241, 171, 134, 1) 0%,
-            rgba(219, 154, 121, 1) 14%,
-            rgba(218, 154, 121, 1) 50%,
-            rgba(121, 86, 67, 1) 100%
-        );
+        // background: rgb(241, 171, 134);
+        // background: linear-gradient(
+        //     180deg,
+        //     rgba(241, 171, 134, 1) 0%,
+        //     rgba(219, 154, 121, 1) 14%,
+        //     rgba(218, 154, 121, 1) 50%,
+        //     rgba(121, 86, 67, 1) 100%
+        // );
+        background-color: #1d1d1d;
 
         .darkGreen {
             position: absolute;
-            background-color: $darkGreen;
+            background-color: $copperCrayola;
             width: 100%;
             height: 290px;
             border-radius: 20px;
@@ -36,7 +37,7 @@
             top: 50%;
             left: 50%;
             transform: translateX(-50%);
-            color: $darkGreen;
+            color: $tumpleWeed;
             font-weight: 800;
             text-transform: uppercase;
             font-size: 1.4rem;

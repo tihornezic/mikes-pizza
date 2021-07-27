@@ -17,7 +17,7 @@ const Hero = () => {
                         <p>Longest tradition in making the most delicious pizza in town. Since 1954.</p>
                     </div>
 
-                    <Link to='/' className='button buttonPrimary heroButton'>Order Now</Link>
+                    <Link to='/' className='button buttonPrimary heroButton'>See Menu</Link>
                 </div>
 
                 <div className='image'>
