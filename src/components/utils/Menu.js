@@ -1,21 +1,16 @@
 import PizzaCard from '../utils/PizzaCard'
 import {useState, useEffect} from 'react'
-import {
-    fetchPizzas
-} from '../../service/pizzas'
+import {useSelector, useDispatch} from 'react-redux'
+import {getPizzas} from '../../redux/actions/pizzasActions'
 
 const Menu = () => {
-    const [pizzas, setPizzas] = useState([])
+    const pizzas = useSelector(state => state.pizzas.pizzas)
+    const dispatch = useDispatch()
 
+    
     useEffect(() => {
-        const fetchApi = async () => {
-            setPizzas(await fetchPizzas())
-        }
-
-        fetchApi()
+        dispatch(getPizzas())
     }, [])
-
-    // console.log(pizzas)
 
     return (
         <div className='container menu'>
