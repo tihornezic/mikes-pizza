@@ -1,5 +1,5 @@
 import darkBackground from '../../img/darkBackground.svg'
-import pizzaLogoWhite from '../../img/pizzaLogoWhite.png'
+import pizzaLogoWhiteSmall from '../../img/pizzaLogoWhiteSmall.svg'
 import facebook from '../../img/facebook.svg'
 import {Link} from 'react-router-dom'
 
@@ -8,7 +8,7 @@ const Footer = () => {
         <footer>
             <div className='darkBackground'>
                 <div className='container infoRow'>
-                    <img src={pizzaLogoWhite} alt='Pizza logo white' />
+                    <img src={pizzaLogoWhiteSmall} alt='Pizza logo white' />
                     <div className='infoItem'>
                         <ul>
                             <Link to='/'>

@@ -1,6 +1,6 @@
 .header {
     position: absolute;
-    right: 100px;
+    right: 80px;
     top: 57px;
 
     ul {
@@ -8,13 +8,25 @@
 
         li {
             list-style: none;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 600;
 
             a {
                 text-decoration: none;
                 color: $darkGreen;
                 padding-left: 65px;
+
+                &.button {
+                    padding: 8px 40px;
+                    color: $backgroundWhite;
+                    margin-left: 60px;
+                    font-size: 1.2rem;
+
+                    @media(max-width: 1790px) {
+                        padding: 8px 35px;
+                        margin-left: 30px;
+                    }
+                }
             }
         }
     }
