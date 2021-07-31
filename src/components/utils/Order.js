@@ -1,5 +1,6 @@
 import {useSelector, useDispatch} from 'react-redux'
 import {setToggleOrder} from '../../redux/actions/orderActions'
+import pizzaSharing from '../../img/pizzaSharing.svg'
 import CloseIcon from '@material-ui/icons/Close'
 
 const Order = () => {
@@ -9,8 +10,6 @@ const Order = () => {
 
     return (
 
-
-        // <div className='order'>
         <>
             <div className={showOrder ? 'backgroundOverlay open' : 'backgroundOverlay'}></div>
             <div className={showOrder ? 'order orderOpen' : 'order'}>
@@ -18,9 +17,16 @@ const Order = () => {
 
                 {
                     order.length === 0 ?
-                    <div>Your order is empty.</div>
-                    :
-                    <div>Not empty.</div>
+                        <div className='empty'>
+                            <img src={pizzaSharing} alt='Pizza sharing' />
+                            <p>You haven't put any pizza to your Order. When you do, you will see them here!</p>
+                        </div>
+                        :
+                        <div className='notEmpty'>
+                            {order.map((item) => (
+                                <p>{item.name}</p>
+                            ))}
+                        </div>
                 }
             </div>
         </>

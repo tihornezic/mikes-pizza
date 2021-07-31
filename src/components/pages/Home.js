@@ -12,7 +12,12 @@ import {setToggleOrder} from '../../redux/actions/orderActions'
 const Home = () => {
     const showOrder = useSelector(state => state.showOrder.showOrder)
     const order = useSelector(state => state.order.order)
+    const [shake, setShake] = useState(false)
     const dispatch = useDispatch()
+
+    useEffect(() => {
+        setShake(true)
+    }, [order])
 
     return (
         <div className='home'>
@@ -20,7 +25,10 @@ const Home = () => {
             <Order />
             <Hero />
 
-            <div className='basket' onClick={() => dispatch(setToggleOrder(showOrder))}>
+            {/* basket icon */}
+            <div className={shake ? 'basket shake' : 'basket'} onClick={() => dispatch(setToggleOrder(showOrder))}
+                onAnimationEnd={() => setShake(false)}>
+
                 <ShoppingBasketIcon className='basketIcon' />
 
                 {order.length >= 1 ?
