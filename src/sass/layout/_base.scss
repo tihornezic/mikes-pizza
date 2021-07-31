@@ -39,3 +39,16 @@ body {
         background-color: #da9774;
     }
 }
+
+.backgroundOverlay {
+    position: fixed;
+    inset: 0px;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 30;
+    transition: all 3s ease;
+    display: none;
+    
+    &.open {
+        display: block;
+    }
+}

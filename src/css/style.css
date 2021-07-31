@@ -41,6 +41,18 @@ body {
   background-color: #da9774;
 }
 
+.backgroundOverlay {
+  position: fixed;
+  inset: 0px;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 30;
+  transition: all 3s ease;
+  display: none;
+}
+.backgroundOverlay.open {
+  display: block;
+}
+
 .header {
   position: absolute;
   right: 80px;
@@ -53,16 +65,15 @@ body {
   list-style: none;
   font-size: 1.3rem;
   font-weight: 600;
+  padding-left: 65px;
 }
 .header ul li a {
   text-decoration: none;
   color: #1E2D2F;
-  padding-left: 65px;
 }
 .header ul li a.button {
   padding: 8px 40px;
   color: #F2F2F2;
-  margin-left: 60px;
   font-size: 1.2rem;
 }
 @media (max-width: 1790px) {
@@ -123,6 +134,39 @@ body {
   }
 }
 
+.home .basket {
+  position: fixed;
+  bottom: 38px;
+  right: 35px;
+  transition: all 0.3s ease;
+  z-index: 30;
+  cursor: pointer;
+}
+.home .basket .basketIcon {
+  color: #366961;
+  font-size: 4.5rem;
+  filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.4));
+}
+.home .basket .orderItems {
+  position: absolute;
+  bottom: 4px;
+  right: -3px;
+  z-index: 33;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #C57B57;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  color: #F2F2F2;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+.home .basket:hover {
+  transform: translateY(-6px);
+}
+
 .menu {
   position: relative;
 }
@@ -155,6 +199,7 @@ body {
   border-radius: 20px;
   background-color: #1d1d1d;
   transition: all 0.3s ease;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.4);
 }
 .pizzaCard .card .darkGreen {
   position: absolute;
@@ -170,6 +215,7 @@ body {
   top: 0;
   right: 0;
   z-index: 3;
+  transition: all 0.3s ease;
 }
 .pizzaCard .card h3 {
   position: absolute;
@@ -207,13 +253,20 @@ body {
 }
 .pizzaCard .card svg {
   position: absolute;
+  transition: all 0.3s ease;
   font-size: 2.52rem;
   bottom: 10px;
   right: 3%;
-  color: #F1AB86;
+  color: #366961;
 }
 .pizzaCard .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
+}
+.pizzaCard .card:hover img {
+  filter: drop-shadow(-10px 5px 10px rgba(221, 217, 183, 0.4));
+}
+.pizzaCard .card:hover svg {
+  opacity: 0.95;
 }
 
 .quote {
@@ -264,6 +317,32 @@ body {
 }
 .pizza .logo {
   margin-top: 15px;
+}
+
+.order {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #DFDFDF;
+  width: 400px;
+  transition: transform 0.55s ease-in-out;
+  transform: translateX(100%);
+  z-index: 35;
+}
+.order.sliderOpen {
+  transform: translateX(0);
+}
+.order svg {
+  position: absolute;
+  color: #6e6e6e;
+  font-size: 2.2rem;
+  top: 12px;
+  right: 10px;
+  cursor: pointer;
+}
+.order.orderOpen {
+  transform: translateX(0);
 }
 
 footer .darkBackground {
