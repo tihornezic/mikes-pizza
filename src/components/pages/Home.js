@@ -13,7 +13,6 @@ import {setToggleOrder} from '../../redux/actions/orderActions'
 
 const Home = () => {
     const showOrder = useSelector(state => state.showOrder.showOrder)
-    const showCustomizeOrderModal = useSelector(state => state.showCustomizeOrderModal.showCustomizeOrderModal)
     const order = useSelector(state => state.order.order)
     const dispatch = useDispatch()
 

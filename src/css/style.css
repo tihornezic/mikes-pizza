@@ -141,7 +141,7 @@ body {
   bottom: 38px;
   right: 35px;
   transition: all 0.3s ease;
-  z-index: 30;
+  z-index: 20;
   cursor: pointer;
 }
 .home .basket .basketIcon {
@@ -223,7 +223,10 @@ body {
   cursor: pointer;
 }
 .pizzaCard .top {
-  background-color: #C57B57;
+  background: url("../img/sunburst6.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
   width: 100%;
   height: 290px;
   border-radius: 20px;
@@ -232,7 +235,7 @@ body {
 .pizzaCard img {
   position: absolute;
   border-radius: 20px;
-  top: 0;
+  top: 55px;
   right: 0;
   z-index: 3;
   transition: all 0.3s ease;
@@ -392,8 +395,8 @@ body {
   transform: translate(-50%, -100%);
   transition: all 0.5s ease;
   background-color: #DFDFDF;
-  border-radius: 5px;
-  width: 55%;
+  border-radius: 10px;
+  width: 60%;
   height: 600px;
   z-index: 30;
   pointer-events: none;
@@ -401,19 +404,67 @@ body {
 }
 .customizeOrderModal svg {
   position: absolute;
-  color: #6e6e6e;
-  font-size: 2.2rem;
+  color: #F2F2F2;
+  font-size: 1.9rem;
   top: 12px;
   right: 10px;
   cursor: pointer;
+  z-index: 35;
 }
 .customizeOrderModal.open {
   opacity: 1;
   pointer-events: all;
   transform: translate(-50%, -50%);
 }
-.customizeOrderModal .content {
-  padding: 50px;
+.customizeOrderModal .contentRow {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.customizeOrderModal .contentRow .left {
+  overflow-y: scroll;
+  padding: 40px;
+}
+.customizeOrderModal .contentRow .left h1 {
+  font-size: 1.85rem;
+  color: #1d1d1d;
+}
+.customizeOrderModal .contentRow .left h3 {
+  margin: 10px 0;
+  font-size: 1.15rem;
+  color: #6e6e6e;
+  display: inline-block;
+}
+.customizeOrderModal .contentRow .left span {
+  background-color: #C57B57;
+  color: #494949;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 2px 8px;
+  margin-left: 5px;
+}
+.customizeOrderModal .contentRow .right {
+  background-color: #DFDFDF;
+  border-radius: 10px;
+}
+.customizeOrderModal .contentRow .right .imageBox {
+  position: relative;
+  background: url("../img/sunburst6.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  height: 55%;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.customizeOrderModal .contentRow .right .imageBox .pizza {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  filter: drop-shadow(-20px 5px 20px rgba(221, 217, 183, 0.55));
 }
 
 footer .darkBackground {
