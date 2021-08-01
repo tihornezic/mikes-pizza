@@ -46,11 +46,13 @@ body {
   inset: 0px;
   background: rgba(0, 0, 0, 0.75);
   z-index: 30;
-  transition: all 3s ease;
-  display: none;
+  transition: all 0.5s ease;
+  opacity: 0;
+  pointer-events: none;
 }
 .backgroundOverlay.open {
-  display: block;
+  opacity: 1;
+  pointer-events: all;
 }
 
 .header {
@@ -211,24 +213,23 @@ body {
   grid-gap: 60px;
 }
 
-.pizzaCard .card {
+.pizzaCard {
   position: relative;
-  background-color: transparent;
-  min-height: 620px;
+  height: 620px;
   border-radius: 20px;
   background-color: #1d1d1d;
   transition: all 0.3s ease;
   box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
 }
-.pizzaCard .card .darkGreen {
-  position: absolute;
+.pizzaCard .top {
   background-color: #C57B57;
   width: 100%;
   height: 290px;
   border-radius: 20px;
   z-index: 2;
 }
-.pizzaCard .card img {
+.pizzaCard img {
   position: absolute;
   border-radius: 20px;
   top: 0;
@@ -236,7 +237,7 @@ body {
   z-index: 3;
   transition: all 0.3s ease;
 }
-.pizzaCard .card h3 {
+.pizzaCard h3 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -248,7 +249,7 @@ body {
   width: 310px;
   text-align: center;
 }
-.pizzaCard .card .price {
+.pizzaCard .price {
   position: absolute;
   top: 56%;
   left: 50%;
@@ -259,7 +260,7 @@ body {
   width: 310px;
   text-align: center;
 }
-.pizzaCard .card .description {
+.pizzaCard .description {
   position: absolute;
   top: 68%;
   left: 50%;
@@ -270,7 +271,7 @@ body {
   width: 310px;
   text-align: center;
 }
-.pizzaCard .card svg {
+.pizzaCard svg {
   position: absolute;
   transition: all 0.3s ease;
   font-size: 2.52rem;
@@ -278,13 +279,13 @@ body {
   right: 3%;
   color: #366961;
 }
-.pizzaCard .card:hover {
+.pizzaCard:hover {
   transform: translateY(-6px);
 }
-.pizzaCard .card:hover img {
+.pizzaCard:hover img {
   filter: drop-shadow(-10px 5px 10px rgba(221, 217, 183, 0.4));
 }
-.pizzaCard .card:hover svg {
+.pizzaCard:hover svg {
   opacity: 0.95;
 }
 
@@ -382,6 +383,37 @@ body {
   text-align: center;
   margin-top: -140px;
   color: #6e6e6e;
+}
+
+.customizeOrderModal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -100%);
+  transition: all 0.5s ease;
+  background-color: #DFDFDF;
+  border-radius: 5px;
+  width: 55%;
+  height: 600px;
+  z-index: 30;
+  pointer-events: none;
+  opacity: 0;
+}
+.customizeOrderModal svg {
+  position: absolute;
+  color: #6e6e6e;
+  font-size: 2.2rem;
+  top: 12px;
+  right: 10px;
+  cursor: pointer;
+}
+.customizeOrderModal.open {
+  opacity: 1;
+  pointer-events: all;
+  transform: translate(-50%, -50%);
+}
+.customizeOrderModal .content {
+  padding: 50px;
 }
 
 footer .darkBackground {

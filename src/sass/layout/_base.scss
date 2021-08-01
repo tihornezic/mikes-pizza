@@ -44,11 +44,14 @@ body {
     position: fixed;
     inset: 0px;
     background: rgba(0, 0, 0, 0.75);
+    // background: rgba(255, 123, 56, 0.9);
     z-index: 30;
-    transition: all 3s ease;
-    display: none;
-    
+    transition: all 0.5s ease;
+    opacity: 0;
+    pointer-events: none;
+
     &.open {
-        display: block;
+        opacity: 1;
+        pointer-events: all;
     }
 }

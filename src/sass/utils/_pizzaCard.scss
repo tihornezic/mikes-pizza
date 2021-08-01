@@ -1,87 +1,85 @@
 .pizzaCard {
-    .card {
-        position: relative;
-        background-color: transparent;
-        min-height: 620px;
-        border-radius: 20px;
-        background-color: $dark;
-        transition: all 0.3s ease;
-        box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.4);
+    position: relative;
+    height: 620px;
+    border-radius: 20px;
+    background-color: $dark;
+    transition: all 0.3s ease;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
 
-        .darkGreen {
-            position: absolute;
-            background-color: $copperCrayola;
-            width: 100%;
-            height: 290px;
-            border-radius: 20px;
-            z-index: 2;
-        }
+    .top {
+        // position: absolute;
+        background-color: $copperCrayola;
+        width: 100%;
+        height: 290px;
+        border-radius: 20px;
+        z-index: 2;
+    }
+
+    img {
+        position: absolute;
+        border-radius: 20px;
+        top: 0;
+        right: 0;
+        z-index: 3;
+        transition: all 0.3s ease;
+    }
+
+    h3 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: $backgroundWhite;
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        width: 310px;
+        text-align: center;
+    }
+
+    .price {
+        position: absolute;
+        top: 56%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #c4bcaf;
+        font-weight: 600;
+        font-size: 1.02rem;
+        width: 310px;
+        text-align: center;
+    }
+
+    .description {
+        position: absolute;
+        top: 68%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: $creamWhite;
+        font-weight: 600;
+        font-size: 1.25rem;
+        width: 310px;
+        text-align: center;
+    }
+
+    svg {
+        position: absolute;
+        transition: all 0.3s ease;
+        font-size: 2.52rem;
+        bottom: 10px;
+        right: 3%;
+        color: $lightGreen;
+    }
+
+    &:hover {
+        transform: translateY(-6px);
 
         img {
-            position: absolute;
-            border-radius: 20px;
-            top: 0;
-            right: 0;
-            z-index: 3;
-            transition: all 0.3s ease;
-        }
-
-        h3 {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translateX(-50%);
-            color: $backgroundWhite;
-            font-weight: 800;
-            text-transform: uppercase;
-            font-size: 1.5rem;
-            width: 310px;
-            text-align: center;
-        }
-
-        .price {
-            position: absolute;
-            top: 56%;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #c4bcaf;
-            font-weight: 600;
-            font-size: 1.02rem;
-            width: 310px;
-            text-align: center;
-        }
-
-        .description {
-            position: absolute;
-            top: 68%;
-            left: 50%;
-            transform: translateX(-50%);
-            color: $creamWhite;
-            font-weight: 600;
-            font-size: 1.25rem;
-            width: 310px;
-            text-align: center;
+            filter: drop-shadow(-10px 5px 10px rgba(221, 217, 183, 0.4));
         }
 
         svg {
-            position: absolute;
-            transition: all 0.3s ease;
-            font-size: 2.52rem;
-            bottom: 10px;
-            right: 3%;
-            color: $lightGreen;
-        }
-        
-        &:hover {
-            transform: translateY(-6px);
-            
-            img {
-                filter: drop-shadow(-10px 5px 10px rgba(221, 217, 183, 0.4));
-            }
-            
-            svg {
-                opacity: 0.95;
-            }
+            opacity: 0.95;
         }
     }
 }

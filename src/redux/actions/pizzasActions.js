@@ -6,3 +6,10 @@ export const getPizzas = (pizzas) => {
         payload: pizzas
     }
 }
+
+export const getPizza = (pizza) => {
+    return {
+        type: ActionTypes.GET_PIZZA,
+        payload: pizza
+    }
+}

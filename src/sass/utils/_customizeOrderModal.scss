@@ -1,0 +1,33 @@
+.customizeOrderModal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -100%);
+    transition: all 0.50s ease;
+    background-color: $creamWhite;
+    border-radius: 5px;
+    width: 55%;
+    height: 600px;
+    z-index: 30;
+    pointer-events: none;
+    opacity: 0;
+
+    svg {
+        position: absolute;
+        color: $grey;
+        font-size: 2.2rem;
+        top: 12px;
+        right: 10px;
+        cursor: pointer;
+    }
+
+    &.open {
+        opacity: 1;
+        pointer-events: all;
+        transform: translate(-50%, -50%);
+    }
+
+    .content {
+        padding: 50px;
+    }
+}

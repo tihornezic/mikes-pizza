@@ -4,6 +4,8 @@ import Menu from '../utils/Menu'
 import Quote from '../utils/Quote'
 import Badges from '../utils/Badges'
 import Order from '../utils/Order'
+import CustomizeOrderModal from '../utils/CustomizeOrderModal'
+import BackgroundOverlay from '../utils/BackgroundOverlay';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 import {useState, useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
@@ -11,9 +13,11 @@ import {setToggleOrder} from '../../redux/actions/orderActions'
 
 const Home = () => {
     const showOrder = useSelector(state => state.showOrder.showOrder)
+    const showCustomizeOrderModal = useSelector(state => state.showCustomizeOrderModal.showCustomizeOrderModal)
     const order = useSelector(state => state.order.order)
-    const [shake, setShake] = useState(false)
     const dispatch = useDispatch()
+
+    const [shake, setShake] = useState(false)
 
     useEffect(() => {
         setShake(true)
@@ -21,6 +25,7 @@ const Home = () => {
 
     return (
         <div className='home'>
+            <BackgroundOverlay />
             <Header />
             <Order />
             <Hero />
@@ -38,9 +43,12 @@ const Home = () => {
                 }
             </div>
 
+            <CustomizeOrderModal />
+
             <Menu />
             <Quote />
             <Badges />
+
         </div>
     )
 }
