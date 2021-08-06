@@ -26,8 +26,12 @@ body {
   }
 }
 
+button {
+  font-family: "Neuton", serif;
+  border: none;
+}
+
 .button {
-  background-color: #C57B57;
   border-radius: 20px;
   padding: 12px 65px;
   text-decoration: none;
@@ -36,9 +40,27 @@ body {
   color: #DFDFDF;
   text-align: center;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
-.button:hover {
+
+.buttonPrimary {
+  background-color: #C57B57;
+}
+.buttonPrimary:hover {
   background-color: #da9774;
+}
+
+.buttonSecondary {
+  background-color: #366961;
+}
+.buttonSecondary:hover {
+  background-color: #29504a;
+}
+
+.buttonDisabled {
+  cursor: not-allowed;
+  background-color: #c7c7c7;
+  color: #F2F2F2;
 }
 
 .backgroundOverlay {
@@ -396,13 +418,13 @@ body {
   transition: all 0.5s ease;
   background-color: #DFDFDF;
   border-radius: 10px;
-  width: 60%;
+  width: 67%;
   height: 600px;
   z-index: 30;
   pointer-events: none;
   opacity: 0;
 }
-.customizeOrderModal svg {
+.customizeOrderModal .close {
   position: absolute;
   color: #F2F2F2;
   font-size: 1.9rem;
@@ -437,17 +459,126 @@ body {
   color: #6e6e6e;
   display: inline-block;
 }
-.customizeOrderModal .contentRow .left span {
+.customizeOrderModal .contentRow .left .required {
   background-color: #C57B57;
-  color: #494949;
+  color: #DFDFDF;
   font-weight: 700;
   border-radius: 10px;
   padding: 2px 8px;
   margin-left: 5px;
 }
+.customizeOrderModal .contentRow .left .sizeOptions {
+  width: 100%;
+  margin-top: 20px;
+}
+.customizeOrderModal .contentRow .left .sizeOptions .option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 15px;
+  border: 1px solid #bbbbbb;
+  font-size: 1.16rem;
+  font-weight: 600;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.customizeOrderModal .contentRow .left .sizeOptions .option .labelPriceRow {
+  width: 140px;
+  display: flex;
+  justify-content: space-between;
+}
+.customizeOrderModal .contentRow .left .sizeOptions .option .labelPriceRow .label {
+  color: #494949;
+}
+.customizeOrderModal .contentRow .left .sizeOptions .option .labelPriceRow .price {
+  color: #366961;
+}
+.customizeOrderModal .contentRow .left .sizeOptions .option .add {
+  font-size: 1.6rem;
+  color: #366961;
+}
+.customizeOrderModal .contentRow .left .sizeOptions .option:hover {
+  border: 1px solid #366961;
+}
+.customizeOrderModal .contentRow .left .sizeOptions .option.active {
+  background-color: #c7c7c7;
+}
+.customizeOrderModal .contentRow .left .sizeOptions .option.active:hover {
+  border: 1px solid transparent;
+}
+.customizeOrderModal .contentRow .left .quantity {
+  margin-top: 25px;
+}
+.customizeOrderModal .contentRow .left .quantity h1 {
+  font-size: 1.2rem;
+  margin-top: 35px;
+  margin-bottom: 5px;
+  color: #1d1d1d;
+}
+.customizeOrderModal .contentRow .left .quantity .quantityController {
+  display: flex;
+  padding: 15px 0;
+}
+.customizeOrderModal .contentRow .left .quantity .quantityController h1 {
+  margin: 0;
+}
+.customizeOrderModal .contentRow .left .quantity .quantityController .buttons {
+  display: flex;
+  align-items: center;
+  width: 15%;
+  justify-content: space-between;
+  margin-left: 10px;
+  cursor: not-allowed;
+}
+.customizeOrderModal .contentRow .left .quantity .quantityController .buttons svg {
+  color: #c7c7c7;
+  font-size: 1.6rem;
+  cursor: pointer;
+  pointer-events: none;
+}
+.customizeOrderModal .contentRow .left .quantity .quantityController .buttons span {
+  justify-self: center;
+  font-size: 1.16rem;
+  font-weight: 700;
+  color: #c7c7c7;
+}
+.customizeOrderModal .contentRow .left .quantity .quantityController .buttons.active {
+  cursor: pointer;
+}
+.customizeOrderModal .contentRow .left .quantity .quantityController .buttons.active svg {
+  color: #366961;
+  pointer-events: all;
+}
+.customizeOrderModal .contentRow .left .quantity .quantityController .buttons.active span {
+  color: #1E2D2F;
+}
+.customizeOrderModal .contentRow .left .extras h1 {
+  font-size: 1.2rem;
+  margin-top: 9px;
+  margin-bottom: 5px;
+  color: #1d1d1d;
+}
+.customizeOrderModal .contentRow .left .extras .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 35px;
+}
 .customizeOrderModal .contentRow .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #DFDFDF;
   border-radius: 10px;
+}
+.customizeOrderModal .contentRow .right h2 {
+  color: #1d1d1d;
+  font-size: 1.4rem;
+}
+.customizeOrderModal .contentRow .right p {
+  font-weight: 400;
+  font-size: 1.1rem;
 }
 .customizeOrderModal .contentRow .right .imageBox {
   position: relative;
@@ -465,6 +596,28 @@ body {
   top: 55px;
   right: 0;
   filter: drop-shadow(-20px 5px 20px rgba(221, 217, 183, 0.55));
+}
+.customizeOrderModal .contentRow .right .ingredients {
+  align-self: center;
+  width: 80%;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+.customizeOrderModal .contentRow .right .extras {
+  align-self: center;
+  width: 80%;
+  margin-top: -50px;
+}
+.customizeOrderModal .contentRow .right .extras span {
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+.customizeOrderModal .contentRow .right button {
+  bottom: 0;
+  align-self: center;
+  margin-bottom: 20px;
+  width: 80%;
+  font-size: 1.2rem;
 }
 
 footer .darkBackground {

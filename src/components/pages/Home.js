@@ -19,6 +19,7 @@ const Home = () => {
     const [shake, setShake] = useState(false)
 
     useEffect(() => {
+        console.log(order)
         setShake(true)
     }, [order])
 

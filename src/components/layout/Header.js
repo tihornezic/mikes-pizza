@@ -19,7 +19,7 @@ const Header = () => {
                     <Link to='/'>Account</Link>
                 </li>
                 <li>
-                    <a href='#menu' className='button'>See Menu</a>
+                    <a href='#menu' className='button buttonPrimary'>See Menu</a>
                 </li>
             </ul>
         </div>

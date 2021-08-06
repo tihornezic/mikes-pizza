@@ -6,13 +6,13 @@
     transition: all 0.5s ease;
     background-color: $creamWhite;
     border-radius: 10px;
-    width: 60%;
+    width: 67%;
     height: 600px;
     z-index: 30;
     pointer-events: none;
     opacity: 0;
 
-    svg {
+    .close {
         position: absolute;
         color: $backgroundWhite;
         font-size: 1.9rem;
@@ -51,25 +51,160 @@
                 display: inline-block;
             }
 
-            span {
+            .required {
                 background-color: $copperCrayola;
-                color: $darkGrey;
+                color: $creamWhite;
                 font-weight: 700;
                 border-radius: 10px;
                 padding: 2px 8px;
                 margin-left: 5px;
             }
 
+            .sizeOptions {
+                width: 100%;
+                margin-top: 20px;
 
+                .option {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 13px 15px;
+                    border: 1px solid $lightGrey;
+                    font-size: 1.16rem;
+                    font-weight: 600;
+                    border-radius: 10px;
+                    margin-bottom: 20px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+
+                    .labelPriceRow {
+                        width: 140px;
+                        display: flex;
+                        justify-content: space-between;
+
+                        .label {
+                            color: $darkGrey;
+                        }
+
+                        .price {
+                            color: $lightGreen;
+                        }
+                    }
+
+                    .add {
+                        font-size: 1.6rem;
+                        color: $lightGreen;
+                    }
+
+                    &:hover {
+                        // background-color: $lightGrey;
+                        border: 1px solid $lightGreen;
+                    }
+
+                    &.active {
+                        background-color: $mildGrey;
+
+                        &:hover {
+                            border: 1px solid transparent;
+                        }
+                    }
+                }
+            }
+
+            .quantity {
+                margin-top: 25px;
+
+                h1 {
+                    // font-size: 1.55rem;
+                    font-size: 1.2rem;
+                    margin-top: 35px;
+                    margin-bottom: 5px;
+                    color: $dark;
+                }
+
+                .quantityController {
+                    display: flex;
+                    padding: 15px 0;
+
+                    h1 {
+                        margin: 0;
+                    }
+
+                    .buttons {
+                        display: flex;
+                        align-items: center;
+                        width: 15%;
+                        justify-content: space-between;
+                        margin-left: 10px;
+                        cursor: not-allowed;
+                        
+                        svg {
+                            color: $mildGrey;
+                            font-size: 1.6rem;
+                            cursor: pointer;
+                            pointer-events: none;
+                        }
+                        
+                        span {
+                            justify-self: center;
+                            font-size: 1.16rem;
+                            font-weight: 700;
+                            color: $mildGrey;
+                        }
+
+                        &.active {
+                            cursor: pointer;
+
+                            svg {
+                                color: $lightGreen;
+                                pointer-events: all;
+                            }
+
+                            span {
+                                color: $darkGreen;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .extras {
+                h1 {
+                    // font-size: 1.55rem;
+                    font-size: 1.2rem;
+                    margin-top: 9px;
+                    margin-bottom: 5px;
+                    color: $dark;
+                }
+
+                .grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    column-gap: 35px;
+                }
+            }
         }
 
         .right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             background-color: $creamWhite;
             border-radius: 10px;
 
+            h2 {
+                color: $dark;
+                // margin-bottom: 5px;
+                font-size: 1.4rem;
+            }
+
+            p {
+                font-weight: 400;
+                font-size: 1.1rem;
+            }
+
             .imageBox {
                 position: relative;
-                // background-color: $copperCrayola;
                 background: url("../img/sunburst6.svg");
                 background-repeat: no-repeat;
                 background-position: center bottom;
@@ -86,6 +221,32 @@
                     // filter: drop-shadow(-20px 5px 20px rgba(221, 217, 183, 0.85));
                     filter: drop-shadow(-20px 5px 20px rgba(221, 217, 183, 0.55));
                 }
+            }
+
+            .ingredients {
+                align-self: center;
+                width: 80%;
+                margin-top: -10px;
+                margin-bottom: 20px;
+            }
+
+            .extras {
+                align-self: center;
+                width: 80%;
+                margin-top: -50px;
+
+                span {
+                    font-weight: 400;
+                    font-size: 1.1rem;
+                }
+            }
+
+            button {
+                bottom: 0;
+                align-self: center;
+                margin-bottom: 20px;
+                width: 80%;
+                font-size: 1.2rem;
             }
         }
     }

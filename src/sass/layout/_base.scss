@@ -13,6 +13,7 @@ html {
 body {
     font-family: $neuton;
     background-color: $backgroundWhite;
+    // overflow-y: hidden;
 }
 
 .container {
@@ -24,8 +25,12 @@ body {
     }
 }
 
+button {
+    font-family: $neuton;
+    border: none;
+}
+
 .button {
-    background-color: $copperCrayola;
     border-radius: 20px;
     padding: 12px 65px;
     text-decoration: none;
@@ -34,10 +39,29 @@ body {
     color: $creamWhite;
     text-align: center;
     transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.buttonPrimary {
+    background-color: $copperCrayola;
 
     &:hover {
         background-color: #da9774;
     }
+}
+
+.buttonSecondary {
+    background-color: $lightGreen;
+
+    &:hover {
+        background-color: #29504a;
+    }
+}
+
+.buttonDisabled {
+    cursor: not-allowed;
+    background-color: $mildGrey;
+    color: $backgroundWhite;
 }
 
 .backgroundOverlay {

@@ -20,8 +20,8 @@ const Order = () => {
                     </div>
                     :
                     <div className='notEmpty'>
-                        {order.map((item) => (
-                            <p>{item.name}</p>
+                        {order.map((item, index) => (
+                            <p key={index}>{item.name}</p>
                         ))}
                     </div>
             }

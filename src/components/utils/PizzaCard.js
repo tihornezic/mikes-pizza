@@ -17,11 +17,12 @@ const PizzaCard = ({pizza}) => {
             </div>
             <h3>{pizza.name}</h3>
 
-            <p className='price'>
-                {pizza.prices.small} /&nbsp;
-                    {pizza.prices.medium} /&nbsp;
-                    {pizza.prices.large}
-            </p>
+            <div className='price'>
+                ${pizza.prices.small.toFixed(2)} /&nbsp;
+                ${pizza.prices.medium.toFixed(2)} /&nbsp;
+                ${pizza.prices.large.toFixed(2)}
+
+            </div>
 
             <p className='description'>{pizza.description}</p>
 
