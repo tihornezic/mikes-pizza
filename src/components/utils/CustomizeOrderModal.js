@@ -24,7 +24,10 @@ const CustomizeOrderModal = () => {
     // sum of all extras array
     const [allExtrasTotal, setAllExtrasTotal] = useState(0)
 
-    const [pizzaSize, setPizzaSize] = useState('')
+    // pizza's size price-wise
+    const [pizzaSizePrice, setPizzaSizePrice] = useState(0)
+    // pizza's size name-wise
+    const [pizzaSizeName, setPizzaSizeName] = useState('')
     const [quantity, setQuantity] = useState(1)
     const [totalOrderAmount, setTotalOrderAmount] = useState(0)
 
@@ -65,7 +68,7 @@ const CustomizeOrderModal = () => {
             setExtrasArray(prev => [...prev, e.target.value])
             addExtra(parseFloat(e.target.value))
             setExtrasItemsArray(prev => [...prev, item])
-        // remove
+            // remove
         } else {
             setExtrasArray(extrasArray.filter(extra => extra !== e.target.value))
             subtractExtra(parseFloat(e.target.value))
@@ -74,14 +77,16 @@ const CustomizeOrderModal = () => {
         }
     }
 
-    const togglePizzaSizeChoice = (propPizzaSize, allExtrasTotal) => {
+    const togglePizzaSizeChoice = (propPizzaSizePrice, allExtrasTotal, propPizzaSizeName) => {
         // if it is already active/clicked
-        if (pizzaSize === propPizzaSize) {
-            setPizzaSize(false)
-            setTotalOrderAmount(propPizzaSize + allExtrasTotal)
+        if (pizzaSizePrice === propPizzaSizePrice) {
+            setPizzaSizePrice(false)
+            setPizzaSizeName(propPizzaSizeName)
+            setTotalOrderAmount(propPizzaSizePrice + allExtrasTotal)
         } else {
-            setPizzaSize(propPizzaSize)
-            setTotalOrderAmount(propPizzaSize + allExtrasTotal)
+            setPizzaSizePrice(propPizzaSizePrice)
+            setPizzaSizeName(propPizzaSizeName)
+            setTotalOrderAmount(propPizzaSizePrice + allExtrasTotal)
         }
     }
 
@@ -95,8 +100,8 @@ const CustomizeOrderModal = () => {
         setTotalOrderAmount(prev => +(prev - extra).toFixed(2))
     }
 
-    const resetPizzaSizeAndQuantity = () => {
-        setPizzaSize(null)
+    const resetPizzaSizePriceAndQuantity = () => {
+        setPizzaSizePrice(null)
         setQuantity(1)
     }
 
@@ -108,9 +113,16 @@ const CustomizeOrderModal = () => {
 
     const createOrderObject = () => {
         setOrderObject({
-            extras: extrasItemsArray,
+            name: pizza.name,
+            size: pizzaSizeName,
+            ingredients: pizza.ingredients.map((ingredient) => (
+                ingredient
+            )),
+            // extras: extrasItemsArray,
+            extras: extrasItemsArray.map((extra, index) => (
+                (index ? ', ' : '') + extra[0].toLowerCase() + extra.substr(1)
+            )),
             quantity: quantity,
-            // amount: totalOrderAmount * quantity,
             price: +(totalOrderAmount.toFixed(2) * quantity.toFixed(2)).toFixed(2),
         })
     }
@@ -127,17 +139,21 @@ const CustomizeOrderModal = () => {
     // dispatch orderObject to redux store order variable
     useEffect(() => {
         // do not dispatch empty object, only dispatch when object is populated
-        if(Object.keys(orderObject).length !== 0) {
+        if (Object.keys(orderObject).length !== 0) {
             dispatch(addPizzaToOrder(orderObject))
         }
     }, [orderObject])
+
+    useEffect(() => {
+        console.log(pizzaSizeName)
+    }, [pizzaSizeName])
 
     return (
         <div className={showCustomizeOrderModal ? 'customizeOrderModal open' : 'customizeOrderModal'}>
             <CloseIcon className='close'
                 onClick={() => {
                     dispatch(setToggleCustomizeOrderModal(showCustomizeOrderModal))
-                    resetPizzaSizeAndQuantity()
+                    resetPizzaSizePriceAndQuantity()
                 }} />
 
             <div className='contentRow'>
@@ -147,8 +163,8 @@ const CustomizeOrderModal = () => {
                     <span className='required'>Required</span>
 
                     <div className='sizeOptions'>
-                        <div className={pizzaSize === pizza.prices?.small ? 'option active' : 'option'}
-                            onClick={() => togglePizzaSizeChoice(pizza.prices?.small, allExtrasTotal)}
+                        <div className={pizzaSizePrice === pizza.prices?.small ? 'option active' : 'option'}
+                            onClick={() => togglePizzaSizeChoice(pizza.prices?.small, allExtrasTotal, 'Small')}
                         >
                             <div className='labelPriceRow'>
                                 <span className='label'>Small</span>
@@ -157,8 +173,8 @@ const CustomizeOrderModal = () => {
                             <AddCircleIcon className='add' />
                         </div>
 
-                        <div className={pizzaSize === pizza.prices?.medium ? 'option active' : 'option'}
-                            onClick={() => togglePizzaSizeChoice(pizza.prices?.medium, allExtrasTotal)}
+                        <div className={pizzaSizePrice === pizza.prices?.medium ? 'option active' : 'option'}
+                            onClick={() => togglePizzaSizeChoice(pizza.prices?.medium, allExtrasTotal, 'Medium')}
                         >
                             <div className='labelPriceRow'>
                                 <span className='label'>Medium</span>
@@ -167,8 +183,8 @@ const CustomizeOrderModal = () => {
                             <AddCircleIcon className='add' />
                         </div>
 
-                        <div className={pizzaSize === pizza.prices?.large ? 'option active' : 'option'}
-                            onClick={() => togglePizzaSizeChoice(pizza.prices?.large, allExtrasTotal)}
+                        <div className={pizzaSizePrice === pizza.prices?.large ? 'option active' : 'option'}
+                            onClick={() => togglePizzaSizeChoice(pizza.prices?.large, allExtrasTotal, 'Large')}
                         >
                             <div className='labelPriceRow'>
                                 <span className='label'>Large</span>
@@ -182,7 +198,7 @@ const CustomizeOrderModal = () => {
 
                         <div className='quantityController'>
                             <h1>Quantity</h1>
-                            <div className={pizzaSize ? 'buttons active' : 'buttons'}>
+                            <div className={pizzaSizePrice ? 'buttons active' : 'buttons'}>
                                 <RemoveCircleOutlineIcon onClick={() => {setQuantity(prev => prev - 1); preventQuantityToZero(quantity)}} />
                                 <span>{quantity}</span>
                                 <AddCircleOutlineIcon onClick={() => setQuantity(prev => prev + 1)} />
@@ -199,7 +215,7 @@ const CustomizeOrderModal = () => {
                                 {extras.map((extra) => (
                                     <FormControlLabel
                                         key={extra.item}
-                                        disabled={pizzaSize ? false : true}
+                                        disabled={pizzaSizePrice ? false : true}
                                         control={
                                             <Checkbox
                                                 color='primary'
@@ -209,9 +225,9 @@ const CustomizeOrderModal = () => {
                                         }
                                         label=
                                         {
-                                            <span style={pizzaSize ? {fontSize: '1.155rem', color: '#494949'} : {fontSize: '1.155rem', color: '#bbbbbb'}}>
+                                            <span style={pizzaSizePrice ? {fontSize: '1.155rem', color: '#494949'} : {fontSize: '1.155rem', color: '#bbbbbb'}}>
                                                 {extra.item}&nbsp;
-                                                <span style={pizzaSize ? {color: '#366961'} : {color: '#c7c7c7'}}>+${extra.price}</span>
+                                                <span style={pizzaSizePrice ? {color: '#366961'} : {color: '#c7c7c7'}}>+${extra.price}</span>
                                             </span>
                                         }
                                     />
@@ -248,15 +264,15 @@ const CustomizeOrderModal = () => {
                         }
                     </div>
 
-                    <button className={pizzaSize ? 'button buttonSecondary' : 'button buttonDisabled'} onClick={() => {
+                    <button className={pizzaSizePrice ? 'button buttonSecondary' : 'button buttonDisabled'} onClick={() => {
                         createOrderObject()
                         dispatch(setToggleCustomizeOrderModal(showCustomizeOrderModal))
-                        resetPizzaSizeAndQuantity()
+                        resetPizzaSizePriceAndQuantity()
                     }}>
                         Add to Order&nbsp;
                         {
                             // totalOrderAmount !== 0
-                            pizzaSize
+                            pizzaSizePrice
                                 ?
                                 // <span>${totalOrderAmount.toFixed(2)}</span>
                                 <span>${(totalOrderAmount.toFixed(2) * quantity.toFixed(2)).toFixed(2)}</span>
