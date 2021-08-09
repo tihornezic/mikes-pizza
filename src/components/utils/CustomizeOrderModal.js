@@ -121,6 +121,7 @@ const CustomizeOrderModal = () => {
     const createOrderObject = () => {
         setOrderObject({
             id: uuid(),
+            pizzaId: pizza.id,
             name: pizza.name,
             size: pizzaSizeName,
             ingredients: pizza.ingredients.map((ingredient) => (
