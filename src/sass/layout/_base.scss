@@ -13,7 +13,10 @@ html {
 body {
     font-family: $neuton;
     background-color: $backgroundWhite;
-    // overflow-y: hidden;
+
+    &.overflow {
+        overflow: hidden;
+    }
 }
 
 .container {

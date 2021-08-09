@@ -23,6 +23,10 @@ const Home = () => {
         setShake(true)
     }, [order])
 
+    const toggleBodyOverflowHidden = () => {
+        document.body.classList.toggle('overflow')
+    }
+
     return (
         <div className='home'>
             <BackgroundOverlay />

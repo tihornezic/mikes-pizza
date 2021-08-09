@@ -9,7 +9,7 @@ import FormGroup from '@material-ui/core/FormGroup'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import AddCircleIcon from '@material-ui/icons/AddCircle'
 import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline'
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline'
 import CloseIcon from '@material-ui/icons/Close'
 import Checkbox from '@material-ui/core/Checkbox'
 
@@ -81,7 +81,7 @@ const CustomizeOrderModal = () => {
         // if it is already active/clicked
         if (pizzaSizePrice === propPizzaSizePrice) {
             setPizzaSizePrice(false)
-            setPizzaSizeName(propPizzaSizeName)
+            setPizzaSizeName('')
             setTotalOrderAmount(propPizzaSizePrice + allExtrasTotal)
         } else {
             setPizzaSizePrice(propPizzaSizePrice)
@@ -108,6 +108,12 @@ const CustomizeOrderModal = () => {
     const preventQuantityToZero = (quantity) => {
         if (quantity <= 1) {
             setQuantity(1)
+        }
+    }
+
+    const preventQuantitytoFifteen = (quantity) => {
+        if(quantity === 15) {
+            setQuantity(15)
         }
     }
 
@@ -144,9 +150,9 @@ const CustomizeOrderModal = () => {
         }
     }, [orderObject])
 
-    useEffect(() => {
-        console.log(pizzaSizeName)
-    }, [pizzaSizeName])
+    // useEffect(() => {
+    //     console.log(pizzaSizeName)
+    // }, [pizzaSizeName])
 
     return (
         <div className={showCustomizeOrderModal ? 'customizeOrderModal open' : 'customizeOrderModal'}>
@@ -201,7 +207,7 @@ const CustomizeOrderModal = () => {
                             <div className={pizzaSizePrice ? 'buttons active' : 'buttons'}>
                                 <RemoveCircleOutlineIcon onClick={() => {setQuantity(prev => prev - 1); preventQuantityToZero(quantity)}} />
                                 <span>{quantity}</span>
-                                <AddCircleOutlineIcon onClick={() => setQuantity(prev => prev + 1)} />
+                                <AddCircleOutlineIcon onClick={() => {setQuantity(prev => prev + 1); preventQuantitytoFifteen(quantity)}} />
                             </div>
                         </div>
                     </div>

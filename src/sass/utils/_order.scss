@@ -8,12 +8,14 @@
     transition: transform 0.55s ease-in-out;
     transform: translateX(100%);
     z-index: 35;
+    padding: 0 60px;
+    overflow-y: auto;
 
     &.sliderOpen {
         transform: translateX(0);
     }
 
-    svg {
+    .close {
         position: absolute;
         color: $grey;
         font-size: 2.2rem;
@@ -48,4 +50,34 @@
             color: $grey;
         }
     }
+
+    .notEmpty {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        
+        .headerAndItems {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+
+            h2 {
+                margin: 50px 0;
+                letter-spacing: 1px;
+                font-size: 1.85rem;
+                color: $grey;
+            }
+        }
+
+        .orderButton {
+            width: 100%;
+            padding: 13px 40px;
+            font-size: 1.27rem;
+            margin-bottom: 25px; 
+        }
+    }
+
 }

@@ -15,6 +15,9 @@ body {
   font-family: "Neuton", serif;
   background-color: #F2F2F2;
 }
+body.overflow {
+  overflow: hidden;
+}
 
 .container {
   max-width: 1300px;
@@ -374,11 +377,13 @@ button {
   transition: transform 0.55s ease-in-out;
   transform: translateX(100%);
   z-index: 35;
+  padding: 0 60px;
+  overflow-y: auto;
 }
 .order.sliderOpen {
   transform: translateX(0);
 }
-.order svg {
+.order .close {
   position: absolute;
   color: #6e6e6e;
   font-size: 2.2rem;
@@ -408,6 +413,31 @@ button {
   text-align: center;
   margin-top: -140px;
   color: #6e6e6e;
+}
+.order .notEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+.order .notEmpty .headerAndItems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.order .notEmpty .headerAndItems h2 {
+  margin: 50px 0;
+  letter-spacing: 1px;
+  font-size: 1.85rem;
+  color: #6e6e6e;
+}
+.order .notEmpty .orderButton {
+  width: 100%;
+  padding: 13px 40px;
+  font-size: 1.27rem;
+  margin-bottom: 25px;
 }
 
 .customizeOrderModal {
@@ -618,6 +648,64 @@ button {
   margin-bottom: 20px;
   width: 80%;
   font-size: 1.2rem;
+}
+
+.orderItem {
+  width: 100%;
+  font-size: 1.19rem;
+  border-bottom: 1px solid #366961;
+  margin-bottom: 15px;
+}
+.orderItem .label {
+  font-size: 1.1rem;
+  color: #1E2D2F;
+  margin-top: 5px;
+}
+.orderItem .label .labelValue {
+  font-size: 1rem;
+  color: #1d1d1d;
+}
+.orderItem .bold {
+  font-weight: 700;
+}
+.orderItem .ingredients {
+  font-size: 1rem;
+  color: #6e6e6e;
+}
+.orderItem .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.orderItem .priceAndIcons {
+  display: flex;
+  align-items: center;
+}
+.orderItem .priceAndIcons .edit {
+  margin-left: 8px;
+  color: #366961;
+  cursor: pointer;
+}
+.orderItem .priceAndIcons .delete {
+  margin-left: 4px;
+  color: #a04747;
+  cursor: pointer;
+}
+.orderItem .quantityName {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.orderItem .quantityName .quantity {
+  font-weight: 700;
+  margin-right: 10px;
+}
+.orderItem .marginBottom {
+  margin-top: 15px;
+  margin-bottom: 3px;
+}
+.orderItem:last-of-type {
+  margin-bottom: 40px;
 }
 
 footer .darkBackground {

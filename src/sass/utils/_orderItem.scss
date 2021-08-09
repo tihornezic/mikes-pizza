@@ -1,0 +1,86 @@
+.orderItem {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
+    width: 100%;
+    font-size: 1.19rem;
+    border-bottom: 1px solid $lightGreen;
+    margin-bottom: 15px;
+
+    .label {
+        font-size: 1.1rem;
+        color: $darkGreen;
+        margin-top: 5px;
+
+        .labelValue {
+            font-size: 1rem;
+            color: $dark;
+        }
+    }
+
+    // .edit {
+    //     color: $lightGreen;
+    //     font-weight: 700;
+    //     cursor: pointer;
+    //     margin-right: 10px;
+    // }
+
+    // .remove {
+    //     color: $red;
+    //     font-weight: 700;
+    //     cursor: pointer;
+    // }
+
+    .bold {
+        font-weight: 700;
+    }
+
+    .ingredients {
+        font-size: 1rem;
+        color: $grey;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .priceAndIcons {
+        display: flex;
+        align-items: center;
+
+        .edit {
+            margin-left: 8px;
+            color: $lightGreen;
+            cursor: pointer;
+        }
+
+        .delete {
+            margin-left: 4px;
+            color: $red;
+            cursor: pointer;
+        }
+    }
+
+    .quantityName {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // width: 80%;
+
+        .quantity {
+            font-weight: 700;
+            margin-right: 10px;
+        }
+    }
+
+    .marginBottom {
+        margin-top: 15px;
+        margin-bottom: 3px;
+    }
+
+    &:last-of-type {
+        margin-bottom: 40px;
+    }
+}
