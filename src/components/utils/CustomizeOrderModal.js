@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import uuid from 'react-uuid'
 import {Link} from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
 import {setToggleCustomizeOrderModal} from '../../redux/actions/orderActions'
@@ -119,6 +120,7 @@ const CustomizeOrderModal = () => {
 
     const createOrderObject = () => {
         setOrderObject({
+            id: uuid(),
             name: pizza.name,
             size: pizzaSizeName,
             ingredients: pizza.ingredients.map((ingredient) => (

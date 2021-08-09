@@ -20,3 +20,10 @@ export const addPizzaToOrder = (pizza) => {
         payload: pizza
     }
 }
+
+export const removePizzaFromOrder = (pizza) => {
+    return {
+        type: ActionTypes.REMOVE_PIZZA_FROM_ORDER,
+        payload: pizza
+    }
+}

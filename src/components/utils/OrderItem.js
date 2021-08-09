@@ -1,7 +1,11 @@
+import {useSelector, useDispatch} from 'react-redux'
+import {removePizzaFromOrder} from '../../redux/actions/orderActions'
 import EditIcon from '@material-ui/icons/Edit'
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline'
 
 const OrderItem = ({item}) => {
+    const dispatch = useDispatch()
+
     return (
         <div className='orderItem'>
             <div className='row'>
@@ -12,7 +16,7 @@ const OrderItem = ({item}) => {
                 <div className='priceAndIcons'>
                     <span>${item.price.toFixed(2)}</span>
                     <EditIcon className='edit' />
-                    <DeleteOutlineIcon className='delete' />
+                    <DeleteOutlineIcon className='delete' onClick={() => dispatch(removePizzaFromOrder(item))} />
                 </div>
             </div>
 
