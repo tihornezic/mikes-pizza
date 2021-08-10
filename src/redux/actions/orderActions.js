@@ -14,6 +14,13 @@ export const setToggleCustomizeOrderModal = (orderModal) => {
     }
 }
 
+export const setToggleCustomizeOrderModalEdit = (orderModalEdit) => {
+    return {
+        type: ActionTypes.TOGGLE_SHOW_CUSTOMIZE_ORDER_MODAL_EDIT,
+        payload: orderModalEdit
+    }
+}
+
 export const addPizzaToOrder = (pizza) => {
     return {
         type: ActionTypes.ADD_PIZZA_TO_ORDER,

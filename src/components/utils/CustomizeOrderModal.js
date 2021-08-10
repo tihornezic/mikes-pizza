@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
 import {setToggleCustomizeOrderModal} from '../../redux/actions/orderActions'
 import {addPizzaToOrder} from '../../redux/actions/orderActions'
+import {getPizza} from '../../redux/actions/pizzasActions'
 import {createTheme} from '@material-ui/core/styles'
 import {ThemeProvider} from '@material-ui/core/styles'
 import FormGroup from '@material-ui/core/FormGroup'
@@ -113,17 +114,28 @@ const CustomizeOrderModal = () => {
     }
 
     const preventQuantitytoFifteen = (quantity) => {
-        if(quantity === 15) {
+        if (quantity === 15) {
             setQuantity(15)
         }
     }
 
     const createOrderObject = () => {
         setOrderObject({
-            id: uuid(),
+            // default api pizza data; 
+            // here they are set as well for the needs of editing an order
             pizzaId: pizza.id,
             name: pizza.name,
+            image: pizza.image,
+            prices: {
+                small: pizza.prices.small,
+                medium: pizza.prices.medium,
+                large: pizza.prices.large
+            },
+
+            // specific order data
+            id: uuid(),
             size: pizzaSizeName,
+            sizePrice: pizzaSizePrice,
             ingredients: pizza.ingredients.map((ingredient) => (
                 ingredient
             )),
@@ -153,9 +165,6 @@ const CustomizeOrderModal = () => {
         }
     }, [orderObject])
 
-    // useEffect(() => {
-    //     console.log(pizzaSizeName)
-    // }, [pizzaSizeName])
 
     return (
         <div className={showCustomizeOrderModal ? 'customizeOrderModal open' : 'customizeOrderModal'}>
@@ -236,7 +245,7 @@ const CustomizeOrderModal = () => {
                                         {
                                             <span style={pizzaSizePrice ? {fontSize: '1.155rem', color: '#494949'} : {fontSize: '1.155rem', color: '#bbbbbb'}}>
                                                 {extra.item}&nbsp;
-                                                <span style={pizzaSizePrice ? {color: '#366961'} : {color: '#c7c7c7'}}>+${extra.price}</span>
+                                                    <span style={pizzaSizePrice ? {color: '#366961'} : {color: '#c7c7c7'}}>+${extra.price}</span>
                                             </span>
                                         }
                                     />
@@ -277,9 +286,10 @@ const CustomizeOrderModal = () => {
                         createOrderObject()
                         dispatch(setToggleCustomizeOrderModal(showCustomizeOrderModal))
                         resetPizzaSizePriceAndQuantity()
+                        // dispatch(getPizza({}))
                     }}>
                         Add to Order&nbsp;
-                        {
+                            {
                             // totalOrderAmount !== 0
                             pizzaSizePrice
                                 ?

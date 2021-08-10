@@ -7,7 +7,6 @@ export const ActionTypes = {
 
     GET_PIZZA: 'GET_PIZZA',
 
-
     // pizzas
     GET_PIZZAS_REQUESTED: 'GET_PIZZAS_REQUESTED',
     GET_PIZZAS_SUCCESS: 'GET_PIZZAS_SUCCESS',

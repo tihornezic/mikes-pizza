@@ -7,16 +7,9 @@ export const getPizzas = (pizzas) => {
     }
 }
 
-// export const getPizza = (pizza) => {
-//     return {
-//         type: ActionTypes.GET_PIZZA,
-//         payload: pizza
-//     }
-// }
-
-export const getPizza = (id) => {
+export const getPizza = (pizza) => {
     return {
-        type: ActionTypes.GET_PIZZA_REQUESTED,
-        payload: id
+        type: ActionTypes.GET_PIZZA,
+        payload: pizza
     }
 }

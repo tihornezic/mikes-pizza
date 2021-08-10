@@ -1,7 +1,7 @@
 import {ActionTypes} from "../constants/actionTypes";
 
 const initialState = {
-    showCustomizeOrderModal: false
+    showCustomizeOrderModal: false,
 }
 
 export const toggleCustomizeOrderModal = (state = initialState, action) => {

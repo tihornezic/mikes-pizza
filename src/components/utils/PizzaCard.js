@@ -11,7 +11,7 @@ const PizzaCard = ({pizza}) => {
     const dispatch = useDispatch()
 
     return (
-        <div className='pizzaCard' onClick={() => {dispatch(setToggleCustomizeOrderModal(showCustomizeOrderModal)); dispatch(getPizza(pizza.id))}}>
+        <div className='pizzaCard' onClick={() => {dispatch(setToggleCustomizeOrderModal(showCustomizeOrderModal)); dispatch(getPizza(pizza))}}>
             <div className='top'>
                 <img src={pizza.image} alt={pizza.name} width='235px' />
             </div>

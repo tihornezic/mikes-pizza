@@ -5,7 +5,7 @@ import Quote from '../utils/Quote'
 import Badges from '../utils/Badges'
 import Order from '../utils/Order'
 import CustomizeOrderModal from '../utils/CustomizeOrderModal'
-import BackgroundOverlay from '../utils/BackgroundOverlay';
+import BackgroundOverlay from '../utils/BackgroundOverlay'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 import {useState, useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
