@@ -5,6 +5,7 @@ import Quote from '../utils/Quote'
 import Badges from '../utils/Badges'
 import Order from '../utils/Order'
 import CustomizeOrderModal from '../utils/CustomizeOrderModal'
+import RegisterModal from '../utils/RegisterModal'
 import BackgroundOverlay from '../utils/BackgroundOverlay'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 import {useState, useEffect} from 'react'
@@ -48,6 +49,7 @@ const Home = () => {
             </div>
 
             <CustomizeOrderModal />
+            <RegisterModal />
 
             <Menu />
             <Quote />

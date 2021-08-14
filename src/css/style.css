@@ -95,6 +95,7 @@ button {
   padding-left: 65px;
 }
 .header ul li a {
+  transition: all 0.2s ease;
   text-decoration: none;
   color: #1E2D2F;
 }
@@ -108,6 +109,53 @@ button {
     padding: 8px 35px;
     margin-left: 30px;
   }
+}
+.header ul li a:hover:not(#not) {
+  color: #C57B57;
+}
+.header ul li .account {
+  position: relative;
+}
+.header ul li .account .fakeLink {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.header ul li .account .fakeLink:hover {
+  color: #C57B57;
+}
+.header ul li .account .dropdown {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+  top: 40px;
+  border-radius: 5px;
+  background-color: #DFDFDF;
+  width: 155px;
+  height: 250px;
+  text-align: center;
+  padding: 20px 10px;
+}
+.header ul li .account .dropdown .helloUser {
+  font-size: 1.25rem;
+  margin-bottom: 25px;
+}
+.header ul li .account .dropdown .helloUser span {
+  color: #C57B57;
+  font-size: 1.15rem;
+}
+.header ul li .account .dropdown a {
+  cursor: pointer;
+  display: block;
+  font-size: 1.12rem;
+  margin-bottom: 25px;
+}
+.header ul li .account .dropdown a:hover {
+  color: #366961;
+}
+.header ul li .account:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
 }
 @media (max-width: 1790px) {
   .header {
@@ -706,6 +754,128 @@ button {
 }
 .orderItem:last-of-type {
   margin-bottom: 40px;
+}
+
+.registerLoginModal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.15s ease;
+  background-color: #DFDFDF;
+  border-radius: 10px;
+  width: 620px;
+  height: 78%;
+  padding: 40px 85px;
+  z-index: 30;
+  pointer-events: none;
+  opacity: 0;
+  overflow-y: auto;
+}
+.registerLoginModal .close {
+  position: absolute;
+  color: #494949;
+  font-size: 1.9rem;
+  top: 12px;
+  right: 10px;
+  cursor: pointer;
+  z-index: 35;
+}
+.registerLoginModal.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.registerLoginModal .contentColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.registerLoginModal .contentColumn h1 {
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: #494949;
+  margin-bottom: 70px;
+}
+.registerLoginModal .contentColumn .facebookButton {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  background-color: #3b5998;
+  font-weight: 700;
+  font-size: 1.3rem;
+  padding: 10px 80px;
+}
+.registerLoginModal .contentColumn .facebookButton svg {
+  font-size: 2rem;
+  margin-right: 5px;
+}
+.registerLoginModal .contentColumn .facebookButton:hover {
+  background-color: #2d4579;
+}
+.registerLoginModal .contentColumn .or {
+  font-size: 1.35em;
+  color: #6e6e6e;
+  margin: 30px 0;
+}
+.registerLoginModal .contentColumn form {
+  width: 100%;
+  text-align: center;
+}
+.registerLoginModal .contentColumn form .inputGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 70px;
+}
+.registerLoginModal .contentColumn form .inputGroup svg {
+  position: absolute;
+  left: 1px;
+  font-size: 2.35rem;
+  color: #494949;
+}
+.registerLoginModal .contentColumn form .inputGroup label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 48px;
+  transition: all 0.3s ease;
+  color: #6e6e6e;
+  font-size: 1.3rem;
+  z-index: 45;
+}
+.registerLoginModal .contentColumn form .inputGroup label.active {
+  top: -25px;
+  font-size: 1rem;
+  color: #1d1d1d;
+}
+.registerLoginModal .contentColumn form .inputGroup input {
+  position: relative;
+  font-family: "Neuton", serif;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #bbbbbb;
+  width: 80%;
+  font-size: 1.2rem;
+  padding-bottom: 8px;
+  z-index: 50;
+}
+.registerLoginModal .contentColumn form .inputGroup input.active {
+  border-bottom: 1px solid #494949;
+}
+.registerLoginModal .contentColumn form .formButton {
+  margin-top: 80px;
+}
+.registerLoginModal .contentColumn .needAnAccount {
+  margin: 15px 0;
+  font-size: 1.05rem;
+}
+.registerLoginModal .contentColumn .needAnAccount a {
+  color: #C57B57;
+  font-weight: 700;
 }
 
 footer .darkBackground {

@@ -13,19 +13,76 @@
             padding-left: 65px;
 
             a {
+                transition: all 0.2s ease;
                 text-decoration: none;
                 color: $darkGreen;
 
                 &.button {
                     padding: 8px 40px;
                     color: $backgroundWhite;
-                    // margin-left: 60px;
                     font-size: 1.2rem;
 
                     @media (max-width: 1790px) {
                         padding: 8px 35px;
                         margin-left: 30px;
                     }
+                }
+
+                &:hover:not(#not) {
+                    color: $copperCrayola;
+                }
+            }
+
+            .account {
+                position: relative;
+                
+                .fakeLink {
+                    transition: all 0.2s ease;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: $copperCrayola;
+                    }
+                }
+                
+                .dropdown {
+                    position: absolute;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all 0.2s;
+                    top: 40px;
+                    border-radius: 5px;
+                    background-color: $creamWhite;
+                    width: 155px;
+                    height: 250px;
+                    text-align: center;
+                    padding: 20px 10px;
+                    
+                    .helloUser {
+                        font-size: 1.25rem;
+                        margin-bottom: 25px;
+                        
+                        span {
+                            color: $copperCrayola;
+                            font-size: 1.15rem;
+                        }
+                    }
+                    
+                    a {
+                        cursor: pointer;
+                        display: block;
+                        font-size: 1.12rem;
+                        margin-bottom: 25px;
+
+                        &:hover {
+                            color: $lightGreen;
+                        }
+                    }
+                }
+
+                &:hover .dropdown {
+                    opacity: 1;
+                    visibility: visible;
                 }
             }
         }

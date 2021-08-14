@@ -1,4 +1,4 @@
-import {ActionTypes} from "../constants/actionTypes";
+import {ActionTypes} from "../constants/actionTypes"
 
 export const setToggleOrder = (order) => {
     return {
@@ -14,12 +14,12 @@ export const setToggleCustomizeOrderModal = (orderModal) => {
     }
 }
 
-export const setToggleCustomizeOrderModalEdit = (orderModalEdit) => {
-    return {
-        type: ActionTypes.TOGGLE_SHOW_CUSTOMIZE_ORDER_MODAL_EDIT,
-        payload: orderModalEdit
-    }
-}
+// export const setToggleCustomizeOrderModalEdit = (orderModalEdit) => {
+//     return {
+//         type: ActionTypes.TOGGLE_SHOW_CUSTOMIZE_ORDER_MODAL_EDIT,
+//         payload: orderModalEdit
+//     }
+// }
 
 export const addPizzaToOrder = (pizza) => {
     return {
