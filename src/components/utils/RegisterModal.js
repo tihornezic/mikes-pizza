@@ -3,9 +3,12 @@ import {useSelector, useDispatch} from 'react-redux'
 import {useAuth} from '../../auth/authContext'
 import {setToggleAuthModal} from '../../redux/actions/authActions'
 import {useRef, useState, useEffect} from 'react'
+import {db} from '../../firebase'
+import {facebookProvider} from '../../auth/authContext'
 import LoginModal from './LoginModal'
 import Alert from '@material-ui/lab/Alert'
 import CloseIcon from '@material-ui/icons/Close'
+import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined'
 import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import FacebookIcon from '@material-ui/icons/Facebook'
@@ -17,19 +20,22 @@ const RegisterModal = () => {
     const [registerModal, setRegisterModal] = useState(true)
     const [loginModal, setLoginModal] = useState(false)
 
-    const {signup, currentUser} = useAuth()
+    const {signup, currentUser, facebookAuth} = useAuth()
 
-    const [activeEmail, setActiveEmail] = useState(false)
-    const [activePassword, setActivePassword] = useState(false)
+    const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
 
+    const nameRef = useRef()
     const emailRef = useRef()
     const passwordRef = useRef()
 
+    const [activeName, setActiveName] = useState(false)
+    const [activeEmail, setActiveEmail] = useState(false)
+    const [activePassword, setActivePassword] = useState(false)
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -37,8 +43,20 @@ const RegisterModal = () => {
         try {
             setError('')
             setLoading(true)
-            await signup(emailRef.current.value, passwordRef.current.value)
+
+            const createUser = await signup(emailRef.current.value, passwordRef.current.value)
+
+            const result = await createUser
+
+            const database = db.collection('users').doc(result.user.uid).collection('userInfo').doc(result.user.uid)
+
+            await database.set({
+                name: nameRef.current.value,
+                email: emailRef.current.value
+            })
+
             dispatch(setToggleAuthModal(authModal))
+            setName('')
             setEmail('')
             setPassword('')
 
@@ -50,6 +68,13 @@ const RegisterModal = () => {
 
     }
 
+
+    async function handleFacebookAuth(provider) {
+        const res = await facebookAuth(provider)
+        // console.log(res)
+        dispatch(setToggleAuthModal(authModal))
+    }
+
     useEffect(() => {
         console.log(currentUser)
     }, [currentUser])
@@ -59,12 +84,21 @@ const RegisterModal = () => {
         <div className={authModal ? 'registerLoginModal open' : 'registerLoginModal'}>
             {registerModal &&
                 <>
-                    <CloseIcon className='close' onClick={() => dispatch(setToggleAuthModal(authModal))} />
+                    <CloseIcon className='close' onClick={() => {
+                        dispatch(setToggleAuthModal(authModal)); 
+                        setName('')
+                        setEmail('')
+                        setPassword('')
+                        setError('')
+                        setActiveName(false)
+                        setActiveEmail(false)
+                        setActivePassword(false)
+                    }} />
 
                     <div className='contentColumn'>
                         <h1>Register on Mike's Pizza</h1>
 
-                        <button className='button facebookButton'>
+                        <button className='button facebookButton' onClick={() => handleFacebookAuth(facebookProvider)}>
                             <FacebookIcon />
                             Facebook
                          </button>
@@ -78,6 +112,16 @@ const RegisterModal = () => {
                         }
 
                         <form onSubmit={handleSubmit}>
+                            <div className='inputGroup'>
+                                <PersonOutlineOutlinedIcon />
+                                <label className={activeName ? 'active' : ''} htmlFor='name'>Name</label>
+                                <input className={activeName ? 'active' : ''} type='text'
+                                    onFocus={() => setActiveName(true)}
+                                    // do the onBlur only if the value is empty
+                                    onBlur={name.length === 0 ? () => setActiveName(false) : () => setActiveName(true)}
+                                    ref={nameRef} required value={name} onChange={(e) => setName(e.target.value)}
+                                />
+                            </div>
                             <div className='inputGroup'>
                                 <EmailOutlinedIcon />
                                 <label className={activeEmail ? 'active' : ''} htmlFor='email'>Email</label>

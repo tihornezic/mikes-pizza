@@ -3,6 +3,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import {useAuth} from '../../auth/authContext'
 import {setToggleAuthModal} from '../../redux/actions/authActions'
 import {useRef, useState, useEffect} from 'react'
+import {facebookProvider} from '../../auth/authContext'
 import Alert from '@material-ui/lab/Alert'
 import CloseIcon from '@material-ui/icons/Close'
 import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined'
@@ -13,7 +14,7 @@ const LoginModal = ({setLoginModal, setRegisterModal}) => {
     const authModal = useSelector(state => state.showAuthModal.showAuthModal)
     const dispatch = useDispatch()
 
-    const {login, currentUser} = useAuth()
+    const {login, currentUser, facebookAuth} = useAuth()
 
     const [activeEmail, setActiveEmail] = useState(false)
     const [activePassword, setActivePassword] = useState(false)
@@ -47,6 +48,14 @@ const LoginModal = ({setLoginModal, setRegisterModal}) => {
     }
 
 
+    async function handleFacebookAuth(provider) {
+        const res = await facebookAuth(provider)
+        // console.log(res)
+        dispatch(setToggleAuthModal(authModal))
+        setLoginModal(false)
+        setRegisterModal(true)
+    }
+
     useEffect(() => {
         console.log(currentUser)
     }, [currentUser])
@@ -54,12 +63,21 @@ const LoginModal = ({setLoginModal, setRegisterModal}) => {
 
     return (
         <>
-            <CloseIcon className='close' onClick={() => {dispatch(setToggleAuthModal(authModal)); setLoginModal(false); setRegisterModal(true)}} />
+            <CloseIcon className='close' onClick={() => {
+                dispatch(setToggleAuthModal(authModal))
+                setLoginModal(false)
+                setRegisterModal(true)
+                setEmail('')
+                setPassword('')
+                setError('')
+                setActiveEmail(false)
+                setActivePassword(false)
+            }} />
 
             <div className='contentColumn'>
                 <h1>Login on Mike's Pizza</h1>
 
-                <button className='button facebookButton'>
+                <button className='button facebookButton' onClick={() => handleFacebookAuth(facebookProvider)}>
                     <FacebookIcon />
                     Facebook
                 </button>

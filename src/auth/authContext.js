@@ -4,6 +4,8 @@ import firebase from 'firebase/app'
 
 export const AuthContext = createContext()
 
+export const facebookProvider = new firebase.auth.FacebookAuthProvider()
+
 export function useAuth() {
     return useContext(AuthContext)
 }
@@ -11,6 +13,7 @@ export function useAuth() {
 export function AuthProvider({children}) {
     const [currentUser, setCurrentUser] = useState()
     const [loading, setLoading] = useState(true)
+
 
     // auth functions
     const signup = (email, password) => {
@@ -37,6 +40,18 @@ export function AuthProvider({children}) {
         return currentUser.updatePassword(password)
     }
 
+    const facebookAuth = (provider) => {
+        return firebase
+            .auth()
+            .signInWithPopup(provider)
+            .then((res) => {
+                return res.user
+            })
+            .catch((err) => {
+                return err
+            })
+    }
+
     const value = {
         currentUser,
         login,
@@ -45,6 +60,7 @@ export function AuthProvider({children}) {
         resetPassword,
         updateEmail,
         updatePassword,
+        facebookAuth
     }
 
     useEffect(() => {

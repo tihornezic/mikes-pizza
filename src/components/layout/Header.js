@@ -4,6 +4,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import {setToggleOrder} from '../../redux/actions/orderActions'
 import {setToggleAuthModal} from '../../redux/actions/authActions'
 import {useAuth} from '../../auth/authContext'
+import {db} from '../../firebase'
 
 const Header = () => {
     const order = useSelector(state => state.showOrder.showOrder)
@@ -12,11 +13,9 @@ const Header = () => {
 
     const history = useHistory()
     const {currentUser, logout} = useAuth()
+    const [userInfo, setUserInfo] = useState([])
     const [error, setError] = useState('')
 
-    useEffect(() => {
-        console.log(currentUser)
-    }, [])
 
     async function handleLogout() {
         setError('')
@@ -29,6 +28,23 @@ const Header = () => {
             alert(error)
         }
     }
+
+    useEffect(() => {
+        console.log(currentUser)
+    }, [])
+
+    useEffect(() => {
+        if (currentUser) {
+            const getUserInfo = async () => {
+                const data = await db.collection('users').doc(currentUser.uid).collection('userInfo').doc(currentUser.uid).get()
+                setUserInfo(data.data())
+            }
+
+            getUserInfo()
+        } else {
+            setUserInfo([])
+        }
+    }, [currentUser]) // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <div className='header'>
@@ -48,7 +64,11 @@ const Header = () => {
                                     <p>
                                         Hello,
                                     </p>
-                                    <span>{currentUser.email}</span>
+                                    {userInfo ?
+                                        <span>{userInfo.name}</span>
+                                        :
+                                        <span>{currentUser.displayName}</span>
+                                    }
                                 </div>
                                 <Link to='recent-orders'>Recent orders</Link>
                                 <Link to='profile'>Profile</Link>

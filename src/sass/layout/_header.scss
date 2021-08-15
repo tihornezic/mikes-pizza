@@ -53,14 +53,15 @@
                     top: 40px;
                     border-radius: 5px;
                     background-color: $creamWhite;
-                    width: 155px;
-                    height: 250px;
+                    width: 185px;
+                    height: 240px;
                     text-align: center;
-                    padding: 20px 10px;
+                    // padding: 20px 10px;
                     
                     .helloUser {
                         font-size: 1.25rem;
                         margin-bottom: 25px;
+                        margin-top: 20px;
                         
                         span {
                             color: $copperCrayola;
@@ -71,11 +72,13 @@
                     a {
                         cursor: pointer;
                         display: block;
+                        padding: 10px 0;
                         font-size: 1.12rem;
-                        margin-bottom: 25px;
+                        // margin-bottom: 25px;
 
                         &:hover {
                             color: $lightGreen;
+                            background-color: $lightGrey;
                         }
                     }
                 }

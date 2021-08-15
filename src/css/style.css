@@ -131,14 +131,14 @@ button {
   top: 40px;
   border-radius: 5px;
   background-color: #DFDFDF;
-  width: 155px;
-  height: 250px;
+  width: 185px;
+  height: 240px;
   text-align: center;
-  padding: 20px 10px;
 }
 .header ul li .account .dropdown .helloUser {
   font-size: 1.25rem;
   margin-bottom: 25px;
+  margin-top: 20px;
 }
 .header ul li .account .dropdown .helloUser span {
   color: #C57B57;
@@ -147,11 +147,12 @@ button {
 .header ul li .account .dropdown a {
   cursor: pointer;
   display: block;
+  padding: 10px 0;
   font-size: 1.12rem;
-  margin-bottom: 25px;
 }
 .header ul li .account .dropdown a:hover {
   color: #366961;
+  background-color: #bbbbbb;
 }
 .header ul li .account:hover .dropdown {
   opacity: 1;
@@ -765,7 +766,7 @@ button {
   background-color: #DFDFDF;
   border-radius: 10px;
   width: 620px;
-  height: 78%;
+  height: 88%;
   padding: 40px 85px;
   z-index: 30;
   pointer-events: none;
