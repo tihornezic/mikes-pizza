@@ -1,0 +1,90 @@
+.payment {
+    .logo {
+        margin-top: 15px;
+    }
+
+    .paymentContainer {
+        max-width: 1050px;
+        margin: 0 auto;
+
+        .heading {
+            display: flex;
+            align-items: center;
+            margin-bottom: 75px;
+            color: $darkGrey;
+
+            svg {
+                font-size: 1.8rem;
+                margin-right: 10px;
+                cursor: pointer;
+                transition: all 0.25s ease-in-out;
+
+                &:hover {
+                    transform: translateX(-7px);
+                    color: $darkGrey;
+                }
+            }
+
+            h1 {
+                font-size: 1.85rem;
+            }
+        }
+
+        .mainRow {
+            display: flex;
+
+            .left {
+                width: 60%;
+
+                .address {
+                    margin-bottom: 50px;
+
+                    p {
+                        font-size: 1.25rem;
+                    }
+                }
+
+                .orderContent {
+                    margin-bottom: 50px;
+                }
+
+                h2 {
+                    font-size: 1.55rem;
+                    // margin-bottom: 30px;
+                }
+            }
+
+            .right {
+                width: 40%;
+                margin-left: 70px;
+
+                .summaryCard {
+                    position: sticky;
+                    top: 75px;
+                    background-color: $white;
+                    border-radius: 15px 15px 0 0;
+                    box-shadow: 0 2px 8px 2px rgb(0 0 0 / 10%);
+                    width: 100%;
+                    height: 450px;
+                    // height: fit-content;
+
+                    &::after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        height: 20px;
+                        background: linear-gradient(45deg, transparent 33.333%, #fff 0, #fff 66.667%, transparent 0),
+                            linear-gradient(-45deg, transparent 33.333%, #fff 0, #fff 66.667%, transparent 0);
+                        background-size: 20px 40px;
+                        background-position: 0 -20px;
+                        bottom: -10px;
+                        top: auto;
+                    }
+                }
+            }
+        }
+    }
+}

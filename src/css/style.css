@@ -14,6 +14,7 @@ html {
 body {
   font-family: "Neuton", serif;
   background-color: #F2F2F2;
+  overflow-y: scroll;
 }
 body.overflow {
   overflow: hidden;
@@ -407,13 +408,6 @@ button {
   font-size: 1.5rem;
   font-weight: 800;
   max-width: 300px;
-}
-
-.pizza {
-  overflow-y: scroll;
-}
-.pizza .logo {
-  margin-top: 15px;
 }
 
 .order {
@@ -877,6 +871,78 @@ button {
 .registerLoginModal .contentColumn .needAnAccount a {
   color: #C57B57;
   font-weight: 700;
+}
+
+.payment .logo {
+  margin-top: 15px;
+}
+.payment .paymentContainer {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+.payment .paymentContainer .heading {
+  display: flex;
+  align-items: center;
+  margin-bottom: 75px;
+  color: #494949;
+}
+.payment .paymentContainer .heading svg {
+  font-size: 1.8rem;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+.payment .paymentContainer .heading svg:hover {
+  transform: translateX(-7px);
+  color: #494949;
+}
+.payment .paymentContainer .heading h1 {
+  font-size: 1.85rem;
+}
+.payment .paymentContainer .mainRow {
+  display: flex;
+}
+.payment .paymentContainer .mainRow .left {
+  width: 60%;
+}
+.payment .paymentContainer .mainRow .left .address {
+  margin-bottom: 50px;
+}
+.payment .paymentContainer .mainRow .left .address p {
+  font-size: 1.25rem;
+}
+.payment .paymentContainer .mainRow .left .orderContent {
+  margin-bottom: 50px;
+}
+.payment .paymentContainer .mainRow .left h2 {
+  font-size: 1.55rem;
+}
+.payment .paymentContainer .mainRow .right {
+  width: 40%;
+  margin-left: 70px;
+}
+.payment .paymentContainer .mainRow .right .summaryCard {
+  position: sticky;
+  top: 75px;
+  background-color: #ffffff;
+  border-radius: 15px 15px 0 0;
+  box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 450px;
+}
+.payment .paymentContainer .mainRow .right .summaryCard::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 20px;
+  background: linear-gradient(45deg, transparent 33.333%, #fff 0, #fff 66.667%, transparent 0), linear-gradient(-45deg, transparent 33.333%, #fff 0, #fff 66.667%, transparent 0);
+  background-size: 20px 40px;
+  background-position: 0 -20px;
+  bottom: -10px;
+  top: auto;
 }
 
 footer .darkBackground {

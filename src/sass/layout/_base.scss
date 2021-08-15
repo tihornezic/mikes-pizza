@@ -13,6 +13,7 @@ html {
 body {
     font-family: $neuton;
     background-color: $backgroundWhite;
+    overflow-y: scroll;
 
     &.overflow {
         overflow: hidden;
