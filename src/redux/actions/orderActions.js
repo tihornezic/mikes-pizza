@@ -14,13 +14,6 @@ export const setToggleCustomizeOrderModal = (orderModal) => {
     }
 }
 
-// export const setToggleCustomizeOrderModalEdit = (orderModalEdit) => {
-//     return {
-//         type: ActionTypes.TOGGLE_SHOW_CUSTOMIZE_ORDER_MODAL_EDIT,
-//         payload: orderModalEdit
-//     }
-// }
-
 export const addPizzaToOrder = (pizza) => {
     return {
         type: ActionTypes.ADD_PIZZA_TO_ORDER,
@@ -32,5 +25,12 @@ export const removePizzaFromOrder = (pizza) => {
     return {
         type: ActionTypes.REMOVE_PIZZA_FROM_ORDER,
         payload: pizza
+    }
+}
+
+export const annulOrder = () => {
+    return {
+        type: ActionTypes.ANNUL_ORDER,
+        // payload: pizza
     }
 }

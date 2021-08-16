@@ -696,7 +696,7 @@ button {
 .orderItem {
   width: 100%;
   font-size: 1.19rem;
-  border-bottom: 1px solid #366961;
+  border-bottom: 1px solid #c7c7c7;
   margin-bottom: 15px;
 }
 .orderItem .label {
@@ -916,6 +916,7 @@ button {
 }
 .payment .paymentContainer .mainRow .left h2 {
   font-size: 1.55rem;
+  margin-bottom: 10px;
 }
 .payment .paymentContainer .mainRow .right {
   width: 40%;
@@ -923,12 +924,14 @@ button {
 }
 .payment .paymentContainer .mainRow .right .summaryCard {
   position: sticky;
-  top: 75px;
+  top: 45px;
   background-color: #ffffff;
   border-radius: 15px 15px 0 0;
   box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.1);
   width: 100%;
-  height: 450px;
+  height: fit-content;
+  padding: 35px;
+  margin-top: -55px;
 }
 .payment .paymentContainer .mainRow .right .summaryCard::after {
   content: "";
@@ -943,6 +946,60 @@ button {
   background-position: 0 -20px;
   bottom: -10px;
   top: auto;
+}
+.payment .paymentContainer .mainRow .right .summaryCard .headingRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #c7c7c7;
+  margin-bottom: 15px;
+}
+.payment .paymentContainer .mainRow .right .summaryCard .headingRow h2 {
+  font-size: 1.85rem;
+  color: #494949;
+}
+.payment .paymentContainer .mainRow .right .summaryCard .headingRow img {
+  width: 140px;
+}
+.payment .paymentContainer .mainRow .right .summaryCard .orderInfos {
+  font-size: 1.25rem;
+}
+.payment .paymentContainer .mainRow .right .summaryCard .orderInfos .infoRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.payment .paymentContainer .mainRow .right .summaryCard .orderInfos .infoRow .total {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.payment .paymentContainer .mainRow .right .summaryCard .orderInfos .addressDetails {
+  border-top: 1px solid #c7c7c7;
+  padding: 10px 0;
+  margin-bottom: 15px;
+}
+.payment .paymentContainer .mainRow .right .summaryCard .orderInfos .addressDetails h2 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+.payment .paymentContainer .mainRow .right .summaryCard .orderInfos .addressDetails p {
+  font-size: 1.2rem;
+}
+.payment .paymentContainer .mainRow .right .summaryCard .orderInfos .paymentDetails {
+  border-top: 1px solid #c7c7c7;
+  padding: 10px 0;
+}
+.payment .paymentContainer .mainRow .right .summaryCard .orderInfos .paymentDetails h2 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+.payment .paymentContainer .mainRow .right .summaryCard .orderInfos .paymentDetails .confirmOrderButton {
+  width: 100%;
+  margin-top: 75px;
+  text-align: center;
 }
 
 footer .darkBackground {

@@ -70,14 +70,19 @@ const RegisterModal = () => {
 
 
     async function handleFacebookAuth(provider) {
-        const res = await facebookAuth(provider)
-        // console.log(res)
+        const createUser = await facebookAuth(provider)
+
+
+        const result = await createUser
+        const database = db.collection('users').doc(result.uid).collection('userInfo').doc(result.uid)
+
+        await database.set({
+            name: result.displayName,
+            email: result.email
+        })
+
         dispatch(setToggleAuthModal(authModal))
     }
-
-    useEffect(() => {
-        console.log(currentUser)
-    }, [currentUser])
 
 
     return (

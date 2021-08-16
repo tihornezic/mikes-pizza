@@ -50,7 +50,7 @@
 
                 h2 {
                     font-size: 1.55rem;
-                    // margin-bottom: 30px;
+                    margin-bottom: 10px;
                 }
             }
 
@@ -60,13 +60,15 @@
 
                 .summaryCard {
                     position: sticky;
-                    top: 75px;
+                    top: 45px;
                     background-color: $white;
                     border-radius: 15px 15px 0 0;
                     box-shadow: 0 2px 8px 2px rgb(0 0 0 / 10%);
                     width: 100%;
-                    height: 450px;
-                    // height: fit-content;
+                    // height: 500px;
+                    height: fit-content;
+                    padding: 35px;
+                    margin-top: -55px;
 
                     &::after {
                         content: "";
@@ -82,6 +84,73 @@
                         background-position: 0 -20px;
                         bottom: -10px;
                         top: auto;
+                    }
+
+                    .headingRow {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding-bottom: 15px;
+                        border-bottom: 1px solid $mildGrey;
+                        margin-bottom: 15px;
+
+                        h2 {
+                            font-size: 1.85rem;
+                            color: $darkGrey;
+                        }
+
+                        img {
+                            width: 140px;
+                        }
+                    }
+
+                    .orderInfos {
+                        font-size: 1.25rem;
+
+                        .infoRow {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            margin-bottom: 15px;
+
+                            .total {
+                                font-size: 1.35rem;
+                                font-weight: 700;
+                                margin-bottom: 8px;
+                            }
+                        }
+
+                        .addressDetails {
+                            border-top: 1px solid $mildGrey;
+                            padding: 10px 0;
+                            margin-bottom: 15px;
+
+                            h2 {
+                                font-size: 1.4rem;
+                                margin-bottom: 5px;
+                            }
+
+                            p {
+                                font-size: 1.2rem;
+                            }
+                        }
+
+                        .paymentDetails {
+                            border-top: 1px solid $mildGrey;
+                            padding: 10px 0;
+                            // margin-bottom: 40px;
+
+                            h2 {
+                                font-size: 1.4rem;
+                                margin-bottom: 15px;
+                            }
+
+                            .confirmOrderButton {
+                                width: 100%;
+                                margin-top: 75px;
+                                text-align: center;
+                            }
+                        }
                     }
                 }
             }
