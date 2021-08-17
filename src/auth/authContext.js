@@ -52,6 +52,37 @@ export function AuthProvider({children}) {
             })
     }
 
+    // 
+    // database functions
+    const setPayment = (paymentIntent, orderAddress, order) => {
+        db
+            .collection('users')
+            .doc(currentUser?.uid)
+            .collection('orders')
+            .doc(paymentIntent.id)
+            .set({
+                orderAddress: orderAddress,
+                order: order,
+                amount: paymentIntent.amount,
+                created: paymentIntent.created,
+                createdAt: firebase.firestore.FieldValue.serverTimestamp()
+            })
+    }
+
+    const getPayment = (setOrders) => {
+        db
+            .collection('users')
+            .doc(currentUser.uid)
+            .collection('orders')
+            .orderBy('createdAt', 'desc')
+            .onSnapshot(snapshot => (
+                setOrders(snapshot.docs.map(doc => ({
+                    id: doc.id,
+                    data: doc.data()
+                })))
+            ))
+    }
+
     const value = {
         currentUser,
         login,
@@ -60,7 +91,10 @@ export function AuthProvider({children}) {
         resetPassword,
         updateEmail,
         updatePassword,
-        facebookAuth
+        facebookAuth,
+
+        setPayment,
+        getPayment
     }
 
     useEffect(() => {

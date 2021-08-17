@@ -147,8 +147,15 @@
 
                             .confirmOrderButton {
                                 width: 100%;
-                                margin-top: 75px;
+                                margin-top: 45px;
                                 text-align: center;
+                            }
+
+                            .error {
+                                font-size: 1rem;
+                                color: $errorRed;
+                                text-align: center;
+                                margin-top: 25px;
                             }
                         }
                     }

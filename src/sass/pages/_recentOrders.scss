@@ -23,6 +23,16 @@
                 font-size: 1.15rem;
                 color: $lightGrey;
             }
+
+            .emptyOrders {
+                margin-top: 175px;
+
+                p {
+                    font-size: 1.55rem;
+                    font-weight: 700;
+                    color: $lightGrey;
+                }
+            }
         }
 
         .right {

@@ -24,7 +24,7 @@ const Payment = () => {
     const orderAddress = useSelector(state => state.order.address)
     const showOrder = useSelector(state => state.showOrder.showOrder)
     const dispatch = useDispatch()
-    const {currentUser} = useAuth()
+    const {currentUser, setPayment} = useAuth()
 
     const [totalOrder, setTotalOrder] = useState(0)
     const [totalQuantity, setTotalQuantity] = useState(0)
@@ -52,18 +52,7 @@ const Payment = () => {
             // paymentIntent = payment confirmation
         }).then(({paymentIntent}) => {
 
-            db
-                .collection('users')
-                .doc(currentUser?.uid)
-                .collection('orders')
-                .doc(paymentIntent.id)
-                .set({
-                    orderAddress: orderAddress,
-                    order: order,
-                    amount: paymentIntent.amount,
-                    created: paymentIntent.created,
-                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
-                })
+            setPayment(paymentIntent, orderAddress, order)
 
             setSucceeded(true)
             setError(null)
@@ -176,9 +165,9 @@ const Payment = () => {
                                         <CardElement onChange={handleChange} />
 
                                         <button
-                                            disabled={processing || disabled || succeeded}
+                                            disabled={processing || disabled || succeeded || error}
                                             // className='button buttonSecondary confirmOrderButton'
-                                            className={processing || disabled || succeeded ?
+                                            className={processing || disabled || succeeded || error ?
                                                 'button confirmOrderButton buttonDisabled' :
                                                 'button buttonSecondary confirmOrderButton'
                                             }
@@ -187,7 +176,7 @@ const Payment = () => {
                                         </button>
                                     </form>
 
-                                    {error && <div>{error}</div>}
+                                    {error && <div className='error'>{error}</div>}
                                 </div>
 
                             </div>
@@ -196,7 +185,7 @@ const Payment = () => {
 
                 </div>
             </div>
-        </div >
+        </div>
     )
 }
 

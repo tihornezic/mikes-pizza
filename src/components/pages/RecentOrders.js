@@ -1,27 +1,16 @@
 import {Link} from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import {useAuth} from '../../auth/authContext'
-import {db} from '../../firebase'
 import RecentOrder from '../utils/RecentOrder'
 import pizzaLogoDarkSmall from '../../img/pizzaLogoDarkSmall.svg'
 import pizzaEatingTogether from '../../img/pizzaEatingTogether.svg'
 
 const RecentOrders = () => {
-    const {currentUser} = useAuth()
+    const {currentUser, getPayment} = useAuth()
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
-        db
-            .collection('users')
-            .doc(currentUser.uid)
-            .collection('orders')
-            .orderBy('createdAt', 'desc')
-            .onSnapshot(snapshot => (
-                setOrders(snapshot.docs.map(doc => ({
-                    id: doc.id,
-                    data: doc.data()
-                })))
-            ))
+        getPayment(setOrders)
     }, [])
 
     return (
@@ -36,9 +25,15 @@ const RecentOrders = () => {
                         <h1>Recent Orders</h1>
                         <h2 style={{marginBottom: '50px'}}>{currentUser.email}</h2>
 
-                        {orders.map(item => (
-                            <RecentOrder key={item.id} item={item} />
-                        ))}
+                        {orders.length >= 1 ?
+                            orders.map(item => (
+                                <RecentOrder key={item.id} item={item} />
+                            ))
+                            :
+                            <div className='emptyOrders'>
+                                <p>You haven't ordered any pizza! You don't know what you are missing :)</p>
+                            </div>
+                        }
                     </div>
 
                     <div className='right'>

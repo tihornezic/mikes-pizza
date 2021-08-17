@@ -150,6 +150,7 @@ button {
   display: block;
   padding: 10px 0;
   font-size: 1.12rem;
+  border-radius: 5px;
 }
 .header ul li .account .dropdown a:hover {
   color: #366961;
@@ -998,8 +999,14 @@ button {
 }
 .payment .paymentContainer .mainRow .right .summaryCard .orderInfos .paymentDetails .confirmOrderButton {
   width: 100%;
-  margin-top: 75px;
+  margin-top: 45px;
   text-align: center;
+}
+.payment .paymentContainer .mainRow .right .summaryCard .orderInfos .paymentDetails .error {
+  font-size: 1rem;
+  color: #eb1c26;
+  text-align: center;
+  margin-top: 25px;
 }
 
 .addressModal {
@@ -1117,6 +1124,14 @@ button {
 }
 .recentOrders .recentOrdersContainer .left h2 {
   font-size: 1.15rem;
+  color: #bbbbbb;
+}
+.recentOrders .recentOrdersContainer .left .emptyOrders {
+  margin-top: 175px;
+}
+.recentOrders .recentOrdersContainer .left .emptyOrders p {
+  font-size: 1.55rem;
+  font-weight: 700;
   color: #bbbbbb;
 }
 .recentOrders .recentOrdersContainer .right {
