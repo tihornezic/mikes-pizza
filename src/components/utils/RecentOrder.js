@@ -49,7 +49,7 @@ const RecentOrder = ({item}) => {
 
                             <div className='infoRow'>
                                 <p className='label'>Price: </p>
-                                <p className='price total'>&nbsp;${order.price}</p>
+                                <p className='price total'>&nbsp;${(order.price).toFixed(2)}</p>
                             </div>
                         </div>
 
