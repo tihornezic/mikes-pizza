@@ -44,7 +44,11 @@ const RecentOrder = ({item}) => {
 
                             <div className='infoRow'>
                                 <p className='label'>Extras: </p>
-                                <p className='extras'>&nbsp;{order.extras}</p>
+                                {order.extras.length !== 0 ?
+                                    <p className='extras'>&nbsp;{order.extras}</p>
+                                    :
+                                    <p className='dash'>-</p>
+                                }
                             </div>
 
                             <div className='infoRow'>

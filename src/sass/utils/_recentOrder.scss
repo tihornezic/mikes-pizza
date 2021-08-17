@@ -6,8 +6,9 @@
     h3 {
         display: flex;
         align-items: center;
-        font-size: 1.35rem;
+        font-size: 1.75rem;
         margin-bottom: 5px;
+        color: $dark;
 
         span {
             color: $grey;
@@ -21,21 +22,23 @@
 
         .timestamp {
             font-weight: 600;
-            color: $grey;
+            color: $darkGrey;
+            font-size: 1.25rem;
         }
-
+        
         .address {
             color: $darkGrey;
             font-weight: 700;
+            font-size: 1.15rem;
         }
 
         .totalQuantity {
-            font-size: 1.15rem;
+            font-size: 1.35rem;
             font-weight: 700;
         }
         
         .totalPrice {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: $lightGreen;
         }
@@ -50,13 +53,21 @@
 
                 p {
                     &:nth-of-type(1) {
-                        color: $darkGrey;
+                        color: $dark;
                         font-weight: 600;
+                        font-size: 1.1rem;
                     }
 
                     &:nth-of-type(2) {
                         margin-left: 5px;
                         font-weight: 600;
+                        font-size: 1.1rem;
+                    }
+
+                    &:nth-of-type(3) {
+                        margin-left: 1px;
+                        font-weight: 600;
+                        font-size: 1.1rem;
                     }
                 }
             }
@@ -64,7 +75,7 @@
             .pizzaOrderInfo {
                 margin-left: 22px;
                 margin-bottom: 4px;
-                font-size: 0.9rem;
+                font-size: 1.1rem;
                 padding-top: 3px;
                 padding-bottom: 5px;
 
@@ -79,10 +90,10 @@
 
                     .price {
                         font-weight: 700;
-                        color: $copperCrayola;
+                        color: $lightGreen;
                         
                         &.total {
-                            font-size: 1.0025rem;
+                            font-size: 1.1rem;
                             color: $lightGreen;
                         }
                     }
@@ -90,12 +101,16 @@
                     .extras {
                         letter-spacing: 0.5px;
                     }
+
+                    .dash {
+                        font-weight: 700;
+                    }
                 }
             }
         }
     }
 
     &:last-of-type {
-        margin-bottom: 50px;
+        margin-bottom: 150px;
     }
 }

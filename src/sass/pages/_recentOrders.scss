@@ -1,22 +1,41 @@
 .recentOrders {
-
     .logo {
         margin-top: 15px;
     }
-    
+
     .recentOrdersContainer {
         max-width: 1050px;
         margin: 0 auto;
+        display: flex;
+        // align-items: center;
+        justify-content: space-between;
 
-        h1 {
-            font-size: 1.75rem;
-            color: $darkGrey;
-            margin-top: 40px;
+        .left {
+            width: 50%;
+
+            h1 {
+                font-size: 2.55rem;
+                color: $dark;
+                margin-top: 40px;
+            }
+
+            h2 {
+                font-size: 1.15rem;
+                color: $lightGrey;
+            }
         }
-        
-        h2 {
-            font-size: 1.35rem;
-            color: $darkGrey;
+
+        .right {
+            width: 50%;
+            margin-top: 100px;
+
+            margin-right: -50px;
+
+            img {
+                position: sticky;
+                top: 165px;
+                width: 660px;
+            }
         }
     }
 }

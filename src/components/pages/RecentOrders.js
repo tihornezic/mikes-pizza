@@ -4,6 +4,7 @@ import {useAuth} from '../../auth/authContext'
 import {db} from '../../firebase'
 import RecentOrder from '../utils/RecentOrder'
 import pizzaLogoDarkSmall from '../../img/pizzaLogoDarkSmall.svg'
+import pizzaEatingTogether from '../../img/pizzaEatingTogether.svg'
 
 const RecentOrders = () => {
     const {currentUser} = useAuth()
@@ -23,12 +24,6 @@ const RecentOrders = () => {
             ))
     }, [])
 
-    useEffect(() => {
-        console.log(orders)
-        console.log(orders[0]?.data.created)
-
-    }, [orders])
-
     return (
         <div className='recentOrders'>
             <div className='container'>
@@ -37,30 +32,23 @@ const RecentOrders = () => {
                 </Link>
 
                 <div className='recentOrdersContainer'>
-                    <h1>Recent Orders</h1>
-                    <h2 style={{marginBottom: '70px'}}>{currentUser.email}</h2>
+                    <div className='left'>
+                        <h1>Recent Orders</h1>
+                        <h2 style={{marginBottom: '50px'}}>{currentUser.email}</h2>
 
-                    {orders.map(item => (
-                        // <div key={index} style={{marginBottom: '40px'}}>
-                        //     {/* <p>{date}</p> */}
-                        //     <p>{generateTimeStamp(item)}</p>
-                        //     <p>{item.id}</p>
-                        //     <p>{item.data.orderAddress.city}</p>
-                        //     <p>{item.data.orderAddress.address}</p>
-                        //     <p>${(item.data.amount / 100).toFixed(2)}</p>
-                        //     {item.data.order.map((order) => (
-                        //         <>
-                        //             <p>{order.name}</p>
-                        //             <p>{order.quantity}</p>
-                        //             <p>{order.extras}</p>
-                        //         </>
-                        //     ))}
-                        // </div>
+                        {orders.map(item => (
+                            <RecentOrder key={item.id} item={item} />
+                        ))}
+                    </div>
 
-                        <RecentOrder key={item.id} item={item} />
-                    ))}
+                    <div className='right'>
+                        <img src={pizzaEatingTogether} alt='Pizza eating together' />
+                    </div>
                 </div>
 
+                <div>
+                    <h1>Footer</h1>
+                </div>
 
             </div>
         </div>
