@@ -7,10 +7,12 @@ import Order from '../utils/Order'
 import CustomizeOrderModal from '../utils/CustomizeOrderModal'
 import RegisterModal from '../utils/RegisterModal'
 import BackgroundOverlay from '../utils/BackgroundOverlay'
+import AddressModal from '../utils/AddressModal'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 import {useState, useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {setToggleOrder} from '../../redux/actions/orderActions'
+import {hideOrder} from '../../redux/actions/orderActions'
 
 const Home = () => {
     const showOrder = useSelector(state => state.showOrder.showOrder)
@@ -23,6 +25,10 @@ const Home = () => {
         console.log(order)
         setShake(true)
     }, [order])
+
+    // useEffect(() => {
+    //     dispatch(hideOrder(false))
+    // }, [])
 
     const toggleBodyOverflowHidden = () => {
         document.body.classList.toggle('overflow')
@@ -50,6 +56,7 @@ const Home = () => {
 
             <CustomizeOrderModal />
             <RegisterModal />
+            <AddressModal />
 
             <Menu />
             <Quote />

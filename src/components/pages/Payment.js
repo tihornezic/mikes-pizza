@@ -6,18 +6,22 @@ import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js'
 import {getOrderTotal} from '../../redux/reducers/orderReducer'
 import {getOrderQuantity} from '../../redux/reducers/orderReducer'
 import {annulOrder} from '../../redux/actions/orderActions'
+import {annulAddress} from '../../redux/actions/orderActions'
 import {setToggleOrder} from '../../redux/actions/orderActions'
+import {hideOrder} from '../../redux/actions/orderActions'
 import {db} from '../../firebase'
 import axios from '../../axios'
 import OrderItem from '../utils/OrderItem'
 import pizzaLogoGreenSmall from '../../img/pizzaLogoGreenSmall.svg'
 import ArrowBackOutlinedIcon from '@material-ui/icons/ArrowBackOutlined'
 import pizzaMaster from '../../img/pizzaMaster.svg'
+import firebase from 'firebase/app'
 
 const Payment = () => {
     const history = useHistory()
 
     const order = useSelector(state => state.order.order)
+    const orderAddress = useSelector(state => state.order.address)
     const showOrder = useSelector(state => state.showOrder.showOrder)
     const dispatch = useDispatch()
     const {currentUser} = useAuth()
@@ -54,9 +58,11 @@ const Payment = () => {
                 .collection('orders')
                 .doc(paymentIntent.id)
                 .set({
+                    orderAddress: orderAddress,
                     order: order,
                     amount: paymentIntent.amount,
-                    created: paymentIntent.created
+                    created: paymentIntent.created,
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
                 })
 
             setSucceeded(true)
@@ -64,7 +70,8 @@ const Payment = () => {
             setProcessing(false)
 
             dispatch(annulOrder())
-            dispatch(setToggleOrder(showOrder))
+            dispatch(annulAddress())
+            dispatch(hideOrder(false))
 
             history.replace('/recent-orders')
         })
@@ -87,7 +94,7 @@ const Payment = () => {
             const response = await axios({
                 method: 'post',
                 // stripe expects the total in a currencies subunits
-                url: `/payments/create?total=${getOrderTotal(order) * 100}`
+                url: `/payments/create?total=${(getOrderTotal(order) * 100).toFixed(0)}`
             })
             setClientSecret(response.data.clientSecret)
         }
@@ -115,10 +122,10 @@ const Payment = () => {
                 <div className='mainRow'>
                     <div className='left'>
                         <div className='address'>
-                            <h2>Delivery Information</h2>
+                            <h2>Customer Information</h2>
                             <p>{currentUser.email}</p>
-                            <p>123 React Lane</p>
-                            <p>Los Angeles, CA</p>
+                            <p>{orderAddress.city}</p>
+                            <p>{orderAddress.address}</p>
                         </div>
 
                         <div className='orderContent'>
@@ -157,9 +164,8 @@ const Payment = () => {
 
                                 <div className='addressDetails'>
                                     <h2>Delivery Information</h2>
-                                    <p>{currentUser.email}</p>
-                                    <p>123 React Lane</p>
-                                    <p>Los Angeles, CA</p>
+                                    <p>{orderAddress.city}</p>
+                                    <p>{orderAddress.address}</p>
                                 </div>
 
 

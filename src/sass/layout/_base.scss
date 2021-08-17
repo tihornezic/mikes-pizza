@@ -83,3 +83,53 @@ button {
         pointer-events: all;
     }
 }
+
+// .inputGroup {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     position: relative;
+//     margin-top: 20px;
+//     margin-bottom: 70px;
+
+//     svg {
+//         position: absolute;
+//         left: 1px;
+//         font-size: 2.35rem;
+//         color: $darkGrey;
+//     }
+
+//     label {
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         margin-left: 48px;
+//         transition: all 0.3s ease;
+//         color: $grey;
+//         font-size: 1.3rem;
+//         z-index: 45;
+
+//         &.active {
+//             top: -25px;
+//             font-size: 1rem;
+//             color: $dark;
+//         }
+//     }
+
+//     input {
+//         position: relative;
+//         font-family: $neuton;
+//         background-color: transparent;
+//         outline: none;
+//         border: none;
+//         border-bottom: 1px solid $lightGrey;
+//         width: 80%;
+//         font-size: 1.2rem;
+//         padding-bottom: 8px;
+//         z-index: 50;
+
+//         &.active {
+//             border-bottom: 1px solid $darkGrey;
+//         }
+//     }
+// }

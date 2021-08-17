@@ -71,7 +71,6 @@ const Header = () => {
                                     }
                                 </div>
                                 <Link to='recent-orders'>Recent orders</Link>
-                                <Link to='profile'>Profile</Link>
                                 <Link to='/' onClick={handleLogout}>Log out</Link>
                             </div>
                         </div>

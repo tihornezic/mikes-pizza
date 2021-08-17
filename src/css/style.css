@@ -133,12 +133,12 @@ button {
   border-radius: 5px;
   background-color: #DFDFDF;
   width: 185px;
-  height: 240px;
+  height: fit-content;
   text-align: center;
 }
 .header ul li .account .dropdown .helloUser {
   font-size: 1.25rem;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   margin-top: 20px;
 }
 .header ul li .account .dropdown .helloUser span {
@@ -1000,6 +1000,199 @@ button {
   width: 100%;
   margin-top: 75px;
   text-align: center;
+}
+
+.addressModal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.15s ease;
+  background-color: #DFDFDF;
+  border-radius: 10px;
+  width: 880px;
+  height: 70%;
+  padding: 40px 55px;
+  z-index: 30;
+  pointer-events: none;
+  opacity: 0;
+}
+.addressModal .close {
+  position: absolute;
+  color: #494949;
+  font-size: 1.9rem;
+  top: 12px;
+  right: 10px;
+  cursor: pointer;
+  z-index: 35;
+}
+.addressModal.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.addressModal h1 {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.addressModal .mainRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 80%;
+}
+.addressModal .mainRow form {
+  width: 70%;
+  text-align: center;
+}
+.addressModal .mainRow form .inputGroup {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 70px;
+}
+.addressModal .mainRow form .inputGroup svg {
+  font-size: 2.35rem;
+  color: #494949;
+}
+.addressModal .mainRow form .inputGroup label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 48px;
+  transition: all 0.3s ease;
+  color: #6e6e6e;
+  font-size: 1.3rem;
+  z-index: 45;
+}
+.addressModal .mainRow form .inputGroup label.active {
+  top: -25px;
+  font-size: 1rem;
+  color: #1d1d1d;
+}
+.addressModal .mainRow form .inputGroup input {
+  position: relative;
+  font-family: "Neuton", serif;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #bbbbbb;
+  width: 80%;
+  font-size: 1.2rem;
+  padding-bottom: 8px;
+  z-index: 50;
+  margin-left: 8px;
+}
+.addressModal .mainRow form .inputGroup input.active {
+  border-bottom: 1px solid #494949;
+}
+.addressModal .mainRow img {
+  width: 300px;
+}
+.addressModal button {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, -50%);
+}
+
+.recentOrders .logo {
+  margin-top: 15px;
+}
+.recentOrders .recentOrdersContainer {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+.recentOrders .recentOrdersContainer h1 {
+  font-size: 1.75rem;
+  color: #494949;
+  margin-top: 40px;
+}
+.recentOrders .recentOrdersContainer h2 {
+  font-size: 1.35rem;
+  color: #494949;
+}
+
+.recentOrder {
+  margin-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #c7c7c7;
+}
+.recentOrder h3 {
+  display: flex;
+  align-items: center;
+  font-size: 1.35rem;
+  margin-bottom: 5px;
+}
+.recentOrder h3 span {
+  color: #6e6e6e;
+  font-size: 1rem;
+  margin-left: 10px;
+}
+.recentOrder .infoGroup {
+  margin: 15px 0;
+}
+.recentOrder .infoGroup .timestamp {
+  font-weight: 600;
+  color: #6e6e6e;
+}
+.recentOrder .infoGroup .address {
+  color: #494949;
+  font-weight: 700;
+}
+.recentOrder .infoGroup .totalQuantity {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.recentOrder .infoGroup .totalPrice {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #366961;
+}
+.recentOrder .infoGroup.adjustedMargins {
+  margin: 2px 0;
+}
+.recentOrder .infoGroup .pizzaInfo .pizzaInfoRow {
+  display: flex;
+}
+.recentOrder .infoGroup .pizzaInfo .pizzaInfoRow p:nth-of-type(1) {
+  color: #494949;
+  font-weight: 600;
+}
+.recentOrder .infoGroup .pizzaInfo .pizzaInfoRow p:nth-of-type(2) {
+  margin-left: 5px;
+  font-weight: 600;
+}
+.recentOrder .infoGroup .pizzaInfo .pizzaOrderInfo {
+  margin-left: 22px;
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+  padding-top: 3px;
+  padding-bottom: 5px;
+}
+.recentOrder .infoGroup .pizzaInfo .pizzaOrderInfo .infoRow {
+  display: flex;
+}
+.recentOrder .infoGroup .pizzaInfo .pizzaOrderInfo .infoRow .label {
+  color: #6e6e6e;
+  font-weight: 600;
+  margin-right: 3px;
+}
+.recentOrder .infoGroup .pizzaInfo .pizzaOrderInfo .infoRow .price {
+  font-weight: 700;
+  color: #C57B57;
+}
+.recentOrder .infoGroup .pizzaInfo .pizzaOrderInfo .infoRow .price.total {
+  font-size: 1.0025rem;
+  color: #366961;
+}
+.recentOrder .infoGroup .pizzaInfo .pizzaOrderInfo .infoRow .extras {
+  letter-spacing: 0.5px;
+}
+.recentOrder:last-of-type {
+  margin-bottom: 50px;
 }
 
 footer .darkBackground {

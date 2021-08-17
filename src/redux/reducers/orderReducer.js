@@ -1,7 +1,8 @@
 import {ActionTypes} from "../constants/actionTypes";
 
 const initialState = {
-    order: []
+    order: [],
+    address: {}
 }
 
 export const getOrderTotal = (order) =>
@@ -37,6 +38,17 @@ export const orderReducer = (state = initialState, action) => {
             return {
                 ...state, order: []
             }
+
+        case ActionTypes.SET_ADDRESS:
+            return {
+                ...state, address: action.payload
+            }
+
+        case ActionTypes.ANNUL_ADDRESS: {
+            return {
+                ...state, address: {}
+            }
+        }
 
         default:
             return state

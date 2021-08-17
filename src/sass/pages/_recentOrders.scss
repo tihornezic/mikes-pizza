@@ -1,0 +1,22 @@
+.recentOrders {
+
+    .logo {
+        margin-top: 15px;
+    }
+    
+    .recentOrdersContainer {
+        max-width: 1050px;
+        margin: 0 auto;
+
+        h1 {
+            font-size: 1.75rem;
+            color: $darkGrey;
+            margin-top: 40px;
+        }
+        
+        h2 {
+            font-size: 1.35rem;
+            color: $darkGrey;
+        }
+    }
+}

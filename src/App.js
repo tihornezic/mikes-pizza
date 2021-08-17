@@ -1,3 +1,4 @@
+import Header from './components/layout/Header'
 import Home from './components/pages/Home'
 import Payment from './components/pages/Payment'
 import RecentOrders from './components/pages/RecentOrders'
@@ -32,6 +33,7 @@ function App() {
           </Route>
 
           <Route path='/recent-orders'>
+            {/* <Header /> */}
             <RecentOrders />
           </Route>
 
