@@ -1,17 +1,27 @@
-import {Link} from 'react-router-dom'
+import {Link, useHistory, useLocation} from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import {useAuth} from '../../auth/authContext'
 import RecentOrder from '../utils/RecentOrder'
 import pizzaLogoDarkSmall from '../../img/pizzaLogoDarkSmall.svg'
 import pizzaEatingTogether from '../../img/pizzaEatingTogether.svg'
+import CloseIcon from '@material-ui/icons/Close'
 
 const RecentOrders = () => {
     const {currentUser, getPayment} = useAuth()
     const [orders, setOrders] = useState([])
 
+    const [message, setMessage] = useState('')
+    const [showMessage, setShowMessage] = useState(true)
+
+    const location = useLocation()
+
     useEffect(() => {
         getPayment(setOrders)
     }, [])
+
+    useEffect(() => {
+        setMessage(location.state?.message)
+    }, [location])
 
     return (
         <div className='recentOrders'>
@@ -19,6 +29,15 @@ const RecentOrders = () => {
                 <Link to='/'>
                     <img className='logo' src={pizzaLogoDarkSmall} alt='Pizza logo white' />
                 </Link>
+
+                {message && showMessage ?
+                    <div className='message'>
+                        {message}
+                        <CloseIcon onClick={() => {setShowMessage(false); setMessage('')}} />
+                    </div>
+                    :
+                    null
+                }
 
                 <div className='recentOrdersContainer'>
                     <div className='left'>

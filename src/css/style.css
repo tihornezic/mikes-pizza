@@ -1108,6 +1108,21 @@ button {
 .recentOrders .logo {
   margin-top: 15px;
 }
+.recentOrders .message {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1050px;
+  margin: 0 auto;
+  background-color: #366961;
+  color: #DFDFDF;
+  padding: 20px 27px;
+  border-radius: 10px;
+  font-size: 1.12rem;
+}
+.recentOrders .message svg {
+  cursor: pointer;
+}
 .recentOrders .recentOrdersContainer {
   max-width: 1050px;
   margin: 0 auto;
@@ -1236,6 +1251,71 @@ button {
 }
 .recentOrder:last-of-type {
   margin-bottom: 150px;
+}
+
+.customSpinner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.customSpinner.noDisplay {
+  display: none;
+}
+.customSpinner .lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.customSpinner .lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #bbbbbb;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.customSpinner .lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.customSpinner .lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.customSpinner .lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.customSpinner .lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
 }
 
 footer .darkBackground {

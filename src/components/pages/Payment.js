@@ -15,6 +15,7 @@ import OrderItem from '../utils/OrderItem'
 import pizzaLogoGreenSmall from '../../img/pizzaLogoGreenSmall.svg'
 import ArrowBackOutlinedIcon from '@material-ui/icons/ArrowBackOutlined'
 import pizzaMaster from '../../img/pizzaMaster.svg'
+import CustomSpinner from '../utils/CustomSpinner'
 import firebase from 'firebase/app'
 
 const Payment = () => {
@@ -39,6 +40,8 @@ const Payment = () => {
 
     const [clientSecret, setClientSecret] = useState(true)
 
+    const [isSpinning, setIsSpinning] = useState(true)
+
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -62,7 +65,20 @@ const Payment = () => {
             dispatch(annulAddress())
             dispatch(hideOrder(false))
 
-            history.replace('/recent-orders')
+            // history.push({
+            //     pathname: '/login',
+            //     state: {message: 'Login to be able to add your Movies and Tv Series to watchlist/watchedlist.'}
+            // })
+
+            history.replace({
+                pathname: '/recent-orders',
+                state: {message: "Your order has been placed! Thank you for ordering Mike's Pizza! Bon Appétit."}
+            })
+
+            // history.replace({
+            //     pathname: '/recent-orders',
+            //     state: {message: "Your order has been placed! Thank you for ordering Mike's Pizza! Bon Appétit."}
+            // })
         })
     }
 
@@ -94,97 +110,112 @@ const Payment = () => {
 
     // console.log('the secret is', clientSecret)
 
+    useEffect(() => {
+        setTimeout(() => {
+            setIsSpinning(false)
+        }, 1550)
+    }, [])
+
     return (
         <div className='payment'>
-            <div className='container'>
-                <Link to='/'>
-                    <img className='logo' src={pizzaLogoGreenSmall} alt='Pizza logo green' />
-                </Link>
-            </div>
+            <CustomSpinner isSpinning={isSpinning} />
 
-            <div className='paymentContainer'>
-                <div className='heading'>
-                    <ArrowBackOutlinedIcon onClick={() => history.goBack()} />
-                    <h1>Order Summary</h1>
-                </div>
-
-                <div className='mainRow'>
-                    <div className='left'>
-                        <div className='address'>
-                            <h2>Customer Information</h2>
-                            <p>{currentUser.email}</p>
-                            <p>{orderAddress.city}</p>
-                            <p>{orderAddress.address}</p>
-                        </div>
-
-                        <div className='orderContent'>
-                            <h2>
-                                <span style={{fontWeight: '700'}}>{totalQuantity}</span> Mike's pizzas
-                            </h2>
-
-                            {order.map((item, index) => (
-                                <OrderItem key={index} item={item} />
-                            ))}
-                        </div>
+            {isSpinning ? null :
+                <>
+                    <div className='container'>
+                        <Link to='/'>
+                            <img className='logo' src={pizzaLogoGreenSmall} alt='Pizza logo green' />
+                        </Link>
                     </div>
 
-                    <div className='right'>
-                        <div className='summaryCard'>
-                            <div className='headingRow'>
-                                <h2>Summary</h2>
-                                <img src={pizzaMaster} alt='Pizza eating' />
-                            </div>
+                    <div className='paymentContainer'>
+                        <div className='heading'>
+                            <ArrowBackOutlinedIcon onClick={() => history.goBack()} />
+                            <h1>Order Summary</h1>
 
-                            <div className='orderInfos'>
-                                <div className='infoRow'>
-                                    <span>Pizzas</span>
-                                    <span>${totalOrder.toFixed(2)}</span>
-                                </div>
+                        </div>
 
-                                <div className='infoRow'>
-                                    <span>Delivery</span>
-                                    <span>FREE</span>
-                                </div>
-
-                                <div className='infoRow'>
-                                    <span className='total'>TOTAL</span>
-                                    <span className='total'>${totalOrder.toFixed(2)}</span>
-                                </div>
-
-                                <div className='addressDetails'>
-                                    <h2>Delivery Information</h2>
+                        <div className='mainRow'>
+                            <div className='left'>
+                                <div className='address'>
+                                    <h2>Customer Information</h2>
+                                    <p>{currentUser.email}</p>
                                     <p>{orderAddress.city}</p>
                                     <p>{orderAddress.address}</p>
                                 </div>
 
+                                <div className='orderContent'>
+                                    <h2>
+                                        <span style={{fontWeight: '700'}}>{totalQuantity}</span> Mike's pizzas
+                            </h2>
 
-                                <div className='paymentDetails'>
-                                    <h2>Payment Method</h2>
-
-                                    <form onSubmit={handleSubmit}>
-                                        <CardElement onChange={handleChange} />
-
-                                        <button
-                                            disabled={processing || disabled || succeeded || error}
-                                            // className='button buttonSecondary confirmOrderButton'
-                                            className={processing || disabled || succeeded || error ?
-                                                'button confirmOrderButton buttonDisabled' :
-                                                'button buttonSecondary confirmOrderButton'
-                                            }
-                                        >
-                                            <span>{processing ? <p>Processing</p> : 'Confirm the Order'}</span>
-                                        </button>
-                                    </form>
-
-                                    {error && <div className='error'>{error}</div>}
+                                    {order.map((item, index) => (
+                                        <OrderItem key={index} item={item} />
+                                    ))}
                                 </div>
-
                             </div>
+
+                            <div className='right'>
+                                <div className='summaryCard'>
+                                    <div className='headingRow'>
+                                        <h2>Summary</h2>
+                                        <img src={pizzaMaster} alt='Pizza eating' />
+                                    </div>
+
+                                    <div className='orderInfos'>
+                                        <div className='infoRow'>
+                                            <span>Pizzas</span>
+                                            <span>${totalOrder.toFixed(2)}</span>
+                                        </div>
+
+                                        <div className='infoRow'>
+                                            <span>Delivery</span>
+                                            <span>FREE</span>
+                                        </div>
+
+                                        <div className='infoRow'>
+                                            <span className='total'>TOTAL</span>
+                                            <span className='total'>${totalOrder.toFixed(2)}</span>
+                                        </div>
+
+                                        <div className='addressDetails'>
+                                            <h2>Delivery Information</h2>
+                                            <p>{orderAddress.city}</p>
+                                            <p>{orderAddress.address}</p>
+                                        </div>
+
+
+                                        <div className='paymentDetails'>
+                                            <h2>Payment Method</h2>
+
+                                            <form onSubmit={handleSubmit}>
+                                                <CardElement onChange={handleChange} />
+
+                                                <button
+                                                    disabled={processing || disabled || succeeded || error}
+                                                    // className='button buttonSecondary confirmOrderButton'
+                                                    className={processing || disabled || succeeded || error ?
+                                                        'button confirmOrderButton buttonDisabled' :
+                                                        'button buttonSecondary confirmOrderButton'
+                                                    }
+                                                >
+                                                    <span>{processing ? <p>Processing</p> : 'Confirm the Order'}</span>
+                                                </button>
+                                            </form>
+
+                                            {error && <div className='error'>{error}</div>}
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
+                </>
+            }
 
-                </div>
-            </div>
+
         </div>
     )
 }
