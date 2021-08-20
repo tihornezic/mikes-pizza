@@ -13,7 +13,7 @@ const PizzaCard = ({pizza}) => {
     return (
         <div className='pizzaCard' onClick={() => {dispatch(setToggleCustomizeOrderModal(showCustomizeOrderModal)); dispatch(getPizza(pizza))}}>
             <div className='top'>
-                <img src={pizza.image} alt={pizza.name} width='235px' />
+                <img src={pizza.image} alt={pizza.name} />
             </div>
             <h3>{pizza.name}</h3>
 

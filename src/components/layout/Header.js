@@ -16,6 +16,8 @@ const Header = () => {
     const [userInfo, setUserInfo] = useState([])
     const [error, setError] = useState('')
 
+    const [openHamburger, setOpenHamburger] = useState(false)
+    const [slideMenu, setSlideMenu] = useState(false)
 
     async function handleLogout() {
         setError('')
@@ -82,6 +84,17 @@ const Header = () => {
                     <a id='not' href='#menu' className='button buttonPrimary'>See Menu</a>
                 </li>
             </ul>
+
+            <div className='hamburger' onClick={() => {setOpenHamburger(prev => !prev); setSlideMenu(prev => !prev);}}>
+                <div className={openHamburger ? 'open' : 'close'}></div>
+                <div className={openHamburger ? 'open' : 'close'}></div>
+                <div className={openHamburger ? 'open' : 'close'}></div>
+            </div>
+
+            <div className={slideMenu ? 'slideMenu slideMenuOpen' : 'slideMenu'}>
+                
+            </div>
+
         </div>
     )
 }

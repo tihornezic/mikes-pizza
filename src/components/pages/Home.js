@@ -59,8 +59,8 @@ const Home = () => {
             <AddressModal />
 
             <Menu />
-            <Quote />
-            <Badges />
+            {/* <Quote /> */}
+            {/* <Badges /> */}
 
         </div>
     )
