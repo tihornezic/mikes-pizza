@@ -108,7 +108,13 @@ button {
 @media (max-width: 1790px) {
   .header ul li a.button {
     padding: 8px 35px;
-    margin-left: 30px;
+    margin-left: 6px;
+  }
+}
+@media (max-width: 1590px) {
+  .header ul li a.button {
+    font-size: 1.05rem;
+    margin-left: 0px;
   }
 }
 .header ul li a:hover:not(#not) {
@@ -160,10 +166,22 @@ button {
   opacity: 1;
   visibility: visible;
 }
+@media (max-width: 1590px) {
+  .header ul li {
+    font-size: 1.05rem;
+    padding-left: 50px;
+  }
+}
 @media (max-width: 1790px) {
   .header {
     right: 50px;
-    top: 35px;
+    top: 45px;
+  }
+}
+@media (max-width: 1510px) {
+  .header {
+    right: 50px;
+    top: 45px;
   }
 }
 

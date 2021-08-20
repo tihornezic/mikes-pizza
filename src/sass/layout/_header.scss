@@ -24,7 +24,12 @@
 
                     @media (max-width: 1790px) {
                         padding: 8px 35px;
-                        margin-left: 30px;
+                        margin-left: 6px;
+                    }
+                    
+                    @media (max-width: 1590px) {
+                        font-size: 1.05rem;
+                        margin-left: 0px;
                     }
                 }
 
@@ -35,7 +40,7 @@
 
             .account {
                 position: relative;
-                
+
                 .fakeLink {
                     transition: all 0.2s ease;
                     cursor: pointer;
@@ -44,7 +49,7 @@
                         color: $copperCrayola;
                     }
                 }
-                
+
                 .dropdown {
                     position: absolute;
                     opacity: 0;
@@ -58,18 +63,18 @@
                     height: fit-content;
                     text-align: center;
                     // padding: 20px 10px;
-                    
+
                     .helloUser {
                         font-size: 1.25rem;
                         margin-bottom: 10px;
                         margin-top: 20px;
-                        
+
                         span {
                             color: $copperCrayola;
                             font-size: 1.15rem;
                         }
                     }
-                    
+
                     a {
                         cursor: pointer;
                         display: block;
@@ -90,11 +95,21 @@
                     visibility: visible;
                 }
             }
+
+            @media (max-width: 1590px) {
+                font-size: 1.05rem;
+                padding-left: 50px;
+            }
         }
     }
 
     @media (max-width: 1790px) {
         right: 50px;
-        top: 35px;
+        top: 45px;
+    }
+
+    @media (max-width: 1510px) {
+        right: 50px;
+        top: 45px;
     }
 }
