@@ -35,6 +35,7 @@ function App() {
           <Route path='/recent-orders'>
             {/* <Header /> */}
             <RecentOrders />
+            <Footer />
           </Route>
 
         </Switch>

@@ -1,11 +1,15 @@
 import darkBackground from '../../img/darkBackground.svg'
 import pizzaLogoWhiteSmall from '../../img/pizzaLogoWhiteSmall.svg'
 import facebook from '../../img/facebook.svg'
+import footerWave from '../../img/footerWave.svg'
 import {Link} from 'react-router-dom'
 
 const Footer = () => {
     return (
         <footer>
+            <div className='footerWave'>
+                <img src={footerWave} />
+            </div>
             <div className='darkBackground'>
                 <div className='container infoRow'>
                     <img src={pizzaLogoWhiteSmall} alt='Pizza logo white' />

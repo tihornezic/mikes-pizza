@@ -385,17 +385,30 @@ button {
 .badges {
   position: relative;
   height: 800px;
-  background: url("../img/gradientBackground.svg");
+  background: url("../img/gradientBackground2.svg");
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 2;
   margin-top: 150px;
+  margin-bottom: -70px;
+}
+.badges .badgesWave {
+  width: 100%;
+  position: relative;
+  z-index: 40;
+}
+.badges .badgesWave img {
+  position: absolute;
+  width: 100%;
+  top: -90px;
+  transform: scale(-1, -1);
 }
 .badges .badgesRow {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 12%;
+  height: 100%;
+  width: 100%;
 }
 .badges .badgesRow .badgesItem {
   text-align: center;
@@ -1105,6 +1118,9 @@ button {
   transform: translate(-50%, -50%);
 }
 
+.recentOrders {
+  margin-bottom: 120px;
+}
 .recentOrders .logo {
   margin-top: 15px;
 }
@@ -1115,7 +1131,7 @@ button {
   max-width: 1050px;
   margin: 0 auto;
   background-color: #366961;
-  color: #DFDFDF;
+  color: #ffffff;
   padding: 20px 27px;
   border-radius: 10px;
   font-size: 1.12rem;
@@ -1156,7 +1172,7 @@ button {
 }
 .recentOrders .recentOrdersContainer .right img {
   position: sticky;
-  top: 165px;
+  top: 85px;
   width: 660px;
 }
 
@@ -1318,13 +1334,27 @@ button {
   }
 }
 
+footer {
+  position: relative;
+  z-index: 50;
+}
+footer .footerWave {
+  width: 100%;
+  height: 68px;
+  position: relative;
+  display: flex;
+}
+footer .footerWave img {
+  position: absolute;
+  width: 100%;
+  bottom: -3px;
+  left: -5px;
+}
 footer .darkBackground {
   background-color: #1d1d1d;
   width: 100% !important;
-  height: 400px;
+  height: 300px;
   position: relative;
-  z-index: 1;
-  margin-top: -160px;
 }
 footer .darkBackground .infoRow {
   display: flex;
@@ -1332,7 +1362,7 @@ footer .darkBackground .infoRow {
   justify-content: space-between;
   position: relative;
   z-index: 5;
-  padding-top: 200px;
+  padding-top: 70px;
 }
 footer .darkBackground .infoRow .infoItem ul {
   display: flex;

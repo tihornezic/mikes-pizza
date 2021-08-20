@@ -1,4 +1,6 @@
 .recentOrders {
+    margin-bottom: 120px;
+
     .logo {
         margin-top: 15px;
     }
@@ -18,7 +20,7 @@
         max-width: 1050px;
         margin: 0 auto;
         background-color: $lightGreen;
-        color: $creamWhite;
+        color: $white;
         padding: 20px 27px;
         border-radius: 10px;
         font-size: 1.12rem;
@@ -69,7 +71,8 @@
 
             img {
                 position: sticky;
-                top: 165px;
+                top: 85px;
+                // bottom: 200px;
                 width: 660px;
             }
         }

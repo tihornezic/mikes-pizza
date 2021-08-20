@@ -1,18 +1,37 @@
 .badges {
     position: relative;
-
     height: 800px;
-    background: url("../img/gradientBackground.svg");
+    background: url("../img/gradientBackground2.svg");
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 2;
     margin-top: 150px;
+    margin-bottom: -70px;
+
+    .badgesWave {
+        width: 100%;
+        // height: 214px;
+        position: relative;
+        z-index: 40;
+
+        img {
+            position: absolute;
+            width: 100%;
+            top: -90px;
+            transform: scale(-1, -1);
+            // object-fit: cover;
+            // bottom: -3px;
+            // left: -5px;
+        }
+    }
 
     .badgesRow {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-top: 12%;
+        // padding-top: 12%;
+        height: 100%;
+        width: 100%;
 
         .badgesItem {
             text-align: center;
