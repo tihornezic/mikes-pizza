@@ -22,7 +22,7 @@ function App() {
 
           <Route exact path='/'>
             <Home />
-            {/* <Footer /> */}
+            <Footer />
           </Route>
 
           <Route path='/payment'>

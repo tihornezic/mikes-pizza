@@ -20,10 +20,18 @@
         height: 290px;
         border-radius: 20px;
         z-index: 2;
-        
+
         // @media (max-width: 1000px) {
         //     height: 590px;
         // }
+
+        @media (max-width: 580px) {
+            height: 240px;
+        }
+
+        @media (max-width: 460px) {
+            height: 180px;
+        }
     }
 
     img {
@@ -38,6 +46,16 @@
         @media (max-width: 1000px) {
             width: 235px;
         }
+
+        @media (max-width: 580px) {
+            width: 180px;
+            top: 60px;
+        }
+
+        @media (max-width: 460px) {
+            width: 130px;
+            top: 50px;
+        }
     }
 
     h3 {
@@ -51,6 +69,15 @@
         font-size: 1.5rem;
         width: 310px;
         text-align: center;
+
+        @media (max-width: 580px) {
+            font-size: 1.3rem;
+        }
+
+        @media (max-width: 460px) {
+            font-size: 1rem;
+            top: 65%;
+        }
     }
 
     .price {
@@ -63,6 +90,11 @@
         font-size: 1.02rem;
         width: 310px;
         text-align: center;
+
+        @media (max-width: 460px) {
+            font-size: 0.9rem;
+            top: 71%;
+        }
     }
 
     .description {
@@ -75,13 +107,23 @@
         font-size: 1.25rem;
         width: 310px;
         text-align: center;
-        
+
         @media (max-width: 1000px) {
             font-size: 1.1rem;
         }
-        
+
         @media (max-width: 910px) {
             font-size: 1.25rem;
+        }
+
+        @media (max-width: 580px) {
+            font-size: 1.1rem;
+            // top: 60%;
+            max-width: 220px;
+        }
+
+        @media (max-width: 460px) {
+            display: none;
         }
     }
 
@@ -92,6 +134,10 @@
         bottom: 10px;
         right: 3%;
         color: $lightGreen;
+
+        @media (max-width: 460px) {
+            display: none;
+        }
     }
 
     &:hover {
@@ -121,5 +167,17 @@
 
     @media (max-width: 830px) {
         width: 65%;
+    }
+
+    @media (max-width: 580px) {
+        height: 540px;
+    }
+
+    @media (max-width: 460px) {
+        height: 400px;
+    }
+
+    @media (max-width: 400px) {
+        width: 79%;
     }
 }

@@ -5,10 +5,43 @@
     flex-direction: column;
     margin-top: 150px;
 
+    img {
+        width: 650px;
+
+        @media (max-width: 1000px) {
+            width: 450px;
+        }
+
+        @media (max-width: 655px) {
+            width: 300px;
+        }
+
+        @media (max-width: 460px) {
+            width: 220px;
+        }
+    }
+
     p {
         font-size: 1.5rem;
         margin-top: -25px;
         font-weight: 600;
         color: $darkGreen;
+        text-align: center;
+
+        @media (max-width: 1000px) {
+            max-width: 450px;
+        }
+
+        @media (max-width: 655px) {
+            font-size: 1.2rem;
+            margin-top: 1px;
+            max-width: 320px;
+        }
+        
+        @media (max-width: 460px) {
+            margin: 0;
+            font-size: 0.9rem;
+            max-width: 270px;
+        }
     }
 }

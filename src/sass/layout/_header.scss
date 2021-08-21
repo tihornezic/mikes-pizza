@@ -121,25 +121,28 @@
         position: absolute;
         top: 10px;
         right: 20px;
-        width: 2rem;
-        height: 2rem;
+        width: 1.8rem;
+        height: 1.8rem;
         justify-content: space-around;
         flex-flow: column nowrap;
         z-index: 71;
         display: none;
 
         div {
-            width: 2rem;
+            width: 1.8rem;
             height: 0.12rem;
             background-color: $darkGrey;
             border-radius: 10px;
             transform-origin: 1px;
             transition: all 0.2s linear;
 
-            @media (max-width: 386px) {
+            @media (max-width: 477px) {
                 width: 1.6rem;
-                z-index: 71;
             }
+
+            // @media (max-width: 386px) {
+            //     width: 1.6rem;
+            // }
         }
 
         div.close:nth-child(1) {
@@ -174,7 +177,16 @@
             display: flex;
         }
 
+        @media (max-width: 477px) {
+            top: 2px;
+            right: -5px;
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+
         @media (max-width: 386px) {
+            top: -7px;
+            right: -25px;
             width: 1.6rem;
             height: 1.6rem;
         }

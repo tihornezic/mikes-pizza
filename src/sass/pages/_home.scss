@@ -11,6 +11,14 @@
             color: $lightGreen;
             font-size: 4.5rem;
             filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.4));
+
+            @media (max-width: 1080px) {
+                font-size: 3.8rem;
+            }
+
+            @media (max-width: 386px) {
+                font-size: 2.75rem;
+            }
         }
 
         .orderItems {
@@ -61,6 +69,16 @@
 
         &:hover {
             transform: translateY(-6px);
+        }
+
+        @media (max-width: 1080px) {
+            bottom: 38px;
+            right: 20px;
+        }
+
+        @media (max-width: 386px) {
+            right: 10px;
+            bottom: 10px;
         }
     }
 }

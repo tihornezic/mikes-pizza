@@ -47,7 +47,6 @@ body.overflow {
 @media (max-width: 830px) {
   .container {
     padding: 0 30px;
-    max-width: 620px;
   }
 }
 
@@ -214,25 +213,24 @@ button {
   position: absolute;
   top: 10px;
   right: 20px;
-  width: 2rem;
-  height: 2rem;
+  width: 1.8rem;
+  height: 1.8rem;
   justify-content: space-around;
   flex-flow: column nowrap;
   z-index: 71;
   display: none;
 }
 .header .hamburger div {
-  width: 2rem;
+  width: 1.8rem;
   height: 0.12rem;
   background-color: #494949;
   border-radius: 10px;
   transform-origin: 1px;
   transition: all 0.2s linear;
 }
-@media (max-width: 386px) {
+@media (max-width: 477px) {
   .header .hamburger div {
     width: 1.6rem;
-    z-index: 71;
   }
 }
 .header .hamburger div.close:nth-child(1) {
@@ -259,8 +257,18 @@ button {
     display: flex;
   }
 }
+@media (max-width: 477px) {
+  .header .hamburger {
+    top: 2px;
+    right: -5px;
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
 @media (max-width: 386px) {
   .header .hamburger {
+    top: -7px;
+    right: -25px;
     width: 1.6rem;
     height: 1.6rem;
   }
@@ -292,6 +300,18 @@ button {
 .hero .logo {
   margin-top: 15px;
 }
+@media (max-width: 477px) {
+  .hero .logo {
+    width: 185px;
+  }
+}
+@media (max-width: 386px) {
+  .hero .logo {
+    margin-top: 15px;
+    margin-left: -20px;
+    width: 150px;
+  }
+}
 .hero .content {
   position: absolute;
   top: 28%;
@@ -315,6 +335,13 @@ button {
 @media (max-width: 1000px) {
   .hero .content h1 {
     font-size: 5.6rem;
+  }
+}
+@media (max-width: 550px) {
+  .hero .content h1 {
+    max-width: 580px;
+    font-size: 4.6rem;
+    letter-spacing: 0;
   }
 }
 .hero .content .description {
@@ -347,6 +374,11 @@ button {
 @media (max-width: 1790px) {
   .hero .content .heroButton {
     padding: 8px 35px;
+  }
+}
+@media (max-height: 685px) {
+  .hero .content .heroButton {
+    display: none;
   }
 }
 @media (max-width: 1445px) {
@@ -410,6 +442,16 @@ button {
   font-size: 4.5rem;
   filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.4));
 }
+@media (max-width: 1080px) {
+  .home .basket .basketIcon {
+    font-size: 3.8rem;
+  }
+}
+@media (max-width: 386px) {
+  .home .basket .basketIcon {
+    font-size: 2.75rem;
+  }
+}
 .home .basket .orderItems {
   position: absolute;
   bottom: 4px;
@@ -447,6 +489,18 @@ button {
 }
 .home .basket:hover {
   transform: translateY(-6px);
+}
+@media (max-width: 1080px) {
+  .home .basket {
+    bottom: 38px;
+    right: 20px;
+  }
+}
+@media (max-width: 386px) {
+  .home .basket {
+    right: 10px;
+    bottom: 10px;
+  }
 }
 
 .menu {
@@ -538,6 +592,16 @@ button {
   border-radius: 20px;
   z-index: 2;
 }
+@media (max-width: 580px) {
+  .pizzaCard .top {
+    height: 240px;
+  }
+}
+@media (max-width: 460px) {
+  .pizzaCard .top {
+    height: 180px;
+  }
+}
 .pizzaCard img {
   position: absolute;
   border-radius: 20px;
@@ -552,6 +616,18 @@ button {
     width: 235px;
   }
 }
+@media (max-width: 580px) {
+  .pizzaCard img {
+    width: 180px;
+    top: 60px;
+  }
+}
+@media (max-width: 460px) {
+  .pizzaCard img {
+    width: 130px;
+    top: 50px;
+  }
+}
 .pizzaCard h3 {
   position: absolute;
   top: 50%;
@@ -564,6 +640,17 @@ button {
   width: 310px;
   text-align: center;
 }
+@media (max-width: 580px) {
+  .pizzaCard h3 {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 460px) {
+  .pizzaCard h3 {
+    font-size: 1rem;
+    top: 65%;
+  }
+}
 .pizzaCard .price {
   position: absolute;
   top: 56%;
@@ -574,6 +661,12 @@ button {
   font-size: 1.02rem;
   width: 310px;
   text-align: center;
+}
+@media (max-width: 460px) {
+  .pizzaCard .price {
+    font-size: 0.9rem;
+    top: 71%;
+  }
 }
 .pizzaCard .description {
   position: absolute;
@@ -596,6 +689,17 @@ button {
     font-size: 1.25rem;
   }
 }
+@media (max-width: 580px) {
+  .pizzaCard .description {
+    font-size: 1.1rem;
+    max-width: 220px;
+  }
+}
+@media (max-width: 460px) {
+  .pizzaCard .description {
+    display: none;
+  }
+}
 .pizzaCard svg {
   position: absolute;
   transition: all 0.3s ease;
@@ -603,6 +707,11 @@ button {
   bottom: 10px;
   right: 3%;
   color: #366961;
+}
+@media (max-width: 460px) {
+  .pizzaCard svg {
+    display: none;
+  }
 }
 .pizzaCard:hover {
   transform: translateY(-6px);
@@ -634,6 +743,21 @@ button {
     width: 65%;
   }
 }
+@media (max-width: 580px) {
+  .pizzaCard {
+    height: 540px;
+  }
+}
+@media (max-width: 460px) {
+  .pizzaCard {
+    height: 400px;
+  }
+}
+@media (max-width: 400px) {
+  .pizzaCard {
+    width: 79%;
+  }
+}
 
 .quote {
   display: flex;
@@ -642,11 +766,49 @@ button {
   flex-direction: column;
   margin-top: 150px;
 }
+.quote img {
+  width: 650px;
+}
+@media (max-width: 1000px) {
+  .quote img {
+    width: 450px;
+  }
+}
+@media (max-width: 655px) {
+  .quote img {
+    width: 300px;
+  }
+}
+@media (max-width: 460px) {
+  .quote img {
+    width: 220px;
+  }
+}
 .quote p {
   font-size: 1.5rem;
   margin-top: -25px;
   font-weight: 600;
   color: #1E2D2F;
+  text-align: center;
+}
+@media (max-width: 1000px) {
+  .quote p {
+    max-width: 450px;
+  }
+}
+@media (max-width: 655px) {
+  .quote p {
+    font-size: 1.2rem;
+    margin-top: 1px;
+    max-width: 320px;
+  }
+}
+@media (max-width: 460px) {
+  .quote p {
+    margin: 0;
+    font-size: 0.9rem;
+    max-width: 270px;
+  }
 }
 
 .badges {
@@ -670,12 +832,19 @@ button {
   top: -90px;
   transform: scale(-1, -1);
 }
+@media (max-width: 1330px) {
+  .badges .badgesWave img {
+    top: -10px;
+  }
+}
 .badges .badgesRow {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: 12%;
   height: 100%;
   width: 100%;
+  padding-bottom: 100px;
 }
 .badges .badgesRow .badgesItem {
   text-align: center;
@@ -683,12 +852,62 @@ button {
 .badges .badgesRow .badgesItem img {
   width: 200px;
 }
+@media (max-width: 1330px) {
+  .badges .badgesRow .badgesItem img {
+    width: 150px;
+  }
+}
+@media (max-width: 450px) {
+  .badges .badgesRow .badgesItem img {
+    width: 100px;
+  }
+}
 .badges .badgesRow .badgesItem p {
   color: #1E2D2F;
   margin-top: 15px;
   font-size: 1.5rem;
   font-weight: 800;
   max-width: 300px;
+}
+@media (max-width: 1330px) {
+  .badges .badgesRow .badgesItem p {
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 910px) {
+  .badges .badgesRow .badgesItem p {
+    margin-top: 5px;
+  }
+}
+@media (max-width: 450px) {
+  .badges .badgesRow .badgesItem p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 910px) {
+  .badges .badgesRow .badgesItem {
+    margin-bottom: 25px;
+  }
+}
+@media (max-width: 910px) {
+  .badges .badgesRow {
+    flex-direction: column;
+  }
+}
+@media (max-width: 450px) {
+  .badges .badgesRow {
+    padding-top: 80px;
+  }
+}
+@media (max-width: 1330px) {
+  .badges {
+    height: 500px;
+  }
+}
+@media (max-width: 910px) {
+  .badges {
+    height: fit-content;
+  }
 }
 
 .order {
@@ -1639,6 +1858,7 @@ footer .darkBackground .infoRow {
 }
 footer .darkBackground .infoRow .infoItem ul {
   display: flex;
+  align-items: center;
 }
 footer .darkBackground .infoRow .infoItem ul a {
   text-decoration: none;
@@ -1650,11 +1870,42 @@ footer .darkBackground .infoRow .infoItem ul a li {
   font-size: 1.3rem;
   font-weight: 600;
 }
+@media (max-width: 585px) {
+  footer .darkBackground .infoRow .infoItem ul a li {
+    padding-left: 0;
+  }
+}
 footer .darkBackground .infoRow .infoItem ul a.logo {
   padding-left: 25px;
 }
+@media (max-width: 1005px) {
+  footer .darkBackground .infoRow .infoItem ul a.logo {
+    padding-left: 75px;
+  }
+}
+@media (max-width: 585px) {
+  footer .darkBackground .infoRow .infoItem ul a.logo {
+    padding-left: 0;
+  }
+}
+@media (max-width: 1005px) {
+  footer .darkBackground .infoRow .infoItem ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 footer .darkBackground .infoRow .infoItem img {
   width: 33px;
+}
+@media (max-width: 1005px) {
+  footer .darkBackground .infoRow {
+    justify-content: space-evenly;
+  }
+}
+@media (max-width: 585px) {
+  footer .darkBackground .infoRow {
+    flex-direction: column;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
