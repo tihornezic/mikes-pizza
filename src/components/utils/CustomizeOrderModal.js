@@ -258,7 +258,7 @@ const CustomizeOrderModal = () => {
 
                 <div className='right'>
                     <div className='imageBox'>
-                        <img className='pizza' src={pizza.image} alt={pizza.name} width={'275px'} />
+                        <img className='pizza' src={pizza.image} alt={pizza.name} />
                     </div>
 
                     <div className='ingredients'>
@@ -299,6 +299,135 @@ const CustomizeOrderModal = () => {
                         }
                     </button>
 
+                </div>
+            </div>
+
+            {/* for media query (max-width: 690px) */}
+            <div className='contentColumn'>
+                <div className='first'>
+                    <div className='row'>
+                        <div className='info'>
+                            <h1>{pizza.name}</h1>
+                            <h3>Pick One</h3>
+                            <span className='required'>Required</span>
+                        </div>
+
+                        <img className='pizza' src={pizza.image} alt={pizza.name} />
+                    </div>
+
+                    <div className='sizeOptions'>
+                        <div className={pizzaSizePrice === pizza.prices?.small ? 'option active' : 'option'}
+                            onClick={() => togglePizzaSizeChoice(pizza.prices?.small, allExtrasTotal, 'Small')}
+                        >
+                            <div className='labelPriceRow'>
+                                <span className='label'>Small</span>
+                                <span className='price'>${pizza.prices?.small.toFixed(2)}</span>
+                            </div>
+                            <AddCircleIcon className='add' />
+                        </div>
+
+                        <div className={pizzaSizePrice === pizza.prices?.medium ? 'option active' : 'option'}
+                            onClick={() => togglePizzaSizeChoice(pizza.prices?.medium, allExtrasTotal, 'Medium')}
+                        >
+                            <div className='labelPriceRow'>
+                                <span className='label'>Medium</span>
+                                <span className='price'>${pizza.prices?.medium.toFixed(2)}</span>
+                            </div>
+                            <AddCircleIcon className='add' />
+                        </div>
+
+                        <div className={pizzaSizePrice === pizza.prices?.large ? 'option active' : 'option'}
+                            onClick={() => togglePizzaSizeChoice(pizza.prices?.large, allExtrasTotal, 'Large')}
+                        >
+                            <div className='labelPriceRow'>
+                                <span className='label'>Large</span>
+                                <span className='price'>${pizza.prices?.large.toFixed(2)}</span>
+                            </div>
+                            <AddCircleIcon className='add' />
+                        </div>
+                    </div>
+
+                    <div className='quantity'>
+
+                        <div className='quantityController'>
+                            <h1>Quantity</h1>
+                            <div className={pizzaSizePrice ? 'buttons active' : 'buttons'}>
+                                <RemoveCircleOutlineIcon onClick={() => {setQuantity(prev => prev - 1); preventQuantityToZero(quantity)}} />
+                                <span>{quantity}</span>
+                                <AddCircleOutlineIcon onClick={() => {setQuantity(prev => prev + 1); preventQuantitytoFifteen(quantity)}} />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='extras'>
+                        <h1>Extras</h1>
+
+                        {/* extras checkboxes grid */}
+                        <ThemeProvider theme={theme}>
+                            <div className='grid'>
+                                {extras.map((extra) => (
+                                    <FormControlLabel
+                                        key={extra.item}
+                                        disabled={pizzaSizePrice ? false : true}
+                                        control={
+                                            <Checkbox
+                                                color='primary'
+                                                value={extra.price}
+                                                onChange={(e) => toggleCheckbox(e, extra.item)}
+                                            />
+                                        }
+                                        label=
+                                        {
+                                            <span style={pizzaSizePrice ? {fontSize: '1.155rem', color: '#494949'} : {fontSize: '1.155rem', color: '#bbbbbb'}}>
+                                                {extra.item}&nbsp;
+                                                    <span style={pizzaSizePrice ? {color: '#366961'} : {color: '#c7c7c7'}}>+${extra.price}</span>
+                                            </span>
+                                        }
+                                    />
+                                ))}
+                            </div>
+                        </ThemeProvider>
+                    </div>
+
+                    <div className='second'>
+                        <div className='ingredients'>
+                            <h2>Ingredients</h2>
+
+                            {pizza.ingredients?.map((ingredient, index) => (
+                                <p key={index}>{ingredient}</p>
+                            ))}
+                        </div>
+
+                        <div className='extras'>
+                            <h2>Extras</h2>
+
+                            {extrasItemsArray.length === 0 ?
+                                <span>No extras</span>
+                                :
+                                extrasItemsArray.map((extra, index) => (
+                                    <span key={index}>{(index ? ', ' : '') + extra[0].toLowerCase() + extra.substr(1)}</span>
+                                ))
+
+                            }
+                        </div>
+
+                        <button className={pizzaSizePrice ? 'button buttonSecondary' : 'button buttonDisabled'} onClick={() => {
+                            createOrderObject()
+                            dispatch(setToggleCustomizeOrderModal(showCustomizeOrderModal))
+                            resetPizzaSizePriceAndQuantity()
+                            // dispatch(getPizza({}))
+                        }}>
+                            Add to Order&nbsp;
+                            {
+                                // totalOrderAmount !== 0
+                                pizzaSizePrice
+                                    ?
+                                    // <span>${totalOrderAmount.toFixed(2)}</span>
+                                    <span>${(totalOrderAmount.toFixed(2) * quantity.toFixed(2)).toFixed(2)}</span>
+                                    : null
+                            }
+                        </button>
+                    </div>
                 </div>
             </div>
 

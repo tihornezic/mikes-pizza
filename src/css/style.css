@@ -468,6 +468,13 @@ button {
   font-weight: 700;
   font-size: 1.25rem;
 }
+@media (max-width: 386px) {
+  .home .basket .orderItems {
+    width: 17px;
+    height: 17px;
+    font-size: 1rem;
+  }
+}
 @keyframes shake {
   10%, 90% {
     transform: translate3d(-1px, 0, 0);
@@ -991,9 +998,9 @@ button {
   transition: all 0.5s ease;
   background-color: #DFDFDF;
   border-radius: 10px;
-  width: 67%;
+  width: 68%;
   height: 600px;
-  z-index: 30;
+  z-index: 72;
   pointer-events: none;
   opacity: 0;
 }
@@ -1005,6 +1012,11 @@ button {
   right: 10px;
   cursor: pointer;
   z-index: 35;
+}
+@media (max-width: 690px) {
+  .customizeOrderModal .close {
+    color: #ffffff;
+  }
 }
 .customizeOrderModal.open {
   opacity: 1;
@@ -1081,6 +1093,11 @@ button {
 .customizeOrderModal .contentRow .left .sizeOptions .option.active:hover {
   border: 1px solid transparent;
 }
+@media (max-width: 840px) {
+  .customizeOrderModal .contentRow .left .sizeOptions .option {
+    padding: 5px 10px;
+  }
+}
 .customizeOrderModal .contentRow .left .quantity {
   margin-top: 25px;
 }
@@ -1138,6 +1155,16 @@ button {
   grid-template-columns: repeat(3, 1fr);
   column-gap: 35px;
 }
+@media (max-width: 1425px) {
+  .customizeOrderModal .contentRow .left .extras .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 1000px) {
+  .customizeOrderModal .contentRow .left .extras .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 .customizeOrderModal .contentRow .right {
   display: flex;
   flex-direction: column;
@@ -1166,9 +1193,30 @@ button {
 }
 .customizeOrderModal .contentRow .right .imageBox .pizza {
   position: absolute;
+  width: 275px;
   top: 55px;
   right: 0;
   filter: drop-shadow(-20px 5px 20px rgba(221, 217, 183, 0.55));
+}
+@media (max-width: 1250px) {
+  .customizeOrderModal .contentRow .right .imageBox .pizza {
+    width: 210px;
+  }
+}
+@media (max-width: 840px) {
+  .customizeOrderModal .contentRow .right .imageBox .pizza {
+    top: 79px;
+  }
+}
+@media (max-width: 1250px) {
+  .customizeOrderModal .contentRow .right .imageBox {
+    height: 44%;
+  }
+}
+@media (max-width: 840px) {
+  .customizeOrderModal .contentRow .right .imageBox {
+    height: 36%;
+  }
 }
 .customizeOrderModal .contentRow .right .ingredients {
   align-self: center;
@@ -1192,9 +1240,246 @@ button {
   width: 80%;
   font-size: 1.2rem;
 }
+@media (max-width: 690px) {
+  .customizeOrderModal .contentRow {
+    display: none;
+  }
+}
+.customizeOrderModal .contentColumn {
+  display: none;
+}
+@media (max-width: 690px) {
+  .customizeOrderModal .contentColumn {
+    display: flex;
+    flex-direction: column;
+  }
+  .customizeOrderModal .contentColumn .first {
+    padding: 40px;
+  }
+  .customizeOrderModal .contentColumn .first .row {
+    display: flex;
+    justify-content: space-between;
+  }
+  .customizeOrderModal .contentColumn .first .row .info {
+    margin-top: 50px;
+  }
+  .customizeOrderModal .contentColumn .first .row .info h1 {
+    font-size: 1.85rem;
+    color: #1d1d1d;
+  }
+}
+@media (max-width: 690px) and (max-width: 400px) {
+  .customizeOrderModal .contentColumn .first .row .info h1 {
+    margin-top: -25px;
+  }
+}
+@media (max-width: 690px) {
+  .customizeOrderModal .contentColumn .first .row .info h3 {
+    margin: 10px 0;
+    font-size: 1.15rem;
+    color: #6e6e6e;
+    display: inline-block;
+    margin-top: 75px;
+  }
+}
+@media (max-width: 690px) {
+  .customizeOrderModal .contentColumn .first .row .info .required {
+    background-color: #C57B57;
+    color: #DFDFDF;
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 2px 8px;
+    margin-left: 5px;
+  }
+}
+@media (max-width: 690px) {
+  .customizeOrderModal .contentColumn .first .row .pizza {
+    position: absolute;
+    width: 200px;
+    top: 0;
+    right: 0;
+    filter: drop-shadow(-20px 5px 20px rgba(221, 217, 183, 0.55));
+  }
+}
+@media (max-width: 690px) and (max-width: 400px) {
+  .customizeOrderModal .contentColumn .first .row .pizza {
+    width: 145px;
+  }
+}
+@media (max-width: 690px) {
+  .customizeOrderModal .contentColumn .first .sizeOptions {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .customizeOrderModal .contentColumn .first .sizeOptions .option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 15px;
+    border: 1px solid #bbbbbb;
+    font-size: 1.16rem;
+    font-weight: 600;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .customizeOrderModal .contentColumn .first .sizeOptions .option .labelPriceRow {
+    width: 140px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .customizeOrderModal .contentColumn .first .sizeOptions .option .labelPriceRow .label {
+    color: #494949;
+  }
+  .customizeOrderModal .contentColumn .first .sizeOptions .option .labelPriceRow .price {
+    color: #366961;
+  }
+  .customizeOrderModal .contentColumn .first .sizeOptions .option .add {
+    font-size: 1.6rem;
+    color: #366961;
+  }
+  .customizeOrderModal .contentColumn .first .sizeOptions .option:hover {
+    border: 1px solid #366961;
+  }
+  .customizeOrderModal .contentColumn .first .sizeOptions .option.active {
+    background-color: #c7c7c7;
+  }
+  .customizeOrderModal .contentColumn .first .sizeOptions .option.active:hover {
+    border: 1px solid transparent;
+  }
+}
+@media (max-width: 690px) and (max-width: 840px) {
+  .customizeOrderModal .contentColumn .first .sizeOptions .option {
+    padding: 5px 10px;
+  }
+}
+@media (max-width: 690px) {
+  .customizeOrderModal .contentColumn .first .quantity {
+    margin-top: 25px;
+  }
+  .customizeOrderModal .contentColumn .first .quantity h1 {
+    font-size: 1.2rem;
+    margin-top: 35px;
+    margin-bottom: 5px;
+    color: #1d1d1d;
+  }
+  .customizeOrderModal .contentColumn .first .quantity .quantityController {
+    display: flex;
+    padding: 15px 0;
+  }
+  .customizeOrderModal .contentColumn .first .quantity .quantityController h1 {
+    margin: 0;
+  }
+  .customizeOrderModal .contentColumn .first .quantity .quantityController .buttons {
+    display: flex;
+    align-items: center;
+    width: 15%;
+    justify-content: space-between;
+    margin-left: 10px;
+    cursor: not-allowed;
+  }
+  .customizeOrderModal .contentColumn .first .quantity .quantityController .buttons svg {
+    color: #c7c7c7;
+    font-size: 1.6rem;
+    cursor: pointer;
+    pointer-events: none;
+  }
+  .customizeOrderModal .contentColumn .first .quantity .quantityController .buttons span {
+    justify-self: center;
+    font-size: 1.16rem;
+    font-weight: 700;
+    color: #c7c7c7;
+  }
+  .customizeOrderModal .contentColumn .first .quantity .quantityController .buttons.active {
+    cursor: pointer;
+  }
+  .customizeOrderModal .contentColumn .first .quantity .quantityController .buttons.active svg {
+    color: #366961;
+    pointer-events: all;
+  }
+  .customizeOrderModal .contentColumn .first .quantity .quantityController .buttons.active span {
+    color: #1E2D2F;
+  }
+}
+@media (max-width: 690px) {
+  .customizeOrderModal .contentColumn .first .extras h1 {
+    font-size: 1.2rem;
+    margin-top: 9px;
+    margin-bottom: 5px;
+    color: #1d1d1d;
+  }
+  .customizeOrderModal .contentColumn .first .extras .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 35px;
+  }
+}
+@media (max-width: 690px) and (max-width: 1425px) {
+  .customizeOrderModal .contentColumn .first .extras .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 690px) and (max-width: 1000px) {
+  .customizeOrderModal .contentColumn .first .extras .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 690px) {
+  .customizeOrderModal .contentColumn .second {
+    display: flex;
+    flex-direction: column;
+    background-color: #DFDFDF;
+    border-radius: 10px;
+    margin-top: 50px;
+  }
+  .customizeOrderModal .contentColumn .second h2 {
+    color: #1d1d1d;
+    font-size: 1.4rem;
+  }
+  .customizeOrderModal .contentColumn .second p {
+    font-weight: 400;
+    font-size: 1.1rem;
+  }
+  .customizeOrderModal .contentColumn .second .ingredients {
+    width: 80%;
+  }
+  .customizeOrderModal .contentColumn .second .extras {
+    width: 80%;
+    margin-top: 25px;
+    margin-bottom: 35px;
+  }
+  .customizeOrderModal .contentColumn .second .extras span {
+    font-weight: 400;
+    font-size: 1.1rem;
+  }
+  .customizeOrderModal .contentColumn .second button {
+    bottom: 0;
+    align-self: center;
+    margin-bottom: 20px;
+    width: 80%;
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 690px) and (max-width: 385px) {
+  .customizeOrderModal .contentColumn .second button {
+    padding: 15px 2px;
+  }
+}
 @media (max-width: 1590px) {
   .customizeOrderModal {
     width: 78%;
+  }
+}
+@media (max-width: 840px) {
+  .customizeOrderModal {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 690px) {
+  .customizeOrderModal {
+    overflow: scroll;
   }
 }
 

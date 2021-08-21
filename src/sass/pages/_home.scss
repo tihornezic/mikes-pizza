@@ -36,6 +36,12 @@
             color: $backgroundWhite;
             font-weight: 700;
             font-size: 1.25rem;
+
+            @media (max-width: 386px) {
+                width: 17px;
+                height: 17px;
+                font-size: 1rem;
+            }
         }
 
         @keyframes shake {
