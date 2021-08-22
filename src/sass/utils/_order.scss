@@ -22,6 +22,14 @@
         top: 12px;
         right: 10px;
         cursor: pointer;
+
+        @media (max-width: 840px) {
+            font-size: 2rem;
+        }
+
+        @media (max-width: 500px) {
+            font-size: 1.775rem;
+        }
     }
 
     &.orderOpen {

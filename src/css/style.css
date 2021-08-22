@@ -861,6 +861,16 @@ button {
   right: 10px;
   cursor: pointer;
 }
+@media (max-width: 840px) {
+  .order .close {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 500px) {
+  .order .close {
+    font-size: 1.775rem;
+  }
+}
 .order.orderOpen {
   transform: translateX(0);
 }
@@ -2109,6 +2119,18 @@ button {
 .recentOrders .logo {
   margin-top: 15px;
 }
+@media (max-width: 477px) {
+  .recentOrders .logo {
+    width: 185px;
+  }
+}
+@media (max-width: 386px) {
+  .recentOrders .logo {
+    margin-top: 15px;
+    margin-left: -20px;
+    width: 150px;
+  }
+}
 .recentOrders .message {
   display: flex;
   align-items: center;
@@ -2138,9 +2160,24 @@ button {
   color: #1d1d1d;
   margin-top: 40px;
 }
+@media (max-width: 1000px) {
+  .recentOrders .recentOrdersContainer .left h1 {
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 477px) {
+  .recentOrders .recentOrdersContainer .left h1 {
+    font-size: 1.8rem;
+  }
+}
 .recentOrders .recentOrdersContainer .left h2 {
   font-size: 1.15rem;
   color: #bbbbbb;
+}
+@media (max-width: 477px) {
+  .recentOrders .recentOrdersContainer .left h2 {
+    font-size: 1rem;
+  }
 }
 .recentOrders .recentOrdersContainer .left .emptyOrders {
   margin-top: 175px;
@@ -2149,6 +2186,11 @@ button {
   font-size: 1.55rem;
   font-weight: 700;
   color: #bbbbbb;
+}
+@media (max-width: 1000px) {
+  .recentOrders .recentOrdersContainer .left {
+    width: 90%;
+  }
 }
 .recentOrders .recentOrdersContainer .right {
   width: 50%;
@@ -2159,6 +2201,36 @@ button {
   position: sticky;
   top: 85px;
   width: 660px;
+}
+@media (max-width: 1470px) {
+  .recentOrders .recentOrdersContainer .right img {
+    width: 520px;
+  }
+}
+@media (max-width: 1195px) {
+  .recentOrders .recentOrdersContainer .right img {
+    width: 420px;
+  }
+}
+@media (max-width: 1000px) {
+  .recentOrders .recentOrdersContainer .right {
+    display: none;
+  }
+}
+@media (max-width: 1790px) {
+  .recentOrders .recentOrdersContainer {
+    max-width: 850px;
+  }
+}
+@media (max-width: 1330px) {
+  .recentOrders .recentOrdersContainer {
+    max-width: 650px;
+  }
+}
+@media (max-width: 1000px) {
+  .recentOrders .recentOrdersContainer {
+    max-width: 450px;
+  }
 }
 
 .recentOrder {
@@ -2178,6 +2250,16 @@ button {
   font-size: 1rem;
   margin-left: 10px;
 }
+@media (max-width: 477px) {
+  .recentOrder h3 span {
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 475px) {
+  .recentOrder h3 {
+    font-size: 1.25rem;
+  }
+}
 .recentOrder .infoGroup {
   margin: 15px 0;
 }
@@ -2186,19 +2268,39 @@ button {
   color: #494949;
   font-size: 1.25rem;
 }
+@media (max-width: 475px) {
+  .recentOrder .infoGroup .timestamp {
+    font-size: 1rem;
+  }
+}
 .recentOrder .infoGroup .address {
   color: #494949;
   font-weight: 700;
   font-size: 1.15rem;
 }
+@media (max-width: 475px) {
+  .recentOrder .infoGroup .address {
+    font-size: 1rem;
+  }
+}
 .recentOrder .infoGroup .totalQuantity {
   font-size: 1.35rem;
   font-weight: 700;
+}
+@media (max-width: 475px) {
+  .recentOrder .infoGroup .totalQuantity {
+    font-size: 1.25rem;
+  }
 }
 .recentOrder .infoGroup .totalPrice {
   font-size: 1.4rem;
   font-weight: 700;
   color: #366961;
+}
+@media (max-width: 475px) {
+  .recentOrder .infoGroup .totalPrice {
+    font-size: 1.3rem;
+  }
 }
 .recentOrder .infoGroup.adjustedMargins {
   margin: 2px 0;
@@ -2211,15 +2313,30 @@ button {
   font-weight: 600;
   font-size: 1.1rem;
 }
+@media (max-width: 475px) {
+  .recentOrder .infoGroup .pizzaInfo .pizzaInfoRow p:nth-of-type(1) {
+    font-size: 1rem;
+  }
+}
 .recentOrder .infoGroup .pizzaInfo .pizzaInfoRow p:nth-of-type(2) {
   margin-left: 5px;
   font-weight: 600;
   font-size: 1.1rem;
 }
+@media (max-width: 475px) {
+  .recentOrder .infoGroup .pizzaInfo .pizzaInfoRow p:nth-of-type(2) {
+    font-size: 1rem;
+  }
+}
 .recentOrder .infoGroup .pizzaInfo .pizzaInfoRow p:nth-of-type(3) {
   margin-left: 1px;
   font-weight: 600;
   font-size: 1.1rem;
+}
+@media (max-width: 475px) {
+  .recentOrder .infoGroup .pizzaInfo .pizzaInfoRow p:nth-of-type(3) {
+    font-size: 1rem;
+  }
 }
 .recentOrder .infoGroup .pizzaInfo .pizzaOrderInfo {
   margin-left: 22px;
@@ -2251,7 +2368,7 @@ button {
   font-weight: 700;
 }
 .recentOrder:last-of-type {
-  margin-bottom: 150px;
+  margin-bottom: 10px;
 }
 
 .customSpinner {

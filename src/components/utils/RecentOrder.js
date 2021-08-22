@@ -28,7 +28,7 @@ const RecentOrder = ({item}) => {
 
             <div className='infoGroup'>
                 {item.data.order.map((order) => (
-                    <div key={order.id} className='pizzaInfo'>
+                    <div key={order.id  } className='pizzaInfo'>
 
                         <div className='pizzaInfoRow'>
                             <p>{order.quantity}x</p>
