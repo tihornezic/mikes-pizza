@@ -54,6 +54,17 @@ const SlideMenu = ({slideMenu}) => {
                     </Link>
                 </li>
                 <li>
+                    {currentUser &&
+                        <p className='userInfo'>
+                            {userInfo ?
+                                <span>{userInfo.name}</span>
+                                :
+                                <span>{currentUser.displayName}</span>
+                            }
+                        </p>
+                    }
+                </li>
+                <li>
                     <Link to='/' onClick={() => {dispatch(hideSlideMenu(false)); dispatch(hideHamburger(false))}}>Home</Link>
                 </li>
                 <li>
@@ -64,27 +75,26 @@ const SlideMenu = ({slideMenu}) => {
                     }}>Order</Link>
                 </li>
 
-                <li>
-                    {currentUser ?
-                        <div className='account'>
-                            <p>
-                                {userInfo ?
-                                    <span>{userInfo.name}</span>
-                                    :
-                                    <span>{currentUser.displayName}</span>
-                                }
-                            </p>
+                {currentUser ?
+                    <>
+                        <li>
                             <Link to='recent-orders' onClick={() => {dispatch(hideSlideMenu(false)); dispatch(hideHamburger(false))}}>Recent orders</Link>
-                            <Link to='/' onClick={() => {handleLogout(); dispatch(hideHamburger(false))}}>Log out</Link>
-                        </div>
-                        :
+                        </li>
+
+                        <li>
+                            {/* <Link to='/' onClick={() => {handleLogout(); dispatch(hideHamburger(false))}}>Log out</Link> */}
+                            <Link to='/' onClick={() => handleLogout()}>Log out</Link>
+                        </li>
+                    </>
+                    :
+                    <li>
                         <Link to='/' onClick={() => {
-                            dispatch(setToggleAuthModal(authModal)); 
+                            dispatch(setToggleAuthModal(authModal));
                             dispatch(hideSlideMenu(false));
                             dispatch(hideHamburger(false))
                         }}>Sign in</Link>
-                    }
-                </li>
+                    </li>
+                }
 
             </ul>
         </div>

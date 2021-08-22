@@ -2234,6 +2234,11 @@ button {
   margin-left: -50px;
   margin-bottom: 5px;
 }
+.slideMenu ul li .userInfo {
+  color: #6e6e6e;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
 .slideMenu ul li a {
   text-decoration: none;
   color: #366961;
