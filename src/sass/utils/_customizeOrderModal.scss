@@ -315,8 +315,19 @@
                             font-size: 1.85rem;
                             color: $dark;
 
+                            @media (max-width: 480px) {
+                                max-width: 205px;
+                            }
+
                             @media (max-width: 400px) {
-                                margin-top: -25px;
+                                max-width: 180px;
+                                margin-top: -40px;
+                            }
+
+                            @media (max-width: 333px) {
+                                margin-top: -55px;
+                                font-size: 1.55rem;
+                                max-width: 125px;
                             }
                         }
 
@@ -347,6 +358,10 @@
 
                         @media (max-width: 400px) {
                             width: 145px;
+                        }
+
+                        @media (max-width: 333px) {
+                            width: 125px;
                         }
                     }
                 }

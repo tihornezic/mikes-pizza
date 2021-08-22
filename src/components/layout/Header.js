@@ -5,6 +5,7 @@ import {setToggleOrder} from '../../redux/actions/orderActions'
 import {setToggleAuthModal} from '../../redux/actions/authActions'
 import {useAuth} from '../../auth/authContext'
 import {db} from '../../firebase'
+import SlideMenu from '../layout/SlideMenu'
 
 const Header = () => {
     const order = useSelector(state => state.showOrder.showOrder)
@@ -31,9 +32,9 @@ const Header = () => {
         }
     }
 
-    useEffect(() => {
-        console.log(currentUser)
-    }, [])
+    // useEffect(() => {
+    //     console.log(currentUser)
+    // }, [])
 
     useEffect(() => {
         if (currentUser) {
@@ -49,53 +50,58 @@ const Header = () => {
     }, [currentUser]) // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
-        <div className='header'>
-            <ul>
-                <li>
-                    <Link to='/'>Home</Link>
-                </li>
-                <li>
-                    <Link to='/' onClick={() => dispatch(setToggleOrder(order))}>Order</Link>
-                </li>
-                <li>
-                    {currentUser ?
-                        <div className='account'>
-                            <p className='fakeLink'>Account</p>
-                            <div className='dropdown'>
-                                <div className='helloUser'>
-                                    <p>
-                                        Hello,
-                                    </p>
-                                    {userInfo ?
-                                        <span>{userInfo.name}</span>
-                                        :
-                                        <span>{currentUser.displayName}</span>
-                                    }
+
+        <>
+            <div className='header'>
+                <ul>
+                    <li>
+                        <Link to='/'>Home</Link>
+                    </li>
+                    <li>
+                        <Link to='/' onClick={() => dispatch(setToggleOrder(order))}>Order</Link>
+                    </li>
+                    <li>
+                        {currentUser ?
+                            <div className='account'>
+                                <p className='fakeLink'>Account</p>
+                                <div className='dropdown'>
+                                    <div className='helloUser'>
+                                        <p>
+                                            Hello,
+                                        </p>
+                                        {userInfo ?
+                                            <span>{userInfo.name}</span>
+                                            :
+                                            <span>{currentUser.displayName}</span>
+                                        }
+                                    </div>
+                                    <Link to='recent-orders'>Recent orders</Link>
+                                    <Link to='/' onClick={handleLogout}>Log out</Link>
                                 </div>
-                                <Link to='recent-orders'>Recent orders</Link>
-                                <Link to='/' onClick={handleLogout}>Log out</Link>
                             </div>
-                        </div>
-                        :
-                        <Link to='/' onClick={() => dispatch(setToggleAuthModal(authModal))}>Sign in</Link>
-                    }
-                </li>
-                <li>
-                    <a id='not' href='#menu' className='button buttonPrimary'>See Menu</a>
-                </li>
-            </ul>
+                            :
+                            <Link to='/' onClick={() => dispatch(setToggleAuthModal(authModal))}>Sign in</Link>
+                        }
+                    </li>
+                    <li>
+                        <a id='not' href='#menu' className='button buttonPrimary'>See Menu</a>
+                    </li>
+                </ul>
 
-            <div className='hamburger' onClick={() => {setOpenHamburger(prev => !prev); setSlideMenu(prev => !prev);}}>
-                <div className={openHamburger ? 'open' : 'close'}></div>
-                <div className={openHamburger ? 'open' : 'close'}></div>
-                <div className={openHamburger ? 'open' : 'close'}></div>
-            </div>
+                {/* <div className='hamburger' onClick={() => {setOpenHamburger(prev => !prev); setSlideMenu(prev => !prev);}}>
+                    <div className={openHamburger ? 'open' : 'close'}></div>
+                    <div className={openHamburger ? 'open' : 'close'}></div>
+                    <div className={openHamburger ? 'open' : 'close'}></div>
+                </div> */}
 
-            <div className={slideMenu ? 'slideMenu slideMenuOpen' : 'slideMenu'}>
+                {/* <div className={slideMenu ? 'slideMenu slideMenuOpen' : 'slideMenu'}>
                 
+                </div> */}
+
             </div>
 
-        </div>
+            {/* <SlideMenu /> */}
+        </>
     )
 }
 

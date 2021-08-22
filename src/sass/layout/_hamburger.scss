@@ -1,0 +1,70 @@
+.hamburger {
+    position: absolute;
+    top: 55px;
+    right: 50px;
+    width: 1.8rem;
+    height: 1.8rem;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+    z-index: 71;
+    display: none;
+
+    div {
+        width: 1.8rem;
+        height: 0.12rem;
+        background-color: $darkGrey;
+        border-radius: 10px;
+        transform-origin: 1px;
+        transition: all 0.2s linear;
+
+        @media (max-width: 477px) {
+            width: 1.6rem;
+        }
+    }
+
+    div.close:nth-child(1) {
+        transform: rotate(0);
+    }
+
+    div.open:nth-child(1) {
+        // background-color: $creamWhite;
+        transform: rotate(45deg);
+    }
+
+    div.close:nth-child(2) {
+        transform: translateX(0);
+    }
+
+    div.open:nth-child(2) {
+        // background-color: $creamWhite;
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    div.close:nth-child(3) {
+        transform: rotate(0);
+    }
+
+    div.open:nth-child(3) {
+        // background-color: $creamWhite;
+        transform: rotate(-45deg);
+    }
+
+    @media (max-width: 1155px) {
+        display: flex;
+    }
+
+    @media (max-width: 477px) {
+        top: 45px;
+        right: 30px;
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+
+    @media (max-width: 386px) {
+        top: 40px;
+        right: 25px;
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+}

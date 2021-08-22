@@ -8,6 +8,8 @@ import CustomizeOrderModal from '../utils/CustomizeOrderModal'
 import RegisterModal from '../utils/RegisterModal'
 import BackgroundOverlay from '../utils/BackgroundOverlay'
 import AddressModal from '../utils/AddressModal'
+import Hamburger from '../layout/Hamburger'
+import SlideMenu from '../layout/SlideMenu'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 import {useState, useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
@@ -61,6 +63,9 @@ const Home = () => {
             <Menu />
             <Quote />
             <Badges />
+
+            <Hamburger />
+            <SlideMenu />
 
         </div>
     )

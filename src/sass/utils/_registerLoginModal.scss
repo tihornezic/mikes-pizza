@@ -9,7 +9,7 @@
     width: 620px;
     height: 88%;
     padding: 40px 85px;
-    z-index: 30;
+    z-index: 80;
     pointer-events: none;
     opacity: 0;
     overflow-y: auto;
@@ -40,12 +40,22 @@
             font-size: 2.2rem;
             color: $darkGrey;
             margin-bottom: 70px;
+
+            @media (max-width: 530px) {
+                max-width: 250px;
+                text-align: center;
+                font-size: 2rem;
+            }
         }
 
         .facebookButton {
             svg {
                 font-size: 2rem;
                 margin-right: 5px;
+
+                @media (max-width: 530px) {
+                    font-size: 1.6rem;
+                }
             }
 
             display: flex;
@@ -55,6 +65,11 @@
             font-weight: 700;
             font-size: 1.3rem;
             padding: 10px 80px;
+
+            @media (max-width: 530px) {
+                padding: 7px 55px;
+                font-size: 1.1rem;
+            }
 
             &:hover {
                 background-color: #2d4579;
@@ -84,6 +99,14 @@
                     left: 1px;
                     font-size: 2.35rem;
                     color: $darkGrey;
+
+                    @media (max-width: 530px) {
+                        left: -10px;
+                    }
+
+                    @media (max-width: 385px) {
+                        font-size: 2rem;
+                    }
                 }
 
                 label {
@@ -95,6 +118,14 @@
                     color: $grey;
                     font-size: 1.3rem;
                     z-index: 45;
+
+                    @media (max-width: 530px) {
+                        margin-left: 35px;
+                    }
+
+                    @media (max-width: 385px) {
+                        margin-left: 30px;
+                    }
 
                     &.active {
                         top: -25px;
@@ -123,6 +154,11 @@
 
             .formButton {
                 margin-top: 80px;
+
+                @media (max-width: 530px) {
+                    padding: 7px 55px;
+                    font-size: 1.1rem;
+                }
             }
         }
 
@@ -135,5 +171,15 @@
                 font-weight: 700;
             }
         }
+    }
+
+    @media (max-width: 840px) {
+        height: 100%;
+        width: 100%;
+        padding: 40px 45px;
+    }
+
+    @media (max-width: 385px) {
+        padding: 40px 20px;
     }
 }

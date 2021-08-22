@@ -209,86 +209,6 @@ button {
     top: 45px;
   }
 }
-.header .hamburger {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  width: 1.8rem;
-  height: 1.8rem;
-  justify-content: space-around;
-  flex-flow: column nowrap;
-  z-index: 71;
-  display: none;
-}
-.header .hamburger div {
-  width: 1.8rem;
-  height: 0.12rem;
-  background-color: #494949;
-  border-radius: 10px;
-  transform-origin: 1px;
-  transition: all 0.2s linear;
-}
-@media (max-width: 477px) {
-  .header .hamburger div {
-    width: 1.6rem;
-  }
-}
-.header .hamburger div.close:nth-child(1) {
-  transform: rotate(0);
-}
-.header .hamburger div.open:nth-child(1) {
-  transform: rotate(45deg);
-}
-.header .hamburger div.close:nth-child(2) {
-  transform: translateX(0);
-}
-.header .hamburger div.open:nth-child(2) {
-  transform: translateX(-100%);
-  opacity: 0;
-}
-.header .hamburger div.close:nth-child(3) {
-  transform: rotate(0);
-}
-.header .hamburger div.open:nth-child(3) {
-  transform: rotate(-45deg);
-}
-@media (max-width: 1155px) {
-  .header .hamburger {
-    display: flex;
-  }
-}
-@media (max-width: 477px) {
-  .header .hamburger {
-    top: 2px;
-    right: -5px;
-    width: 1.6rem;
-    height: 1.6rem;
-  }
-}
-@media (max-width: 386px) {
-  .header .hamburger {
-    top: -7px;
-    right: -25px;
-    width: 1.6rem;
-    height: 1.6rem;
-  }
-}
-.header .slideMenu {
-  position: fixed;
-  background-color: #bbbbbb;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  transform: translateX(100%);
-  transition: transform 0.45s ease-in-out;
-  overflow-y: scroll;
-  z-index: 70;
-}
-.header .slideMenu.slideMenuOpen {
-  transform: translateX(0);
-}
 
 .hero {
   height: 100vh;
@@ -926,7 +846,7 @@ button {
   width: 400px;
   transition: transform 0.55s ease-in-out;
   transform: translateX(100%);
-  z-index: 56;
+  z-index: 80;
   padding: 0 60px;
   overflow-y: auto;
 }
@@ -1268,9 +1188,22 @@ button {
     color: #1d1d1d;
   }
 }
+@media (max-width: 690px) and (max-width: 480px) {
+  .customizeOrderModal .contentColumn .first .row .info h1 {
+    max-width: 205px;
+  }
+}
 @media (max-width: 690px) and (max-width: 400px) {
   .customizeOrderModal .contentColumn .first .row .info h1 {
-    margin-top: -25px;
+    max-width: 180px;
+    margin-top: -40px;
+  }
+}
+@media (max-width: 690px) and (max-width: 333px) {
+  .customizeOrderModal .contentColumn .first .row .info h1 {
+    margin-top: -55px;
+    font-size: 1.55rem;
+    max-width: 125px;
   }
 }
 @media (max-width: 690px) {
@@ -1304,6 +1237,11 @@ button {
 @media (max-width: 690px) and (max-width: 400px) {
   .customizeOrderModal .contentColumn .first .row .pizza {
     width: 145px;
+  }
+}
+@media (max-width: 690px) and (max-width: 333px) {
+  .customizeOrderModal .contentColumn .first .row .pizza {
+    width: 125px;
   }
 }
 @media (max-width: 690px) {
@@ -1552,7 +1490,7 @@ button {
   width: 620px;
   height: 88%;
   padding: 40px 85px;
-  z-index: 30;
+  z-index: 80;
   pointer-events: none;
   opacity: 0;
   overflow-y: auto;
@@ -1582,6 +1520,13 @@ button {
   color: #494949;
   margin-bottom: 70px;
 }
+@media (max-width: 530px) {
+  .registerLoginModal .contentColumn h1 {
+    max-width: 250px;
+    text-align: center;
+    font-size: 2rem;
+  }
+}
 .registerLoginModal .contentColumn .facebookButton {
   display: flex;
   align-items: center;
@@ -1594,6 +1539,17 @@ button {
 .registerLoginModal .contentColumn .facebookButton svg {
   font-size: 2rem;
   margin-right: 5px;
+}
+@media (max-width: 530px) {
+  .registerLoginModal .contentColumn .facebookButton svg {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 530px) {
+  .registerLoginModal .contentColumn .facebookButton {
+    padding: 7px 55px;
+    font-size: 1.1rem;
+  }
 }
 .registerLoginModal .contentColumn .facebookButton:hover {
   background-color: #2d4579;
@@ -1621,6 +1577,16 @@ button {
   font-size: 2.35rem;
   color: #494949;
 }
+@media (max-width: 530px) {
+  .registerLoginModal .contentColumn form .inputGroup svg {
+    left: -10px;
+  }
+}
+@media (max-width: 385px) {
+  .registerLoginModal .contentColumn form .inputGroup svg {
+    font-size: 2rem;
+  }
+}
 .registerLoginModal .contentColumn form .inputGroup label {
   position: absolute;
   top: 0;
@@ -1630,6 +1596,16 @@ button {
   color: #6e6e6e;
   font-size: 1.3rem;
   z-index: 45;
+}
+@media (max-width: 530px) {
+  .registerLoginModal .contentColumn form .inputGroup label {
+    margin-left: 35px;
+  }
+}
+@media (max-width: 385px) {
+  .registerLoginModal .contentColumn form .inputGroup label {
+    margin-left: 30px;
+  }
 }
 .registerLoginModal .contentColumn form .inputGroup label.active {
   top: -25px;
@@ -1654,6 +1630,12 @@ button {
 .registerLoginModal .contentColumn form .formButton {
   margin-top: 80px;
 }
+@media (max-width: 530px) {
+  .registerLoginModal .contentColumn form .formButton {
+    padding: 7px 55px;
+    font-size: 1.1rem;
+  }
+}
 .registerLoginModal .contentColumn .needAnAccount {
   margin: 15px 0;
   font-size: 1.05rem;
@@ -1661,6 +1643,18 @@ button {
 .registerLoginModal .contentColumn .needAnAccount a {
   color: #C57B57;
   font-weight: 700;
+}
+@media (max-width: 840px) {
+  .registerLoginModal {
+    height: 100%;
+    width: 100%;
+    padding: 40px 45px;
+  }
+}
+@media (max-width: 385px) {
+  .registerLoginModal {
+    padding: 40px 20px;
+  }
 }
 
 .payment .logo {
@@ -2111,6 +2105,114 @@ button {
   }
 }
 
+.hamburger {
+  position: absolute;
+  top: 55px;
+  right: 50px;
+  width: 1.8rem;
+  height: 1.8rem;
+  justify-content: space-around;
+  flex-flow: column nowrap;
+  z-index: 71;
+  display: none;
+}
+.hamburger div {
+  width: 1.8rem;
+  height: 0.12rem;
+  background-color: #494949;
+  border-radius: 10px;
+  transform-origin: 1px;
+  transition: all 0.2s linear;
+}
+@media (max-width: 477px) {
+  .hamburger div {
+    width: 1.6rem;
+  }
+}
+.hamburger div.close:nth-child(1) {
+  transform: rotate(0);
+}
+.hamburger div.open:nth-child(1) {
+  transform: rotate(45deg);
+}
+.hamburger div.close:nth-child(2) {
+  transform: translateX(0);
+}
+.hamburger div.open:nth-child(2) {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.hamburger div.close:nth-child(3) {
+  transform: rotate(0);
+}
+.hamburger div.open:nth-child(3) {
+  transform: rotate(-45deg);
+}
+@media (max-width: 1155px) {
+  .hamburger {
+    display: flex;
+  }
+}
+@media (max-width: 477px) {
+  .hamburger {
+    top: 45px;
+    right: 30px;
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+@media (max-width: 386px) {
+  .hamburger {
+    top: 40px;
+    right: 25px;
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+.slideMenu {
+  position: fixed;
+  background-color: #c7c7c7;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  transform: translateX(100%);
+  transition: transform 0.45s ease-in-out;
+  overflow-y: auto;
+  z-index: 70;
+}
+.slideMenu.slideMenuOpen {
+  transform: translateX(0);
+}
+.slideMenu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 55px;
+}
+.slideMenu ul li {
+  list-style: none;
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin: 25px 0;
+}
+.slideMenu ul li:first-child {
+  margin-left: -50px;
+  margin-bottom: 5px;
+}
+.slideMenu ul li a {
+  text-decoration: none;
+  color: #366961;
+}
+.slideMenu ul li .account {
+  margin-bottom: 45px;
+  color: #6e6e6e;
+  font-size: 1.4rem;
+}
+
 footer {
   position: relative;
   z-index: 50;
@@ -2157,6 +2259,7 @@ footer .darkBackground .infoRow .infoItem ul a li {
 }
 @media (max-width: 585px) {
   footer .darkBackground .infoRow .infoItem ul a li {
+    font-size: 1.05rem;
     padding-left: 0;
   }
 }
