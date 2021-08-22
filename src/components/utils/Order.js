@@ -1,6 +1,5 @@
 import {useSelector, useDispatch} from 'react-redux'
 import {useState, useEffect} from 'react'
-import {Link, useHistory} from 'react-router-dom'
 import {useAuth} from '../../auth/authContext'
 import {setToggleOrder} from '../../redux/actions/orderActions'
 import {setToggleAuthModal} from '../../redux/actions/authActions'
@@ -25,11 +24,9 @@ const Order = () => {
 
     const {currentUser} = useAuth()
 
-    const history = useHistory()
-
-    const toggleBodyOverflowHidden = () => {
-        document.body.classList.toggle('overflow')
-    }
+    // const toggleBodyOverflowHidden = () => {
+    //     document.body.classList.toggle('overflow')
+    // }
 
     useEffect(() => {
         // set all items' prices
@@ -52,12 +49,12 @@ const Order = () => {
             setTotalOrder(0)
             setTotalQuantity(0)
         }
-    }, [orderPrices])
+    }, [orderPrices]) // eslint-disable-line react-hooks/exhaustive-deps
 
 
-    useEffect(() => {
-        console.log(totalQuantity)
-    }, [totalQuantity])
+    // useEffect(() => {
+    //     console.log(totalQuantity)
+    // }, [totalQuantity])
 
     return (
         <div className={showOrder ? 'order orderOpen' : 'order'}>
@@ -89,7 +86,7 @@ const Order = () => {
                                     dispatch(setToggleAddressModal(addressModal))
                                     // dispatch(setToggleOrder(showOrder))
                                     dispatch(hideOrder(false))
-                                    
+
                                 } else {
                                     dispatch(setToggleOrder(showOrder))
                                     dispatch(setToggleAuthModal(authModal))

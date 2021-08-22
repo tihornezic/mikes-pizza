@@ -1,4 +1,3 @@
-import Header from './components/layout/Header'
 import Home from './components/pages/Home'
 import Payment from './components/pages/Payment'
 import RecentOrders from './components/pages/RecentOrders'
@@ -29,11 +28,9 @@ function App() {
             <Elements stripe={promise}>
               <Payment />
             </Elements>
-            {/* <Footer /> */}
           </Route>
 
           <Route path='/recent-orders'>
-            {/* <Header /> */}
             <RecentOrders />
             <Footer />
           </Route>

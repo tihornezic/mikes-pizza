@@ -7,7 +7,9 @@ import reducers from './reducers/index.js'
 
 const sagaMiddleware = createSagaMiddleware()
 
+/* eslint-disable no-unused-vars */
 const persistedState = loadState()
+/* eslint-disable no-unused-vars */
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

@@ -1,9 +1,6 @@
-import {useState, useEffect} from 'react'
-import {Link} from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
 import {setToggleCustomizeOrderModal} from '../../redux/actions/orderActions'
 import {getPizza} from '../../redux/actions/pizzasActions'
-import {addPizzaToOrder} from '../../redux/actions/orderActions'
 import AddCircleIcon from '@material-ui/icons/AddCircle'
 
 const PizzaCard = ({pizza}) => {

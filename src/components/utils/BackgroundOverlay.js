@@ -1,4 +1,4 @@
-import {useSelector, useDispatch} from 'react-redux'
+import {useSelector} from 'react-redux'
 
 const BackgroundOverlay = () => {
     const showCustomizeOrderModal = useSelector(state => state.showCustomizeOrderModal.showCustomizeOrderModal)

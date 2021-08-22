@@ -14,7 +14,6 @@ import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 import {useState, useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {setToggleOrder} from '../../redux/actions/orderActions'
-import {hideOrder} from '../../redux/actions/orderActions'
 
 const Home = () => {
     const showOrder = useSelector(state => state.showOrder.showOrder)
@@ -24,7 +23,7 @@ const Home = () => {
     const [shake, setShake] = useState(false)
 
     useEffect(() => {
-        console.log(order)
+        // console.log(order)
         setShake(true)
     }, [order])
 
@@ -32,9 +31,9 @@ const Home = () => {
     //     dispatch(hideOrder(false))
     // }, [])
 
-    const toggleBodyOverflowHidden = () => {
-        document.body.classList.toggle('overflow')
-    }
+    // const toggleBodyOverflowHidden = () => {
+    //     document.body.classList.toggle('overflow')
+    // }
 
     return (
         <div className='home'>

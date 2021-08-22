@@ -1,5 +1,5 @@
 import PizzaCard from '../utils/PizzaCard'
-import {useState, useEffect} from 'react'
+import {useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {getPizzas} from '../../redux/actions/pizzasActions'
 import CircularProgress from '@material-ui/core/CircularProgress'
@@ -26,7 +26,7 @@ const Menu = () => {
 
     useEffect(() => {
         dispatch(getPizzas())
-    }, [])
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <div className='container menu' id='menu'>

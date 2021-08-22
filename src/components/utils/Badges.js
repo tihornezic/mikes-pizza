@@ -7,7 +7,7 @@ const Badges = () => {
     return (
         <div className='badges'>
             <div className='badgesWave'>
-                <img src={wave2} />
+                <img src={wave2} alt='Badges wave' />
             </div>
             <div className='container badgesRow'>
                 <div className='badgesItem'>

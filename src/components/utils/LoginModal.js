@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
 import {useAuth} from '../../auth/authContext'
 import {setToggleAuthModal} from '../../redux/actions/authActions'
-import {useRef, useState, useEffect} from 'react'
+import {useRef, useState} from 'react'
 import {facebookProvider} from '../../auth/authContext'
 import Alert from '@material-ui/lab/Alert'
 import CloseIcon from '@material-ui/icons/Close'
@@ -14,14 +14,16 @@ const LoginModal = ({setLoginModal, setRegisterModal}) => {
     const authModal = useSelector(state => state.showAuthModal.showAuthModal)
     const dispatch = useDispatch()
 
-    const {login, currentUser, facebookAuth} = useAuth()
+    const {login, facebookAuth} = useAuth()
 
     const [activeEmail, setActiveEmail] = useState(false)
     const [activePassword, setActivePassword] = useState(false)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    /* eslint-disable no-unused-vars */
     const [loading, setLoading] = useState(false)
+    /* eslint-disable no-unused-vars */
     const [error, setError] = useState('')
 
     const emailRef = useRef()
@@ -56,9 +58,9 @@ const LoginModal = ({setLoginModal, setRegisterModal}) => {
         setRegisterModal(true)
     }
 
-    useEffect(() => {
-        console.log(currentUser)
-    }, [currentUser])
+    // useEffect(() => {
+    //     console.log(currentUser)
+    // }, [currentUser])
 
 
     return (

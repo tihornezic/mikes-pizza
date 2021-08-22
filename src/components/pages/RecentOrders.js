@@ -1,10 +1,10 @@
-import {Link, useHistory, useLocation} from 'react-router-dom'
+import {Link, useLocation} from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import {useAuth} from '../../auth/authContext'
 import Hamburger from '../layout/Hamburger'
 import SlideMenu from '../layout/SlideMenu'
 import RecentOrder from '../utils/RecentOrder'
-import pizzaLogoDarkSmall from '../../img/pizzaLogoDarkSmall.svg'
+import pizzaLogoDarkSmall2x from '../../img/pizzaLogoDarkSmall2x.png'
 import pizzaEatingTogether from '../../img/pizzaEatingTogether.svg'
 import CloseIcon from '@material-ui/icons/Close'
 
@@ -20,7 +20,7 @@ const RecentOrders = () => {
     useEffect(() => {
         getPayment(setOrders)
         window.scrollTo({top: 0, behavior: 'smooth'})
-    }, [])
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         setMessage(location.state?.message)
@@ -31,7 +31,7 @@ const RecentOrders = () => {
             <div className='recentOrders'>
                 <div className='container'>
                     <Link to='/'>
-                        <img className='logo' src={pizzaLogoDarkSmall} alt='Pizza logo white' />
+                        <img className='logo' src={pizzaLogoDarkSmall2x} alt='Pizza logo white' />
                     </Link>
 
                     {message && showMessage ?

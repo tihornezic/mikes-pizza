@@ -1,4 +1,4 @@
-import {useSelector, useDispatch} from 'react-redux'
+import {useDispatch} from 'react-redux'
 import {removePizzaFromOrder} from '../../redux/actions/orderActions'
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline'
 
@@ -14,13 +14,6 @@ const OrderItem = ({item}) => {
                 </div>
                 <div className='priceAndIcons'>
                     <span>${item.price.toFixed(2)}</span>
-                    {/* <EditIcon className='edit' onClick={() => {
-                        // dispatch(setToggleCustomizeOrderModal(showCustomizeOrderModal));
-                        // dispatch(getPizza(item))
-                        dispatch(setToggleCustomizeOrderModalEdit(showCustomizeOrderModalEdit));
-                        dispatch(setToggleOrder(showOrder));
-                        dispatch(getPizzaForEdit(item))
-                    }} /> */}
                     <DeleteOutlineIcon className='delete' onClick={() => dispatch(removePizzaFromOrder(item))} />
                 </div>
             </div>

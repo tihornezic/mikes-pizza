@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
 import {useAuth} from '../../auth/authContext'
 import {setToggleAuthModal} from '../../redux/actions/authActions'
-import {useRef, useState, useEffect} from 'react'
+import {useRef, useState} from 'react'
 import {db} from '../../firebase'
 import {facebookProvider} from '../../auth/authContext'
 import LoginModal from './LoginModal'
@@ -20,13 +20,15 @@ const RegisterModal = () => {
     const [registerModal, setRegisterModal] = useState(true)
     const [loginModal, setLoginModal] = useState(false)
 
-    const {signup, currentUser, facebookAuth} = useAuth()
+    const {signup, facebookAuth} = useAuth()
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    /* eslint-disable no-unused-vars */
     const [loading, setLoading] = useState(false)
+    /* eslint-disable no-unused-vars */
     const [error, setError] = useState('')
 
     const nameRef = useRef()

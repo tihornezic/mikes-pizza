@@ -1,13 +1,10 @@
 import {useState, useEffect} from 'react'
 import uuid from 'react-uuid'
-import {Link} from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
 import {setToggleCustomizeOrderModal} from '../../redux/actions/orderActions'
 import {addPizzaToOrder} from '../../redux/actions/orderActions'
-import {getPizza} from '../../redux/actions/pizzasActions'
 import {createTheme} from '@material-ui/core/styles'
 import {ThemeProvider} from '@material-ui/core/styles'
-import FormGroup from '@material-ui/core/FormGroup'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import AddCircleIcon from '@material-ui/icons/AddCircle'
 import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline'
@@ -163,7 +160,7 @@ const CustomizeOrderModal = () => {
         if (Object.keys(orderObject).length !== 0) {
             dispatch(addPizzaToOrder(orderObject))
         }
-    }, [orderObject])
+    }, [orderObject]) // eslint-disable-line react-hooks/exhaustive-deps
 
 
     return (

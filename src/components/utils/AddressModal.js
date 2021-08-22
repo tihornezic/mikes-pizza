@@ -1,8 +1,8 @@
 import {useSelector, useDispatch} from 'react-redux'
 import {setToggleAddressModal} from '../../redux/actions/orderActions'
 import {setOrderAddress} from '../../redux/actions/orderActions'
-import {useRef, useState, useEffect} from 'react'
-import {Link, useHistory} from 'react-router-dom'
+import {useRef, useState} from 'react'
+import {useHistory} from 'react-router-dom'
 import deliveryAddress from '../../img/deliveryAddress.svg'
 import CloseIcon from '@material-ui/icons/Close'
 import LocationCityOutlinedIcon from '@material-ui/icons/LocationCityOutlined'
@@ -14,8 +14,6 @@ const AddressModal = () => {
 
     const [city, setCity] = useState('')
     const [address, setAddress] = useState('')
-
-    const [error, setError] = useState('')
 
     const cityRef = useRef()
     const addressRef = useRef()

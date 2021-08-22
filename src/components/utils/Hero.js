@@ -1,5 +1,6 @@
 // import pizzaLogoWhiteSmall from '../../img/pizzaLogoWhiteSmall.svg'
-import pizzaLogoWhiteSmall from '../../img/pizzaLogoWhiteSmall.png'
+// import pizzaLogoWhiteSmall from '../../img/pizzaLogoWhiteSmall.png'
+import pizzaLogoWhiteSmall2x from '../../img/pizzaLogoWhiteSmall2x.png'
 import pizzaMaker from '../../img/pizzaMaker.svg'
 import {Link} from 'react-router-dom'
 
@@ -8,7 +9,7 @@ const Hero = () => {
         <div className='hero'>
             <div className='container'>
                 <Link to='/'>
-                    <img className='logo' src={pizzaLogoWhiteSmall} alt='Pizza logo white' />
+                    <img className='logo' src={pizzaLogoWhiteSmall2x} alt='Pizza logo white' />
                 </Link>
 
                 <div className='content'>

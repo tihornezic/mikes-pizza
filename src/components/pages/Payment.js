@@ -7,23 +7,19 @@ import {getOrderTotal} from '../../redux/reducers/orderReducer'
 import {getOrderQuantity} from '../../redux/reducers/orderReducer'
 import {annulOrder} from '../../redux/actions/orderActions'
 import {annulAddress} from '../../redux/actions/orderActions'
-import {setToggleOrder} from '../../redux/actions/orderActions'
 import {hideOrder} from '../../redux/actions/orderActions'
-import {db} from '../../firebase'
 import axios from '../../axios'
 import OrderItem from '../utils/OrderItem'
-import pizzaLogoGreenSmall from '../../img/pizzaLogoGreenSmall.svg'
+import pizzaLogoGreenSmall2x from '../../img/pizzaLogoGreenSmall2x.png'
 import ArrowBackOutlinedIcon from '@material-ui/icons/ArrowBackOutlined'
 import pizzaMaster from '../../img/pizzaMaster.svg'
 import CustomSpinner from '../utils/CustomSpinner'
-import firebase from 'firebase/app'
 
 const Payment = () => {
     const history = useHistory()
 
     const order = useSelector(state => state.order.order)
     const orderAddress = useSelector(state => state.order.address)
-    const showOrder = useSelector(state => state.showOrder.showOrder)
     const dispatch = useDispatch()
     const {currentUser, setPayment} = useAuth()
 
@@ -48,7 +44,9 @@ const Payment = () => {
 
         setProcessing(true)
 
+        /* eslint-disable no-unused-vars */
         const payload = await stripe.confirmCardPayment(clientSecret, {
+        /* eslint-disable no-unused-vars */
             payment_method: {
                 card: elements.getElement(CardElement)
             }
@@ -124,7 +122,7 @@ const Payment = () => {
                 <>
                     <div className='container'>
                         <Link to='/'>
-                            <img className='logo' src={pizzaLogoGreenSmall} alt='Pizza logo green' />
+                            <img className='logo' src={pizzaLogoGreenSmall2x} alt='Pizza logo green' />
                         </Link>
                     </div>
 

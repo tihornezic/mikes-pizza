@@ -5,7 +5,6 @@ import {setToggleOrder} from '../../redux/actions/orderActions'
 import {setToggleAuthModal} from '../../redux/actions/authActions'
 import {useAuth} from '../../auth/authContext'
 import {db} from '../../firebase'
-import SlideMenu from '../layout/SlideMenu'
 
 const Header = () => {
     const order = useSelector(state => state.showOrder.showOrder)
@@ -16,9 +15,6 @@ const Header = () => {
     const {currentUser, logout} = useAuth()
     const [userInfo, setUserInfo] = useState([])
     const [error, setError] = useState('')
-
-    const [openHamburger, setOpenHamburger] = useState(false)
-    const [slideMenu, setSlideMenu] = useState(false)
 
     async function handleLogout() {
         setError('')
