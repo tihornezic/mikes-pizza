@@ -7,9 +7,9 @@ import {hideSlideMenu} from '../../redux/actions/slideMenuActions'
 import {hideHamburger} from '../../redux/actions/HamburgerActions'
 import {useSelector, useDispatch} from 'react-redux'
 import {db} from '../../firebase'
-import pizzaLogoDarkSmall from '../../img/pizzaLogoDarkSmall.svg'
+import pizzaLogoDarkSmall2x from '../../img/pizzaLogoDarkSmall2x.png'
 
-const SlideMenu = ({slideMenu}) => {
+const SlideMenu = () => {
     const showSlideMenu = useSelector(state => state.showSlideMenu.showSlideMenu)
     const order = useSelector(state => state.showOrder.showOrder)
     const authModal = useSelector(state => state.showAuthModal.showAuthModal)
@@ -50,7 +50,7 @@ const SlideMenu = ({slideMenu}) => {
             <ul>
                 <li>
                     <Link to='/' onClick={() => {dispatch(hideSlideMenu(false)); dispatch(hideHamburger(false))}}>
-                        <img className='logo' src={pizzaLogoDarkSmall} alt='Pizza logo white' />
+                        <img className='logo' src={pizzaLogoDarkSmall2x} alt='Pizza logo white' />
                     </Link>
                 </li>
                 <li>
