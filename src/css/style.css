@@ -875,6 +875,21 @@ button {
   opacity: 0.5;
   width: 85%;
 }
+@media (max-width: 840px) {
+  .order .empty img {
+    width: 75%;
+  }
+}
+@media (max-width: 500px) {
+  .order .empty img {
+    width: 85%;
+  }
+}
+@media (max-width: 375px) {
+  .order .empty img {
+    width: 100%;
+  }
+}
 .order .empty p {
   font-size: 1.2rem;
   max-width: 340px;
@@ -883,6 +898,16 @@ button {
   text-align: center;
   margin-top: -140px;
   color: #6e6e6e;
+}
+@media (max-width: 840px) {
+  .order .empty p {
+    margin-top: 25px;
+  }
+}
+@media (max-width: 500px) {
+  .order .empty p {
+    margin: 0 auto;
+  }
 }
 .order .notEmpty {
   display: flex;
@@ -908,6 +933,12 @@ button {
   padding: 13px 40px;
   font-size: 1.27rem;
   margin-bottom: 25px;
+}
+@media (max-width: 840px) {
+  .order {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .customizeOrderModal {
