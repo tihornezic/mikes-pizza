@@ -1,4 +1,5 @@
-import pizzaLogoWhiteSmall from '../../img/pizzaLogoWhiteSmall.svg'
+// import pizzaLogoWhiteSmall from '../../img/pizzaLogoWhiteSmall.svg'
+import pizzaLogoWhiteSmall from '../../img/pizzaLogoWhiteSmall.png'
 import pizzaMaker from '../../img/pizzaMaker.svg'
 import {Link} from 'react-router-dom'
 
