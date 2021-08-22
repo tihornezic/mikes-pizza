@@ -19,6 +19,7 @@ const RecentOrders = () => {
 
     useEffect(() => {
         getPayment(setOrders)
+        window.scrollTo({top: 0, behavior: 'smooth'})
     }, [])
 
     useEffect(() => {
