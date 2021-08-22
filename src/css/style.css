@@ -934,6 +934,11 @@ button {
   font-size: 1.27rem;
   margin-bottom: 25px;
 }
+@media (max-width: 351px) {
+  .order .notEmpty .orderButton {
+    padding: 15px 15px;
+  }
+}
 @media (max-width: 840px) {
   .order {
     height: 100%;
@@ -1691,6 +1696,18 @@ button {
 .payment .logo {
   margin-top: 15px;
 }
+@media (max-width: 477px) {
+  .payment .logo {
+    width: 185px;
+  }
+}
+@media (max-width: 386px) {
+  .payment .logo {
+    margin-top: 15px;
+    margin-left: -20px;
+    width: 150px;
+  }
+}
 .payment .paymentContainer {
   max-width: 1050px;
   margin: 0 auto;
@@ -1714,6 +1731,46 @@ button {
 .payment .paymentContainer .heading h1 {
   font-size: 1.85rem;
 }
+@media (max-width: 645px) {
+  .payment .paymentContainer .heading h1 {
+    font-size: 1.55rem;
+  }
+}
+@media (max-width: 400px) {
+  .payment .paymentContainer .heading h1 {
+    font-size: 1.35rem;
+  }
+}
+@media (max-width: 1330px) {
+  .payment .paymentContainer .heading {
+    margin-left: 80px;
+  }
+}
+@media (max-width: 1195px) {
+  .payment .paymentContainer .heading {
+    margin-left: 100px;
+  }
+}
+@media (max-width: 1000px) {
+  .payment .paymentContainer .heading {
+    margin-left: 120px;
+  }
+}
+@media (max-width: 645px) {
+  .payment .paymentContainer .heading {
+    margin-left: 60px;
+  }
+}
+@media (max-width: 460px) {
+  .payment .paymentContainer .heading {
+    margin-left: 50px;
+  }
+}
+@media (max-width: 400px) {
+  .payment .paymentContainer .heading {
+    margin-left: 35px;
+  }
+}
 .payment .paymentContainer .mainRow {
   display: flex;
 }
@@ -1732,6 +1789,16 @@ button {
 .payment .paymentContainer .mainRow .left h2 {
   font-size: 1.55rem;
   margin-bottom: 10px;
+}
+@media (max-width: 1330px) {
+  .payment .paymentContainer .mainRow .left {
+    width: 75%;
+  }
+}
+@media (max-width: 440px) {
+  .payment .paymentContainer .mainRow .left {
+    width: 85%;
+  }
 }
 .payment .paymentContainer .mainRow .right {
   width: 40%;
@@ -1775,8 +1842,23 @@ button {
   font-size: 1.85rem;
   color: #494949;
 }
+@media (max-width: 440px) {
+  .payment .paymentContainer .mainRow .right .summaryCard .headingRow h2 {
+    font-size: 1.55rem;
+  }
+}
 .payment .paymentContainer .mainRow .right .summaryCard .headingRow img {
   width: 140px;
+}
+@media (max-width: 440px) {
+  .payment .paymentContainer .mainRow .right .summaryCard .headingRow img {
+    width: 110px;
+  }
+}
+@media (max-width: 375px) {
+  .payment .paymentContainer .mainRow .right .summaryCard .headingRow img {
+    width: 85px;
+  }
 }
 .payment .paymentContainer .mainRow .right .summaryCard .orderInfos {
   font-size: 1.25rem;
@@ -1787,10 +1869,20 @@ button {
   justify-content: space-between;
   margin-bottom: 15px;
 }
+@media (max-width: 440px) {
+  .payment .paymentContainer .mainRow .right .summaryCard .orderInfos .infoRow span {
+    font-size: 1.05rem;
+  }
+}
 .payment .paymentContainer .mainRow .right .summaryCard .orderInfos .infoRow .total {
   font-size: 1.35rem;
   font-weight: 700;
   margin-bottom: 8px;
+}
+@media (max-width: 440px) {
+  .payment .paymentContainer .mainRow .right .summaryCard .orderInfos .infoRow .total {
+    font-size: 1.25rem;
+  }
 }
 .payment .paymentContainer .mainRow .right .summaryCard .orderInfos .addressDetails {
   border-top: 1px solid #c7c7c7;
@@ -1817,11 +1909,52 @@ button {
   margin-top: 45px;
   text-align: center;
 }
+@media (max-width: 440px) {
+  .payment .paymentContainer .mainRow .right .summaryCard .orderInfos .paymentDetails .confirmOrderButton {
+    font-size: 1.25rem;
+    padding: 15px 25px;
+  }
+}
+@media (max-width: 370px) {
+  .payment .paymentContainer .mainRow .right .summaryCard .orderInfos .paymentDetails .confirmOrderButton {
+    font-size: 1.15rem;
+    padding: 18px 15px;
+  }
+}
+@media (max-width: 327px) {
+  .payment .paymentContainer .mainRow .right .summaryCard .orderInfos .paymentDetails .confirmOrderButton {
+    font-size: 1.15rem;
+    padding: 18px 13px;
+  }
+}
 .payment .paymentContainer .mainRow .right .summaryCard .orderInfos .paymentDetails .error {
   font-size: 1rem;
   color: #eb1c26;
   text-align: center;
   margin-top: 25px;
+}
+@media (max-width: 1330px) {
+  .payment .paymentContainer .mainRow .right {
+    width: 75%;
+    margin-left: 0;
+    margin-top: 75px;
+  }
+}
+@media (max-width: 440px) {
+  .payment .paymentContainer .mainRow .right {
+    width: 85%;
+  }
+}
+@media (max-width: 1330px) {
+  .payment .paymentContainer .mainRow {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 1790px) {
+  .payment .paymentContainer {
+    max-width: 900px;
+  }
 }
 
 .addressModal {
